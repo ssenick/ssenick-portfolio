@@ -1,0 +1,17 @@
+.Header {
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+
+  ul {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .link {
+    padding: 5px 10px;
+    display: block;
+    font-size: 25px;
+  }
+}

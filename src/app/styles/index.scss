@@ -1,0 +1,35 @@
+@import "reset";
+
+h1 {
+  font-size: 55px;
+}
+
+h2 {
+  font-size: 40px;
+  color: red;
+}
+
+.app {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+
+  &__header {
+    background-color: #9aee08;
+  }
+
+  &__main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  // IMPORTANT
+  &.mobile {
+    height: calc(var(--vh, 1vh) * 100);
+
+    @media (max-width: 772px) {
+      transition: height 0.2s;
+    }
+  }
+}
