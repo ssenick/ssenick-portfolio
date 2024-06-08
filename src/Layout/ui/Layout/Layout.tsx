@@ -1,4 +1,5 @@
-import { memo, ReactNode } from 'react';
+import type { ReactNode } from 'react';
+import { memo } from 'react';
 
 import { Header } from '@/components/Header';
 import { classNames } from '@/helpers/classNames/classNames';
