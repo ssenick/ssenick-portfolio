@@ -9,10 +9,15 @@ h2 {
   color: red;
 }
 
+body {
+  font-family: Manrope, sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
 .app {
   height: 100vh;
-  display: grid;
-  grid-template-rows: auto 1fr;
 
   &__header {
     background-color: #9aee08;

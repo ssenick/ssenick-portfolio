@@ -1,5 +1,6 @@
 import './app/styles/index.scss';
 
+import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 
@@ -12,9 +13,11 @@ if (!container) throw new Error('Failed to mount the application, check the cont
 const root = createRoot(container);
 
 root.render(
-   <BrowserRouter>
-      <MediaQueryProvider>
-         <App />
-      </MediaQueryProvider>
-   </BrowserRouter>,
+   <StrictMode>
+      <BrowserRouter>
+         <MediaQueryProvider>
+            <App />
+         </MediaQueryProvider>
+      </BrowserRouter>
+   </StrictMode>,
 );
