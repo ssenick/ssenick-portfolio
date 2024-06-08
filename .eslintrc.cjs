@@ -23,6 +23,7 @@ module.exports = {
       'prettier',
    ],
    rules: {
+      "@typescript-eslint/consistent-type-imports": "error",
       // Упорядочивание импортов
       'simple-import-sort/imports': 'error',
       'simple-import-sort/exports': 'error',
