@@ -3,7 +3,7 @@ import { memo, useMemo } from 'react';
 
 import { animatePattern } from '@/app/povaiders/PageTransition/helpers/animatePattern';
 import { classNames } from '@/helpers/classNames/classNames';
-import { Dimensions } from '@/hooks/useDimensions';
+import type { Dimensions } from '@/hooks/useDimensions';
 
 import cls from './SvgTransition.module.scss';
 
