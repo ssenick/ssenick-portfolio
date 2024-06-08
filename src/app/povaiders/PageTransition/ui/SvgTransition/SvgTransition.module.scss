@@ -1,0 +1,11 @@
+.SvgTransition {
+  position: fixed;
+  height: calc(100vh + 600px);
+  width: 100vw;
+  pointer-events: none;
+  left: 0;
+  cursor: wait;
+  z-index: 100;
+  will-change: top;
+  user-select: none;
+}
