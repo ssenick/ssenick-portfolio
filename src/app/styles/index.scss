@@ -1,4 +1,6 @@
 @import "reset";
+@import "./themes/dark";
+@import "./themes/light";
 
 h1 {
   font-size: 55px;
@@ -14,6 +16,8 @@ body {
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
+  color: var(--color-text);
+  background-color: var(--color-bg);
 }
 
 .app {

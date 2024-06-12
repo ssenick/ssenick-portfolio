@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import type { PropsWithChildren } from 'react';
 import { createContext } from 'react';
 import { useMediaQuery } from 'react-responsive';
 
@@ -17,13 +17,9 @@ const defaultContext = {
    isSmallMobile: false,
 };
 
-interface MediaQueryProviderProps {
-   children: ReactNode;
-}
-
 export const MediaQueryContext = createContext(defaultContext);
 
-export const MediaQueryProvider = ({ children }: MediaQueryProviderProps) => {
+export const MediaQueryProvider = ({ children }: PropsWithChildren) => {
    const isMax = useMediaQuery({ minWidth: queries.pc });
    const isPc = useMediaQuery({ maxWidth: queries.pc });
    const isTablet = useMediaQuery({ maxWidth: queries.tablet });

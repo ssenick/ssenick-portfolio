@@ -3,8 +3,8 @@ import type { ReactNode } from 'react';
 import { memo, useCallback } from 'react';
 import { type Location } from 'react-router-dom';
 
-import { animatePattern } from '@/app/povaiders/PageTransition/helpers/animatePattern';
-import { SvgTransition } from '@/app/povaiders/PageTransition/ui/SvgTransition/SvgTransition';
+import { animatePattern } from '@/app/poviders/PageTransition/helpers/animatePattern';
+import { SvgTransition } from '@/app/poviders/PageTransition/ui/SvgTransition/SvgTransition';
 import { AppRoutes, routeConfig } from '@/config/route/routeConfig';
 import { classNames } from '@/helpers/classNames/classNames';
 import { useDimensions } from '@/hooks/useDimensions';

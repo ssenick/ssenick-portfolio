@@ -1,8 +1,8 @@
 import type { ReactNode } from 'react';
 import { memo } from 'react';
 
-import { Header } from '@/components/Header';
 import { classNames } from '@/helpers/classNames/classNames';
+import { Header } from '@/Layout/ui/Header';
 
 import cls from './Layout.module.scss';
 

@@ -1,3 +1,13 @@
 .AboutPage {
   position: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+
+  h1 {
+    padding: 50px;
+    display: inline-block;
+    will-change: transform;
+  }
 }

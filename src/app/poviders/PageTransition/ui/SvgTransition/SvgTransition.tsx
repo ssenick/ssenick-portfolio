@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { memo, useMemo } from 'react';
 
-import { animatePattern } from '@/app/povaiders/PageTransition/helpers/animatePattern';
+import { animatePattern } from '@/app/poviders/PageTransition/helpers/animatePattern';
 import { classNames } from '@/helpers/classNames/classNames';
 import type { Dimensions } from '@/hooks/useDimensions';
 
