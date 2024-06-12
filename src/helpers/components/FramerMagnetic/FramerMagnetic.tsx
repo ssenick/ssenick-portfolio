@@ -1,5 +1,5 @@
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
-import type { PropsWithChildren } from 'react';
+import type { MouseEvent, PropsWithChildren } from 'react';
 import { useCallback, useRef } from 'react';
 
 const dampen = 40; // Коэффициент демпфирования для эффекта
@@ -24,7 +24,7 @@ const FramerMagnetic = (props: PropsWithChildren) => {
    const translateY = useTransform(springY, [-1, 1], [-dampen, dampen]);
 
    const handleMouseMove = useCallback(
-      (event) => {
+      (event: MouseEvent) => {
          if (!linkRef.current) return;
          const rect = linkRef.current!.getBoundingClientRect();
          const linkX = rect.left + rect.width / 2;
