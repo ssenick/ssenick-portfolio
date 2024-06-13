@@ -1,8 +1,8 @@
 import { getRouteAbout, getRouteContact } from '@/config/route/routeConfig';
 
-import { NavLinks } from '../types/nav';
+import type { NavLinksType } from '../types/nav';
 
-export const NavLinks: NavLinks[] = [
+export const NavLinks: NavLinksType[] = [
    {
       path: getRouteAbout(),
       text: 'About',
