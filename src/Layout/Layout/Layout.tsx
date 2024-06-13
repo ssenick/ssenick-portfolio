@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 import { memo } from 'react';
 
 import { classNames } from '@/helpers/classNames/classNames';
-import { Header } from '@/Layout/ui/Header';
+import { Header } from '@/Layout';
 
 import cls from './Layout.module.scss';
 
@@ -16,7 +16,7 @@ const Layout = memo((props: LayoutProps) => {
 
    return (
       <div className={classNames(cls.Layout, {}, [className])}>
-         <Header className={'app__header'} />
+         <Header />
          {children}
       </div>
    );
