@@ -2,17 +2,21 @@ import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import type { MouseEvent, PropsWithChildren } from 'react';
 import { useCallback, useRef } from 'react';
 
-const dampen = 30; // Коэффициент демпфирования для эффекта
+// const dampen = 25; // Коэффициент демпфирования для эффекта
 const springConfig = {
-   damping: 15,
+   damping: 12,
    type: 'spring',
-   stiffness: 300,
+   stiffness: 250,
    mass: 0.8,
    bounce: 0.5,
 }; // Конфигурация пружины
 
-const FramerMagnetic = (props: PropsWithChildren) => {
-   const { children } = props;
+interface FramerMagneticProps extends PropsWithChildren {
+   dampen?: number;
+}
+
+const FramerMagnetic = (props: FramerMagneticProps) => {
+   const { children, dampen = 25 } = props;
    const linkRef = useRef<HTMLDivElement | null>(null);
    const mouseX = useMotionValue(0);
    const mouseY = useMotionValue(0);
