@@ -11,7 +11,7 @@
     left: 0;
     top: -300px;
     cursor: wait;
-    background-color: #000;
+    background-color: var(--color-text);
     z-index: 100;
   }
 
@@ -32,6 +32,7 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
+      color: var(--color-bg);
 
       &::after,
       &::before {
@@ -39,7 +40,7 @@
         width: 7px;
         height: 7px;
         border-radius: 50%;
-        background-color: #fff;
+        background-color: var(--color-bg);
       }
     }
   }
