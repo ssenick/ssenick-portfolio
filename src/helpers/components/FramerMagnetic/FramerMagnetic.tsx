@@ -1,51 +1,12 @@
-import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
-import type { MouseEvent, PropsWithChildren } from 'react';
-import { useCallback, useRef } from 'react';
+import { motion } from 'framer-motion';
+import type { PropsWithChildren } from 'react';
 
-// const dampen = 25; // Коэффициент демпфирования для эффекта
-const springConfig = {
-   damping: 12,
-   type: 'spring',
-   stiffness: 250,
-   mass: 0.8,
-   bounce: 0.5,
-}; // Конфигурация пружины
+import { useFramerMagnetic } from '@/hooks/useFramerMagnetic';
 
-interface FramerMagneticProps extends PropsWithChildren {
-   dampen?: number;
-}
-
-const FramerMagnetic = (props: FramerMagneticProps) => {
-   const { children, dampen = 25 } = props;
-   const linkRef = useRef<HTMLDivElement | null>(null);
-   const mouseX = useMotionValue(0);
-   const mouseY = useMotionValue(0);
-
-   const springX = useSpring(mouseX, springConfig);
-   const springY = useSpring(mouseY, springConfig);
-
-   const translateX = useTransform(springX, [-1, 1], [-dampen, dampen]);
-   const translateY = useTransform(springY, [-1, 1], [-dampen, dampen]);
-
-   const handleMouseMove = useCallback(
-      (event: MouseEvent) => {
-         if (!linkRef.current) return;
-         const rect = linkRef.current!.getBoundingClientRect();
-         const linkX = rect.left + rect.width / 2;
-         const linkY = rect.top + rect.height / 2;
-         const offsetX = (event.clientX - linkX) / rect.width;
-         const offsetY = (event.clientY - linkY) / rect.height;
-
-         mouseX.set(offsetX);
-         mouseY.set(offsetY);
-      },
-      [mouseX, mouseY],
-   );
-
-   const handleMouseLeave = useCallback(() => {
-      mouseX.set(0);
-      mouseY.set(0);
-   }, [mouseX, mouseY]);
+const FramerMagnetic = (props: PropsWithChildren) => {
+   const { children } = props;
+   const { linkRef, translateY, translateX, handleMouseLeave, handleMouseMove } =
+      useFramerMagnetic<HTMLDivElement>({});
 
    return (
       <motion.div
