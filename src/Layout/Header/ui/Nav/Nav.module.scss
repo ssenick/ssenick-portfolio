@@ -11,6 +11,7 @@
     background-color: var(--color-text);
     will-change: transform;
     transition: var(--animate-faster);
+    transition-property: transform;
   }
 
   .link {
