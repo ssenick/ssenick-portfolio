@@ -26,7 +26,6 @@ const Nav = memo((props: NavProps) => {
                         to={path}
                      >
                         {text}
-
                         <span className={cls.dot}></span>
                      </Link>
                   </FramerMagnetic>
