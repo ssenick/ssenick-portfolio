@@ -1,0 +1,65 @@
+.NavHome {
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  cursor: pointer;
+
+  .credit {
+    margin-right: 5px;
+    font-size: clamp(20px, 1.2vw, 26px);
+  }
+
+  .text {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: var(--animation-primary);
+
+    h5 {
+      white-space: nowrap;
+    }
+  }
+
+  .name {
+    position: relative;
+    display: flex;
+    align-items: center;
+    transition: var(--animation-primary);
+
+    h5 {
+      padding-right: 5px;
+    }
+
+    h5:last-child {
+      position: absolute;
+      top: 0;
+      left: 100%;
+    }
+  }
+
+  .code {
+    transition: var(--animation-primary);
+  }
+
+  &:hover {
+    .wrapper {
+      padding-right: 1.5rem;
+
+      .code {
+        transform: translate(-4.1em);
+      }
+
+      .name {
+        transform: translate(-4.1em);
+      }
+    }
+  }
+}
