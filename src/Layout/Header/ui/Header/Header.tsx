@@ -3,6 +3,7 @@ import { memo } from 'react';
 import { classNames } from '@/helpers/classNames/classNames';
 
 import { Nav } from '../Nav/Nav';
+import { NavHome } from '../NavHome/NavHome';
 import cls from './Header.module.scss';
 
 interface HeaderProps {
@@ -14,9 +15,10 @@ const Header = memo((props: HeaderProps) => {
 
    return (
       <div className={classNames(cls.Header, {}, [className])}>
-         <div className={cls.wrapper}>
+         <nav className={cls.wrapper}>
+            <NavHome />
             <Nav />
-         </div>
+         </nav>
       </div>
    );
 });
