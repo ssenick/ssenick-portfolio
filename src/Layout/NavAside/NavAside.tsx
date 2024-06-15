@@ -1,5 +1,6 @@
+import { motion } from 'framer-motion';
 import { memo } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 import { classNames } from '@/helpers/classNames/classNames';
 import { FramerMagnetic } from '@/helpers/components/FramerMagnetic/FramerMagnetic';
@@ -36,6 +37,7 @@ interface NavAsideProps {
 
 const NavAside = memo((props: NavAsideProps) => {
    const { className } = props;
+   const location = useLocation();
 
    return (
       <div className={classNames(cls.NavAside, {}, [className])}>
@@ -47,17 +49,19 @@ const NavAside = memo((props: NavAsideProps) => {
                   <ul>
                      {NavLinks.map(({ path, text }) => (
                         <li key={path}>
-                           <Link
-                              className={classNames(
-                                 cls.link,
-                                 { [cls.active]: location.pathname === path },
-                                 [],
-                              )}
-                              to={path}
-                           >
-                              {text}
-                              <span className={cls.dot}></span>
-                           </Link>
+                           <FramerMagnetic>
+                              <Link
+                                 className={classNames(
+                                    cls.link,
+                                    { [cls.active]: location.pathname === path },
+                                    [],
+                                 )}
+                                 to={path}
+                              >
+                                 {text}
+                                 <motion.span className={cls.dot}></motion.span>
+                              </Link>
+                           </FramerMagnetic>
                         </li>
                      ))}
                   </ul>

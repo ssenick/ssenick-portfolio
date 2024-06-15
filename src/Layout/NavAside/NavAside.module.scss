@@ -19,19 +19,21 @@
 
   .wrapper {
     position: absolute;
-    right: 0;
+    right: -1px;
     top: 0;
-    height: 100%;
+    height: 101%;
     background-color: var(--color-text);
     color: var(--color-bg);
     will-change: transform;
+    overflow: auto;
+    overflow-x: hidden;
 
     .body {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       height: 100%;
-      padding: 15vh 7.5vw 10vh;
+      padding: 12vh 7.5vw 8vh;
       position: relative;
     }
 
@@ -41,7 +43,7 @@
       flex-direction: column;
 
       h5 {
-        font-size: 0.6rem;
+        font-size: clamp(0.6em, 4vw, 0.8em);
         text-transform: uppercase;
         font-weight: 500;
         opacity: 0.5;
@@ -61,22 +63,74 @@
         align-items: start;
 
         li {
+          position: relative;
+          width: 100%;
+          padding-right: 25px;
+
           .link {
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: start;
             min-height: 100%;
             padding: 0  clamp(0.75em, 4vw, 1.25em);
+            margin: 0 calc(clamp(0.75em, 4vw, 1.25em) * -1);
             height: auto;
-            line-height: 1.5;
+            line-height: 1.8;
+            font-size: clamp(2.5em, 4vw, 3em);
+
+            .dot {
+              position: absolute;
+              right: 0;
+              top: 50%;
+              width: calc(clamp(0.65em, 4vw, 0.75em) / 2.75);
+              height: calc(clamp(0.65em, 4vw, 0.75em) / 2.75);
+              background-color: #fff;
+              border-radius: 50%;
+              will-change: transform;
+              transition: var(--animate-faster);
+              transition-property: transform;
+              transform: translate(0, -50%) scale(0) rotate(0.001deg);
+            }
+
+            &.active {
+              .dot {
+                transform: translate(0%, -50%) scale(1) rotate(0.001deg);
+              }
+            }
+          }
+        }
+
+        @media (any-hover: hover) {
+          &:hover {
+            .link {
+              &.active {
+                .dot {
+                  transform: translate(0%, -50%) scale(0) rotate(0.001deg);
+                }
+              }
+
+              @media (any-hover: hover) {
+                &:hover {
+                  .dot {
+                    transform: translate(0%, -50%) scale(1) rotate(0.001deg);
+                  }
+                }
+              }
+            }
           }
         }
       }
     }
 
     .footer {
+      h5 {
+        padding-top: 1.5em;
+      }
+
       ul {
-        margin-left: calc(clamp(0.75em, 4vw, 1.25em) * -0.9);
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 calc(clamp(0.75em, 4vw, 1.25em) * -0.9);
 
         li {
           display: inline-flex;
@@ -119,6 +173,14 @@
             }
           }
         }
+      }
+    }
+
+    @media (max-width: 772px) {
+      left: 0;
+
+      .footer h5 {
+        border-top: 1px solid;
       }
     }
   }
