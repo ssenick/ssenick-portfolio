@@ -1,20 +1,22 @@
 import { memo } from 'react';
+import { Link } from 'react-router-dom';
 
+import { getRouteHome } from '@/config/route/routeConfig';
 import { classNames } from '@/helpers/classNames/classNames';
 import { FramerMagnetic } from '@/helpers/components/FramerMagnetic/FramerMagnetic';
 
-import cls from './NavHome.module.scss';
+import cls from './NavToHome.module.scss';
 
 interface NavHomeProps {
    className?: string;
 }
 
-const NavHome = memo((props: NavHomeProps) => {
+const NavToHome = memo((props: NavHomeProps) => {
    const { className } = props;
 
    return (
       <FramerMagnetic>
-         <div className={classNames(cls.NavHome, {}, [className])}>
+         <Link to={getRouteHome()} className={classNames(cls.NavToHome, {}, [className])}>
             <div className={cls.credit}>©</div>
             <div className={cls.text}>
                <div className={cls.wrapper}>
@@ -25,10 +27,10 @@ const NavHome = memo((props: NavHomeProps) => {
                   </span>
                </div>
             </div>
-         </div>
+         </Link>
       </FramerMagnetic>
    );
 });
 
-NavHome.displayName = 'NavHome';
-export { NavHome };
+NavToHome.displayName = 'NavToHome';
+export { NavToHome };
