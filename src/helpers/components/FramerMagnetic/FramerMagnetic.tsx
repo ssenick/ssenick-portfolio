@@ -14,7 +14,6 @@ const FramerMagnetic = (props: PropsWithChildren) => {
          onMouseMove={handleMouseMove}
          onMouseLeave={handleMouseLeave}
          style={{
-            display: 'inline-block',
             translateX: translateX,
             translateY: translateY,
             cursor: 'pointer',
