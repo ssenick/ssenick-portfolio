@@ -1,9 +1,11 @@
-import { memo } from 'react';
+import { memo, useState } from 'react';
 
 import { classNames } from '@/helpers/classNames/classNames';
+import { BurgerBtn } from '@/Layout/Header/ui/BurgerBtn/BurgerBtn';
+import { NavAside } from '@/Layout/Header/ui/NavAside/NavAside/NavAside';
 
 import { Nav } from '../Nav/Nav';
-import { NavHome } from '../NavHome/NavHome';
+import { NavToHome } from '../NavToHome/NavToHome';
 import cls from './Header.module.scss';
 
 interface HeaderProps {
@@ -12,12 +14,14 @@ interface HeaderProps {
 
 const Header = memo((props: HeaderProps) => {
    const { className } = props;
-
+   const [active, setActive] = useState(false);
    return (
       <div className={classNames(cls.Header, {}, [className])}>
          <nav className={cls.wrapper}>
-            <NavHome />
+            <NavToHome />
             <Nav />
+            <BurgerBtn setActiveButton={setActive} activeButton={active} />
+            <NavAside isActive={active} setIsActive={setActive} />
          </nav>
       </div>
    );
