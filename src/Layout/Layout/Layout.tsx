@@ -1,24 +1,20 @@
-import type { ReactNode } from 'react';
+import type { PropsWithChildren } from 'react';
 import { memo } from 'react';
 
-import { classNames } from '@/helpers/classNames/classNames';
+import { Page } from '@/components/Page/Page';
 import { Header } from '@/Layout';
 
-import cls from './Layout.module.scss';
-
-interface LayoutProps {
+interface LayoutProps extends PropsWithChildren {
    className?: string;
-   children?: ReactNode;
 }
 
 const Layout = memo((props: LayoutProps) => {
-   const { className, children } = props;
-
+   const { children } = props;
    return (
-      <div className={classNames(cls.Layout, {}, [className])}>
+      <Page>
          <Header />
          {children}
-      </div>
+      </Page>
    );
 });
 
