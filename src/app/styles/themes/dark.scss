@@ -1,4 +1,7 @@
-.dark {
+.dark,
+.darkTheme {
   --color-text: #fff;
   --color-bg: #292929;
+  --color-bg-dark: #fff;
+  --color-border: rgb(238 238 246 / 17%);
 }

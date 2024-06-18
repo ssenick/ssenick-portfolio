@@ -1,4 +1,7 @@
-.light {
-  --color-text: #292929;
+.light,
+.lightTheme {
+  --color-text: #1c1d20;
   --color-bg: #fff;
+  --color-bg-dark: #1c1d20;
+  --color-border: rgb(28 29 32 / 17.5%);
 }

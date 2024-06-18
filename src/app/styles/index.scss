@@ -20,16 +20,15 @@ body {
   font-size: clamp(16px, 1.2vw, 20px);
   color: var(--color-text);
   background-color: var(--color-bg);
+
+  &.lock {
+    overflow: hidden;
+  }
 }
 
 .app {
   height: 100vh;
-
-  &__main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  overflow: hidden;
 
   // IMPORTANT
   &.mobile {
@@ -39,4 +38,9 @@ body {
       transition: height 0.2s;
     }
   }
+}
+
+*::-webkit-scrollbar {
+  width: 0;               /* ширина scrollbar */
+  height: 0;
 }
