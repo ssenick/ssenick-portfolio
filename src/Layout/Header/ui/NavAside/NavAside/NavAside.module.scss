@@ -62,7 +62,6 @@
 
         li {
           position: relative;
-          width: 100%;
 
           .link {
             display: flex;
@@ -77,11 +76,11 @@
 
             .dot {
               position: absolute;
-              right: 0;
+              left: -35px;
               top: 50%;
-              width: calc(clamp(0.65em, 4vw, 0.75em) / 2.75);
-              height: calc(clamp(0.65em, 4vw, 0.75em) / 2.75);
-              background-color: #fff;
+              width: calc(clamp(0.65em, 4vw, 0.75em) / 3);
+              height: calc(clamp(0.65em, 4vw, 0.75em) / 3);
+              background-color: var(--color-bg);
               border-radius: 50%;
               will-change: transform;
               transition: var(--animate-faster);
@@ -175,6 +174,21 @@
 
     @media (max-width: 772px) {
       left: 0;
+
+      .nav {
+        ul {
+          li {
+            width: 100%;
+
+            .link {
+              .dot {
+                right: 0;
+                left: auto;
+              }
+            }
+          }
+        }
+      }
 
       .footer h5 {
         border-top: 1px solid;

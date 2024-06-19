@@ -1,49 +1,26 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { memo, useCallback } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-import { animatePattern } from '@/app/poviders/PageTransition/helpers/animatePattern';
+import { menuSlide, opacity, slide } from '@/const/animate';
 import { classNames } from '@/helpers/classNames/classNames';
 import { FramerMagnetic } from '@/helpers/components/FramerMagnetic/FramerMagnetic';
+import { animatePattern } from '@/helpers/func/animatePattern';
 
-import { menuSlide, opacity, slide } from '../../../const/animate';
-import { NavLinks } from '../../../const/NavLinks';
+import { navLinks } from '../../../const/navLinks';
+import { socials } from '../../../const/socials';
 import { Curve } from '../Curve/Curve';
 import cls from './NavAside.module.scss';
 
-interface Socials {
-   text: string;
-   href: string;
-}
-
-const socials: Socials[] = [
-   {
-      text: 'Instagram',
-      href: 'https://www.instagram.com/senchenkoruslan',
-   },
-   {
-      text: 'Facebook',
-      href: 'https://www.facebook.com/profile.php?id=100003676742055',
-   },
-   {
-      text: 'Linkedin',
-      href: 'https://www.linkedin.com/in/ruslan-senchenko',
-   },
-   {
-      text: 'GitHub',
-      href: 'https://github.com/ssenick',
-   },
-];
-
 interface NavAsideProps {
    className?: string;
+   location: string;
    isActive?: boolean;
    setIsActive?: (isActive: false) => void;
 }
 
 const NavAside = memo((props: NavAsideProps) => {
-   const { className, isActive, setIsActive } = props;
-   const location = useLocation();
+   const { className, location, isActive, setIsActive } = props;
 
    const closeModal = useCallback(() => {
       setIsActive && setIsActive(false);
@@ -59,7 +36,7 @@ const NavAside = memo((props: NavAsideProps) => {
                      <nav className={cls.nav}>
                         <motion.h5 {...animatePattern(slide)}>Navigation</motion.h5>
                         <ul>
-                           {NavLinks.map(({ path, text }, index) => (
+                           {navLinks.map(({ path, text }, index) => (
                               <li key={path}>
                                  <FramerMagnetic>
                                     <motion.div custom={index} {...animatePattern(slide)}>
@@ -67,7 +44,7 @@ const NavAside = memo((props: NavAsideProps) => {
                                           onClick={closeModal}
                                           className={classNames(
                                              cls.link,
-                                             { [cls.active]: location.pathname === path },
+                                             { [cls.active]: location === path },
                                              [],
                                           )}
                                           to={path}

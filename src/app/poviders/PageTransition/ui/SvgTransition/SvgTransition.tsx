@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
 import { memo, useMemo } from 'react';
 
-import { animatePattern } from '@/app/poviders/PageTransition/helpers/animatePattern';
 import { classNames } from '@/helpers/classNames/classNames';
+import { animatePattern } from '@/helpers/func/animatePattern';
 import type { Dimensions } from '@/hooks/useDimensions';
 
 import cls from './SvgTransition.module.scss';

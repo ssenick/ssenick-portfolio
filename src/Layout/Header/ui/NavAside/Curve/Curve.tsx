@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-import { animatePattern } from '@/app/poviders/PageTransition/helpers/animatePattern';
+import { animatePattern } from '@/helpers/func/animatePattern';
 
 import cls from './Curve.module.scss';
 

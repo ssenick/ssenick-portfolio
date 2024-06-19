@@ -22,3 +22,29 @@ export const scale = {
    open: { scale: 1, transition: { duration: 0.3 } },
    closed: { scale: 0, transition: { duration: 0.4 } },
 };
+
+export const text = {
+   initial: {
+      opacity: 1,
+   },
+   animate: {
+      opacity: 0,
+      top: 0,
+      transition: { duration: 0.75, delay: 0.35, ease: [0.645, 0.045, 0.355, 1] },
+      transitionEnd: { top: '50%', opacity: 0 },
+   },
+   exit: {
+      opacity: 0,
+      top: '50%',
+      transition: { duration: 0.5, delay: 0.4, ease: [0.33, 1, 0.68, 1] },
+   },
+};
+export const fade = {
+   initial: {
+      opacity: 0,
+   },
+   animate: {
+      opacity: 1,
+      transition: { duration: 0.3, delay: 0.1 },
+   },
+};

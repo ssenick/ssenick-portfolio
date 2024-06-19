@@ -3,12 +3,13 @@ import type { ReactNode } from 'react';
 import { memo, useCallback } from 'react';
 import { type Location } from 'react-router-dom';
 
-import { animatePattern } from '@/app/poviders/PageTransition/helpers/animatePattern';
-import { SvgTransition } from '@/app/poviders/PageTransition/ui/SvgTransition/SvgTransition';
 import { AppRoutes, routeConfig } from '@/config/route/routeConfig';
+import { fade, text } from '@/const/animate';
 import { classNames } from '@/helpers/classNames/classNames';
+import { animatePattern } from '@/helpers/func/animatePattern';
 import { useDimensions } from '@/hooks/useDimensions';
 
+import { SvgTransition } from '../SvgTransition/SvgTransition';
 import cls from './PageTransition.module.scss';
 
 interface PageTransitionProps {
@@ -16,33 +17,6 @@ interface PageTransitionProps {
    children?: ReactNode;
    location: Location;
 }
-
-const text = {
-   initial: {
-      opacity: 1,
-   },
-   animate: {
-      opacity: 0,
-      top: 0,
-      transition: { duration: 0.75, delay: 0.35, ease: [0.645, 0.045, 0.355, 1] },
-      transitionEnd: { top: '50%', opacity: 0 },
-   },
-   exit: {
-      opacity: 0,
-      top: '50%',
-      transition: { duration: 0.5, delay: 0.4, ease: [0.33, 1, 0.68, 1] },
-   },
-};
-
-const fade = {
-   initial: {
-      opacity: 0,
-   },
-   animate: {
-      opacity: 1,
-      transition: { duration: 0.3, delay: 0.1 },
-   },
-};
 
 const PageTransition = memo((props: PageTransitionProps) => {
    const { className, children, location } = props;
