@@ -1,5 +1,6 @@
-import { motion } from 'framer-motion';
+import { motion, useMotionValueEvent, useScroll } from 'framer-motion';
 import type { ButtonHTMLAttributes } from 'react';
+import { useRef } from 'react';
 
 import { useTheme } from '@/app/poviders/ThemeProvider';
 import { classNames } from '@/helpers/classNames/classNames';
@@ -64,17 +65,27 @@ const Button = ({ children, ...otherProps }: ButtonHTMLAttributes<HTMLButtonElem
 const AboutPage = (props: AboutPageProps) => {
    const { className } = props;
    const { toggleTheme } = useTheme();
+   const ref = useRef<HTMLDivElement | null>(null);
+   const { scrollYProgress } = useScroll({
+      target: ref,
+      offset: ['start end', 'end end'],
+   });
+   useMotionValueEvent(scrollYProgress, 'change', (latest) => {
+      console.log(latest, 'about');
+   });
+
    return (
       <div className={classNames(cls.AboutPage, {}, [className])}>
          <h1>ABOUT</h1>
          <Button onClick={() => toggleTheme()}>
             <span>BUTTON</span>
          </Button>
-         <div style={{ width: '100%', height: '400px', backgroundColor: '#000' }}></div>
-         <div style={{ width: '100%', height: '400px', backgroundColor: '#000' }}></div>
-         <div style={{ width: '100%', height: '400px', backgroundColor: '#000' }}></div>
-         <div style={{ width: '100%', height: '400px', backgroundColor: '#000' }}></div>
-         <div style={{ width: '100%', height: '400px', backgroundColor: '#000' }}></div>
+         <div style={{ height: '200vh' }}></div>
+         <motion.div
+            ref={ref}
+            style={{ height: '400px', width: '100%', backgroundColor: '#000' }}
+         ></motion.div>
+         <div style={{ height: '200vh' }}></div>
       </div>
    );
 };
