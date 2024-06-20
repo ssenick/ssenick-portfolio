@@ -19,8 +19,9 @@ export const opacity = {
 };
 
 export const scale = {
-   open: { scale: 1, transition: { duration: 0.3 } },
-   closed: { scale: 0, transition: { duration: 0.4 } },
+   initial: { scale: 0, transition: { duration: 0.5, delay: 0, ease: [0.76, 0, 0.24, 1] } },
+   animate: { scale: 1, transition: { duration: 0.5, delay: 0, ease: [0.76, 0, 0.24, 1] } },
+   exit: { scale: 0, transition: { duration: 0.5, delay: 0, ease: [0.76, 0, 0.24, 1] } },
 };
 
 export const text = {
