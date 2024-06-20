@@ -1,8 +1,4 @@
 .PageTransition {
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-
   .background {
     position: fixed;
     height: calc(100vh + 600px);
@@ -16,7 +12,7 @@
   }
 
   .pathname {
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
