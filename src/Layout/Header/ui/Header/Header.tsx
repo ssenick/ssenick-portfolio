@@ -1,7 +1,9 @@
-import { memo, useState } from 'react';
+import { memo, useContext, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
+import { MediaQueryContext } from '@/app/poviders/MediaQueryProvider';
 import { classNames } from '@/helpers/classNames/classNames';
+import { MenuBtn } from '@/Layout/Header/ui/MenuBtn/MenuBtn';
 
 import { BurgerBtn } from '../BurgerBtn/BurgerBtn';
 import { Nav } from '../Nav/Nav';
@@ -15,16 +17,32 @@ interface HeaderProps {
 
 const Header = memo((props: HeaderProps) => {
    const { className } = props;
-   const location = useLocation();
+   const [isHiddenBurger, setIsHiddenBurger] = useState(false);
    const [activeBurger, setActiveBurger] = useState(false);
+   const { isMobile } = useContext(MediaQueryContext);
+   const location = useLocation();
 
    return (
       <div className={classNames(cls.Header, {}, [className])}>
          <nav className={cls.wrapper}>
             <NavToHome />
-            <Nav location={location.pathname} />
-            <BurgerBtn setActiveButton={setActiveBurger} activeButton={activeBurger} />
-            <NavAside location={location.pathname} isActive={activeBurger} setIsActive={setActiveBurger} />
+            {isMobile ? (
+               <MenuBtn setHiddenBurger={setIsHiddenBurger} setActiveButton={setActiveBurger} />
+            ) : (
+               <Nav location={location.pathname} />
+            )}
+            <BurgerBtn
+               activeButton={activeBurger}
+               setActiveButton={setActiveBurger}
+               hiddeBurger={isHiddenBurger}
+               setHiddeBurgerButton={setIsHiddenBurger}
+            />
+            <NavAside
+               location={location.pathname}
+               setIsHiddenBurger={setIsHiddenBurger}
+               isActive={activeBurger}
+               setIsActive={setActiveBurger}
+            />
          </nav>
       </div>
    );

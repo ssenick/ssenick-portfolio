@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion';
-import { memo, useCallback } from 'react';
+import { memo, useCallback, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import { menuSlide, opacity, slide } from '@/const/animate';
@@ -16,15 +16,25 @@ interface NavAsideProps {
    className?: string;
    location: string;
    isActive?: boolean;
-   setIsActive?: (isActive: false) => void;
+   setIsActive: (isActive: false) => void;
+   setIsHiddenBurger: (isHiddenBurger: boolean) => void;
 }
 
 const NavAside = memo((props: NavAsideProps) => {
-   const { className, location, isActive, setIsActive } = props;
+   const { className, location, isActive, setIsActive, setIsHiddenBurger } = props;
 
    const closeModal = useCallback(() => {
-      setIsActive && setIsActive(false);
+      setIsActive(false);
    }, [setIsActive]);
+
+   const closeAll = useCallback(() => {
+      setIsActive(false);
+      setIsHiddenBurger(false);
+   }, [setIsActive, setIsHiddenBurger]);
+
+   useEffect(() => {
+      if (isActive) setIsHiddenBurger(true);
+   }, [setIsHiddenBurger, isActive]);
 
    return (
       <AnimatePresence mode="wait">
@@ -41,7 +51,7 @@ const NavAside = memo((props: NavAsideProps) => {
                                  <FramerMagnetic>
                                     <motion.div custom={index} {...animatePattern(slide)}>
                                        <Link
-                                          onClick={closeModal}
+                                          onClick={closeAll}
                                           className={classNames(
                                              cls.link,
                                              { [cls.active]: location === path },

@@ -28,6 +28,7 @@
       height: 80px;
       border-radius: 50%;
       background-color: var(--color-text);
+      box-shadow: var(--color-shadow);
       cursor: pointer;
       display: flex;
       align-items: center;
@@ -71,6 +72,31 @@
       &::before {
         transform: rotate(-45deg);
         top: 0;
+      }
+    }
+  }
+
+  &.menu {
+    .Button {
+      font-weight: 500;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px;
+      cursor: pointer;
+
+      .children {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+
+        &::before {
+          content: "";
+          border-radius: 50%;
+          background-color: var(--color-text);
+          width: calc(clamp(16px, 1.2vw, 19px) / 2.75);
+          height: calc(clamp(16px, 1.2vw, 19px) / 2.75);
+        }
       }
     }
   }

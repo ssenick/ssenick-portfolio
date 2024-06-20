@@ -1,12 +1,14 @@
 import { motion } from 'framer-motion';
 import type { ButtonHTMLAttributes } from 'react';
 
+import { scale } from '@/const/animate';
 import { classNames } from '@/helpers/classNames/classNames';
+import { animatePattern } from '@/helpers/func/animatePattern';
 import { useFramerMagnetic } from '@/hooks/useFramerMagnetic';
 
 import cls from './AppButton.module.scss';
 
-type ButtonVariant = 'clear' | 'burger';
+type ButtonVariant = 'clear' | 'burger' | 'menu';
 
 interface AppButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
    className?: string;
@@ -37,6 +39,7 @@ const AppButton = (props: AppButtonProps) => {
             ref={linkRef}
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
+            {...animatePattern(scale)}
             style={{
                translateX: translateX,
                translateY: translateY,
