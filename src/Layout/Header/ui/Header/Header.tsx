@@ -26,11 +26,7 @@ const Header = memo((props: HeaderProps) => {
       <div className={classNames(cls.Header, {}, [className])}>
          <nav className={cls.wrapper}>
             <NavToHome />
-            {isMobile ? (
-               <MenuBtn setHiddenBurger={setIsHiddenBurger} setActiveButton={setActiveBurger} />
-            ) : (
-               <Nav location={location.pathname} />
-            )}
+            {isMobile ? <MenuBtn setActiveButton={setActiveBurger} /> : <Nav location={location.pathname} />}
             <BurgerBtn
                activeButton={activeBurger}
                setActiveButton={setActiveBurger}
