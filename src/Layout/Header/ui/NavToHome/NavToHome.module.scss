@@ -3,12 +3,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 15px;
+  padding: clamp(0.625rem, 0.55rem + 0.37vw, 1.25rem);
   cursor: pointer;
 
   .credit {
-    margin-right: 5px;
-    font-size: clamp(20px, 1.2vw, 26px);
+    margin-right: clamp(0.313rem, 0.238rem + 0.37vw, 0.938rem);
+    font-size: clamp(1rem, 0.866rem + 0.67vw, 2.125rem);
   }
 
   .text {
@@ -37,7 +37,7 @@
     transition-property: transform;
 
     h5 {
-      padding-right: 5px;
+      padding-right: clamp(0.3rem, 0.275rem + 0.19vw, 0.625rem);
     }
 
     h5:last-child {
@@ -54,14 +54,14 @@
 
   &:hover {
     .wrapper {
-      padding-right: 1.5rem;
+      padding-right: 2.6rem;
 
       .code {
-        transform: translate(-4.1em);
+        transform: translate(-4em);
       }
 
       .name {
-        transform: translate(-4.1em);
+        transform: translate(-4em);
       }
     }
   }

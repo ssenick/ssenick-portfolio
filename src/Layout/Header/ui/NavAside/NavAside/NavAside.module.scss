@@ -126,7 +126,9 @@
       ul {
         display: flex;
         flex-wrap: wrap;
+        align-items: center;
         margin: 0 calc(clamp(0.75em, 4vw, 1.25em) * -0.9);
+        gap: 5px;
 
         li {
           display: inline-flex;
