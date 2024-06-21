@@ -1,3 +1,17 @@
+.CurveSafari {
+  position: absolute;
+  top: 0;
+  right: calc(100% - 1px);
+  width: 100px;
+  height: 100%;
+  fill: var(--color-text);
+  stroke: none;
+  pointer-events: none;
+  user-select: none;
+  transform-origin: right;
+  will-change: transform;
+}
+
 .Curve {
   position: absolute;
   top: 0;
