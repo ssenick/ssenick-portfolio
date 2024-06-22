@@ -1,7 +1,7 @@
 import { AnimatePresence, useMotionValueEvent, useScroll } from 'framer-motion';
 import { memo, useCallback } from 'react';
 
-import { AppButton } from '@/components/UI/AppButton/AppButton';
+import { AppButton } from '@/UI/AppButton/AppButton';
 
 interface BurgerBtnProps {
    activeButton: boolean;

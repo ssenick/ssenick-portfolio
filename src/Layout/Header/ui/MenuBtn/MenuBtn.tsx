@@ -1,6 +1,6 @@
 import { memo, useCallback } from 'react';
 
-import { AppButton } from '@/components/UI/AppButton/AppButton';
+import { AppButton } from '@/UI/AppButton/AppButton';
 
 interface MenuBtnProps {
    setActiveButton: (activeButton: boolean) => void;
