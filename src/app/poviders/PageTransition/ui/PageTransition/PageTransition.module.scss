@@ -1,4 +1,6 @@
 .PageTransition {
+  overflow: hidden;
+
   .background {
     position: fixed;
     height: calc(100vh + 600px);
