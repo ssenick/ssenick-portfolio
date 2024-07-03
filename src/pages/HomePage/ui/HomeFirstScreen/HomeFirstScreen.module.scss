@@ -1,0 +1,69 @@
+.HomeFirstScreen {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+
+  .image {
+    position: absolute;
+    width: auto;
+    height: 90%;
+    bottom: 0;
+    right: 0;
+    object-fit: cover;
+    transform: translate(0%, 0%);
+    filter: grayscale(0.1) brightness(1.1);
+    opacity: 0.9;
+
+    &.dark {
+      filter: grayscale(0.3) brightness(0.6);
+    }
+
+    @media (max-width: 772px) {
+      height: 80%;
+    }
+  }
+
+  .svg {
+    position: absolute;
+    top: 0;
+    right: 5%;
+    width: 93%;
+    height: 100%;
+    fill: var(--color-bg);
+    filter: var(--drop-shadow);
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  .wrapper {
+    position: absolute;
+    bottom: 10%;
+    padding: clamp(1.375rem, 0.83rem + 2.72vw, 5.938rem);
+    max-width: 50%;
+
+    .main {
+      display: grid;
+      gap: 11px;
+
+      h5 {
+        font-size: clamp(0.625rem, 0.573rem + 0.261vw, 1.063rem);
+        text-transform: uppercase;
+        letter-spacing: 4px;
+      }
+
+      h1 {
+        font-size: clamp(1.875rem, 1.5765rem + 1.4925vw, 4.375rem);
+        font-weight: 700;
+        line-height: 1.2;
+      }
+
+      h3 {
+        line-height: 1.3;
+      }
+    }
+
+    @media (max-width: 772px) {
+      max-width: 80%;
+    }
+  }
+}
