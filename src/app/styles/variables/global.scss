@@ -2,12 +2,7 @@
   // index
   --index: calc((1vw + 1vh) * 0.7);
   --base-size: calc(1vw + 1vh);
-  --min-font-size: 16px; /* Минимальный размер шрифта */
-  --max-font-size: 24px; /* Максимальный размер шрифта */
-  --min-padding: 8px; /* Минимальный отступ */
-  --max-padding: 32px; /* Максимальный отступ */
-  --min-margin: 8px; /* Минимальный внешний отступ */
-  --max-margin: 32px; /* Максимальный внешний отступ */
+  --h5-font-size: clamp(0.625rem, 0.573rem + 0.261vw, 1.063rem);
 
   // colors
   --overlay-color: rgb(0 0 0 / 30%);
@@ -19,6 +14,9 @@
   // animation
   --animate-faster: all 0.3s cubic-bezier(0.7, 0, 0.3, 1);
   --animation-primary: all 0.5s cubic-bezier(0.7, 0, 0.3, 1);
+
+  // padding
+  --p-container: clamp(1.375rem, 0.83rem + 2.72vw, 5.938rem);
 }
 
 @mixin adaptive-size($property, $min-value, $multiplier) {
