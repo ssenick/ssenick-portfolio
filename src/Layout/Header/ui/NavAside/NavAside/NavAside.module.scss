@@ -121,6 +121,7 @@
     .footer {
       h5 {
         padding-top: 1.5em;
+        padding-bottom: 0.5em;
       }
 
       ul {
@@ -192,8 +193,19 @@
         }
       }
 
-      .footer h5 {
-        border-top: 1px solid;
+      .footer {
+        position: relative;
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 1px;
+          background-color: var(--color-bg);
+          opacity: 0.5;
+        }
       }
     }
   }
