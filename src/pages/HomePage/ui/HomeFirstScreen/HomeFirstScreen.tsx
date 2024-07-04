@@ -4,6 +4,7 @@ import { useTheme } from '@/app/poviders/ThemeProvider';
 import ImageFront from '@/assets/front.svg?react';
 import ImageMe from '@/assets/me_3.png';
 import { classNames } from '@/helpers/classNames/classNames';
+import { useVhVariable } from '@/hooks/useVhVariable';
 import { Header } from '@/Layout';
 import { AppImage } from '@/UI/AppImage/AppImage';
 
@@ -15,8 +16,9 @@ interface HomeFirstScreenProps {
 
 const HomeFirstScreen = memo((props: HomeFirstScreenProps) => {
    const { className } = props;
-
    const { theme } = useTheme();
+
+   useVhVariable();
 
    return (
       <div className={classNames(cls.HomeFirstScreen, {}, [className])}>

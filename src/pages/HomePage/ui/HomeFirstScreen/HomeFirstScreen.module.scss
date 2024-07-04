@@ -1,7 +1,12 @@
 .HomeFirstScreen {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+  will-change: height;
+
+  @media (max-width: 772px) {
+    transition: height 0.2s;
+  }
 
   .image {
     position: absolute;
