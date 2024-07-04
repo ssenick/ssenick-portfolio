@@ -3,12 +3,12 @@ import { memo, useCallback, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import { menuSlide, opacity, slide } from '@/const/animate';
+import { socials } from '@/const/socials';
 import { classNames } from '@/helpers/classNames/classNames';
 import { FramerMagnetic } from '@/helpers/components/FramerMagnetic/FramerMagnetic';
 import { animatePattern } from '@/helpers/func/animatePattern';
 
 import { navLinks } from '../../../const/navLinks';
-import { socials } from '../../../const/socials';
 import { Curve } from '../Curve/Curve';
 import cls from './NavAside.module.scss';
 
