@@ -1,4 +1,4 @@
-import type { Socials } from '../types/types';
+import type { Socials } from '../Layout/Header/types/types';
 
 export const socials: Socials[] = [
    {
