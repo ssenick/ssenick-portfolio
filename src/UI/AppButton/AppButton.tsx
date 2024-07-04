@@ -8,15 +8,16 @@ import { useFramerMagnetic } from '@/hooks/useFramerMagnetic';
 
 import cls from './AppButton.module.scss';
 
-type ButtonVariant = 'clear' | 'burger' | 'menu';
+type ButtonVariant = 'clear' | 'burger' | 'menu' | 'link';
 
 interface AppButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
    className?: string;
    variant?: ButtonVariant;
    btnActive?: boolean;
+   oppositeColor?: boolean;
 }
 const AppButton = (props: AppButtonProps) => {
-   const { className, btnActive, variant = 'clear', children, ...otherProps } = props;
+   const { className, btnActive, variant = 'clear', oppositeColor, children, ...otherProps } = props;
    const {
       linkRef,
       translateY,
@@ -31,7 +32,11 @@ const AppButton = (props: AppButtonProps) => {
 
    return (
       <button
-         className={classNames(cls.AppButton, { [cls.active]: btnActive }, [className, cls[variant]])}
+         className={classNames(
+            cls.AppButton,
+            { [cls.active]: btnActive, [cls.oppositeColor]: oppositeColor },
+            [className, cls[variant]],
+         )}
          {...otherProps}
       >
          <motion.div

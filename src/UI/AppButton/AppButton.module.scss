@@ -101,4 +101,28 @@
       }
     }
   }
+
+  &.link {
+    .Button {
+      box-shadow: var(--color-shadow-opposite);
+      padding: clamp(1rem, 0.513rem + 0.56vw, 1.563rem) clamp(1.25rem, 1.138rem + 0.56vw, 2.188rem);
+      border-radius: clamp(1.875rem, 1.726rem + 0.746vw, 3.125rem);
+
+      .children {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+
+  &.oppositeColor {
+    color: var(--color-bg);
+
+    &.link {
+      .Button {
+        box-shadow: var(--color-shadow);
+      }
+    }
+  }
 }
