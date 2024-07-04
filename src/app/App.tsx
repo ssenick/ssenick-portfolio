@@ -8,7 +8,6 @@ import { AppRouter } from '@/app/poviders/Router';
 import { classNames } from '@/helpers/classNames/classNames';
 import { fixHeight } from '@/helpers/func/fixHeight';
 import { useMediaQueryValues } from '@/hooks/useMediaQueryValues';
-import { Layout } from '@/Layout';
 
 function App() {
    const { isMobile } = useMediaQueryValues();
@@ -23,9 +22,9 @@ function App() {
    return (
       <div className={classNames('app', { mobile: isMobile }, [])}>
          <PageTransition location={location}>
-            <Layout>
-               <AppRouter location={location} />
-            </Layout>
+            {/*<Layout>*/}
+            <AppRouter location={location} />
+            {/*</Layout>*/}
          </PageTransition>
       </div>
    );
