@@ -15,3 +15,12 @@ export const useVhVariable = (resize?: boolean) => {
       }
    }, [resize]);
 };
+
+// ADD this style in fullscreen component
+
+// height: calc(var(--vh, 1vh) * 100);
+// will-change: height;
+//
+// @media (max-width: 772px) {
+//    transition: height 0.2s;
+// }
