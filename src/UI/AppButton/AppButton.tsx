@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import type { ButtonHTMLAttributes } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { scale } from '@/const/animate';
 import { classNames } from '@/helpers/classNames/classNames';
@@ -18,6 +19,9 @@ interface AppButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 const AppButton = (props: AppButtonProps) => {
    const { className, btnActive, variant = 'clear', oppositeColor, children, ...otherProps } = props;
+   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
+   const [isHovered, setIsHovered] = useState(false);
+   const [isHiding, setIsHiding] = useState(false);
    const {
       linkRef,
       translateY,
@@ -30,17 +34,41 @@ const AppButton = (props: AppButtonProps) => {
       configChildrenEl: { dampingChildren: 30, stiffnessChildren: 350, dampenChildren: 30 },
    });
 
+   const handleMouseEnter = () => {
+      timer.current && clearTimeout(timer.current!);
+      setIsHovered(true);
+      setIsHiding(false);
+   };
+
+   const handleMouseLeaveWithState = () => {
+      setIsHovered(false);
+      setIsHiding(true);
+      handleMouseLeave();
+      timer.current = window.setTimeout(() => {
+         setIsHiding(false);
+      }, 600);
+   };
+
+   useEffect(() => {
+      return () => clearTimeout(timer.current!);
+   }, []);
+
    return (
       <button
+         onMouseEnter={handleMouseEnter}
+         onMouseLeave={handleMouseLeaveWithState}
          className={classNames(
             cls.AppButton,
-            { [cls.active]: btnActive, [cls.oppositeColor]: oppositeColor },
+            {
+               [cls.active]: btnActive,
+               [cls.oppositeColor]: oppositeColor,
+            },
             [className, cls[variant]],
          )}
          {...otherProps}
       >
          <motion.div
-            className={cls.Button}
+            className={classNames(cls.Button, { [cls.show]: isHovered, [cls.hidden]: isHiding }, [])}
             ref={linkRef}
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}

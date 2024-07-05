@@ -104,14 +104,44 @@
 
   &.link {
     .Button {
-      box-shadow: var(--color-shadow-opposite);
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(-s-color-shadow-opposite);
       padding: clamp(1rem, 0.513rem + 0.56vw, 1.563rem) clamp(1.25rem, 1.138rem + 0.56vw, 2.188rem);
       border-radius: clamp(1.875rem, 1.726rem + 0.746vw, 3.125rem);
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 150%;
+        height: 200%;
+        border-radius: 50%;
+        transform: translate(-50%, 50%);
+        background-color: var(--color-blue);
+      }
+
+      &.show {
+        &::after {
+          transition: transform 0.6s ease-in-out;
+          transform: translate(-50%, -50%);
+        }
+      }
+
+      &.hidden {
+        &::after {
+          transition: transform 0.6s ease-in-out;
+          transform: translate(-50%, -150%);
+        }
+      }
 
       .children {
         display: flex;
         justify-content: center;
         align-items: center;
+        position: relative;
+        z-index: 2;
       }
     }
   }
