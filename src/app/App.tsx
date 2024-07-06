@@ -12,9 +12,7 @@ function App() {
    return (
       <div className={classNames('app', {}, [])}>
          <PageTransition location={location}>
-            {/*<Layout>*/}
             <AppRouter location={location} />
-            {/*</Layout>*/}
          </PageTransition>
       </div>
    );
