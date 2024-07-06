@@ -17,17 +17,6 @@ body {
   }
 }
 
-.app {
-  // IMPORTANT
-  &.mobile {
-    height: calc(var(--vh, 1vh) * 100);
-
-    @media (max-width: 772px) {
-      transition: height 0.2s;
-    }
-  }
-}
-
 *::-webkit-scrollbar {
   width: 0;               /* ширина scrollbar */
   height: 0;
