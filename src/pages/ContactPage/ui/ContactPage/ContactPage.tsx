@@ -1,6 +1,7 @@
 import myImage from '@/assets/image.jpg';
 import { classNames } from '@/helpers/classNames/classNames';
 import { FramerMagnetic } from '@/helpers/components/FramerMagnetic/FramerMagnetic';
+import { AppButton } from '@/UI/AppButton/AppButton';
 
 import cls from './ContactPage.module.scss';
 interface AboutPageProps {
@@ -15,6 +16,7 @@ const ContactPage = (props: AboutPageProps) => {
          <FramerMagnetic>
             <h1>CONTACT</h1>
          </FramerMagnetic>
+         <AppButton variant="link"> Button </AppButton>
       </div>
    );
 };

@@ -15,7 +15,7 @@ const HomePage = (props: HomePageProps) => {
       <div className={classNames(cls.HomePage, {}, [className])}>
          <HomeFirstScreen />
 
-         <div style={{ backgroundColor: 'red', height: '100vh' }}></div>
+         <div style={{ backgroundColor: '#fff', height: '100vh', position: 'relative', zIndex: '2' }}></div>
          <Footer />
       </div>
    );
