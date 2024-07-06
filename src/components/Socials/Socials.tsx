@@ -1,9 +1,9 @@
 import { memo } from 'react';
 
-import { Title } from '@/components/Title/Title';
 import { socials } from '@/const/socials';
 import { classNames } from '@/helpers/classNames/classNames';
 import { FramerMagnetic } from '@/helpers/components/FramerMagnetic/FramerMagnetic';
+import { Title } from '@/UI/Title/Title';
 
 import cls from './Socials.module.scss';
 
