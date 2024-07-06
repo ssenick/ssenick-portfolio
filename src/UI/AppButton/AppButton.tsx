@@ -35,7 +35,9 @@ const AppButton = (props: AppButtonProps) => {
    });
 
    const handleMouseEnter = () => {
-      timer.current && clearTimeout(timer.current!);
+      if (timer.current) {
+         clearTimeout(timer.current!);
+      }
       setIsHovered(true);
       setIsHiding(false);
    };
@@ -46,11 +48,15 @@ const AppButton = (props: AppButtonProps) => {
       handleMouseLeave();
       timer.current = window.setTimeout(() => {
          setIsHiding(false);
-      }, 600);
+      }, 500);
    };
 
    useEffect(() => {
-      return () => clearTimeout(timer.current!);
+      return () => {
+         if (timer.current) {
+            clearTimeout(timer.current!);
+         }
+      };
    }, []);
 
    return (
