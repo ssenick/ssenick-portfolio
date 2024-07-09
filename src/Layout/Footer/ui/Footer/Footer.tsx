@@ -19,6 +19,7 @@ interface FooterProps {
 const Footer = memo((props: FooterProps) => {
    const { className } = props;
    const ref = useRef<HTMLDivElement | null>(null);
+
    const { scrollYProgress } = useScroll({
       target: ref,
       offset: ['start end', 'end end'],
@@ -26,6 +27,11 @@ const Footer = memo((props: FooterProps) => {
    const valueHeight = useTransform(scrollYProgress, [0, 1], [1, 0]);
    const valueMove = useTransform(scrollYProgress, [0, 1], ['-30%', '0%']);
 
+   // useMotionValueEvent(scrollYProgress, 'change', (latest) => {
+   //    console.log('x changed to', latest);
+   //    console.log(valueHeight);
+   // });
+   //
    return (
       <div ref={ref} className={classNames(cls.Footer, {}, [className])}>
          <motion.div className={cls.roundWrapper} style={{ scaleY: valueHeight }}>
