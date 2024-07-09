@@ -8,10 +8,11 @@
   width: 100%;
   padding: clamp(2.5rem, 2.052rem + 2.239vw, 6.25rem) var(--p-container);
   color: var(--color-bg);
+  overflow: hidden;
 
   .roundWrapper {
     width: 100%;
-    top: 0;
+    top: -1px;
     left: 0;
     position: absolute;
     height: calc(var(--index) * 6);
