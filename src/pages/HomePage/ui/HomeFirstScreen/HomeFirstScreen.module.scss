@@ -10,21 +10,30 @@
 
   .image {
     position: absolute;
-    width: auto;
-    height: 90%;
-    bottom: 0;
-    right: 0;
-    object-fit: cover;
-    transform: translate(0%, 0%);
-    filter: grayscale(0.1) brightness(1.1);
-    opacity: 0.9;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
 
-    &.dark {
-      filter: grayscale(0.3) brightness(0.6);
-    }
+    .img {
+      position: absolute;
+      width: auto;
+      height: 90%;
+      bottom: 0;
+      right: 0;
+      object-fit: cover;
+      transform: translate(0%, 0%);
+      filter: grayscale(0.1) brightness(1.1);
+      opacity: 0.9;
 
-    @media (max-width: 772px) {
-      height: 80%;
+      &.dark {
+        filter: grayscale(0.3) brightness(0.6);
+      }
+
+      @media (max-width: 772px) {
+        height: 80%;
+      }
     }
   }
 
