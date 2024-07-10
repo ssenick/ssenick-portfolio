@@ -49,3 +49,7 @@ export const fade = {
       transition: { duration: 0.3, delay: 0.1 },
    },
 };
+export const pageEaseOut = {
+   initial: { top: '50vh', opacity: 0 },
+   animate: { top: 0, opacity: 1, transition: { duration: 1, ease: 'easeOut' } },
+};
