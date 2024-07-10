@@ -37,18 +37,6 @@
     }
   }
 
-  .svg {
-    position: absolute;
-    top: 0;
-    right: 5%;
-    width: 93%;
-    height: 100%;
-    fill: var(--color-bg);
-    filter: var(--drop-shadow);
-    z-index: -1;
-    pointer-events: none;
-  }
-
   .wrapper {
     position: absolute;
     bottom: 10%;

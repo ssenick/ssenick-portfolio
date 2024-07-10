@@ -1,13 +1,15 @@
-import { motion, useMotionValueEvent, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { memo, useRef } from 'react';
 
 import { useTheme } from '@/app/poviders/ThemeProvider';
-import ImageFront from '@/assets/front.svg?react';
 import ImageMe from '@/assets/me_3.png';
+import { pageEaseOut } from '@/const/animate';
 import { classNames } from '@/helpers/classNames/classNames';
+import { animatePattern } from '@/helpers/func/animatePattern';
 import { Header } from '@/Layout';
 import { AppImage } from '@/UI/AppImage/AppImage';
 
+import { TextSlider } from '../TextSlider/TextSlider';
 import cls from './HomeFirstScreen.module.scss';
 
 interface HomeFirstScreenProps {
@@ -24,23 +26,19 @@ const HomeFirstScreen = memo((props: HomeFirstScreenProps) => {
       offset: ['end end', 'end start'],
    });
 
-   useMotionValueEvent(scrollYProgress, 'change', (latest) => {
-      console.log('x changed to', latest);
-   });
-
-   // const valueOpacity = useTransform(scrollYProgress, [0, 1], [1, 0.5]);
-   const valueMove = useTransform(scrollYProgress, [0, 1], ['0%', '13%']);
+   const valueOpacity = useTransform(scrollYProgress, [0, 1], [1, 0.5]);
+   const valueMove = useTransform(scrollYProgress, [0, 1], ['0%', '15%']);
    const valueMoveText = useTransform(scrollYProgress, [0, 1], ['0%', '25%']);
 
-   useMotionValueEvent(scrollYProgress, 'change', (latest) => {
-      console.log('x changed to', latest);
-   });
-
    return (
-      <div ref={ref} className={classNames(cls.HomeFirstScreen, {}, [className])}>
+      <motion.div
+         ref={ref}
+         className={classNames(cls.HomeFirstScreen, {}, [className])}
+         {...animatePattern(pageEaseOut)}
+      >
          <Header />
-         <ImageFront className={classNames(cls.svg, { [cls.dark]: theme === 'dark' }, [])} />
-         <motion.div style={{ y: valueMove }} className={cls.image}>
+         <TextSlider />
+         <motion.div style={{ y: valueMove, opacity: valueOpacity }} className={cls.image}>
             <AppImage className={classNames(cls.img, { [cls.dark]: theme === 'dark' }, [])} src={ImageMe} />
          </motion.div>
          <div className={cls.wrapper}>
@@ -48,13 +46,14 @@ const HomeFirstScreen = memo((props: HomeFirstScreenProps) => {
                <h5>Ruslan Senchenko</h5>
                <h1>Frontend Developer</h1>
                <h3>
-                  Over the past 9 years, as an art director and designer, I’ve worked with big companies and
-                  up-and-coming startups to successfully help them reach their full potential and attract new
-                  customers.
+                  Frontend: where technology meets creativity. We create interfaces that inspire. Every line
+                  of code is a stroke in a painting, with user experience at the forefront. Through a passion
+                  for details and teamwork, we shape the future of web technologies. Let&apos;s create
+                  something unique!
                </h3>
             </motion.div>
          </div>
-      </div>
+      </motion.div>
    );
 });
 
