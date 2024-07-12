@@ -1,4 +1,5 @@
 import myImage from '@/assets/image.jpg';
+import { Page } from '@/components/Page/Page';
 import { classNames } from '@/helpers/classNames/classNames';
 import { FramerMagnetic } from '@/helpers/components/FramerMagnetic/FramerMagnetic';
 import { AppButton } from '@/UI/AppButton/AppButton';
@@ -12,12 +13,12 @@ const ContactPage = (props: AboutPageProps) => {
    const { className } = props;
    console.log(myImage);
    return (
-      <div className={classNames(cls.ContactPage, {}, [className])}>
+      <Page className={classNames(cls.ContactPage, {}, [className])}>
          <FramerMagnetic>
             <h1>CONTACT</h1>
          </FramerMagnetic>
          <AppButton variant="link"> Button </AppButton>
-      </div>
+      </Page>
    );
 };
 

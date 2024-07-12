@@ -1,3 +1,4 @@
+import { Page } from '@/components/Page/Page';
 import { classNames } from '@/helpers/classNames/classNames';
 
 import cls from './WorkPage.module.scss';
@@ -9,9 +10,9 @@ interface WorkPageProps {
 const WorkPage = (props: WorkPageProps) => {
    const { className } = props;
    return (
-      <div className={classNames(cls.WorkPage, {}, [className])}>
+      <Page className={classNames(cls.WorkPage, {}, [className])}>
          <h1>WORK</h1>
-      </div>
+      </Page>
    );
 };
 
