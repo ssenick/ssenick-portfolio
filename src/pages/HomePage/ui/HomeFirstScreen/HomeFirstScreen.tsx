@@ -3,9 +3,7 @@ import { memo, useRef } from 'react';
 
 import { useTheme } from '@/app/poviders/ThemeProvider';
 import ImageMe from '@/assets/me_3.png';
-import { pageEaseOut } from '@/const/animate';
 import { classNames } from '@/helpers/classNames/classNames';
-import { animatePattern } from '@/helpers/func/animatePattern';
 import { Header } from '@/Layout';
 import { AppImage } from '@/UI/AppImage/AppImage';
 
@@ -31,11 +29,7 @@ const HomeFirstScreen = memo((props: HomeFirstScreenProps) => {
    const valueMoveText = useTransform(scrollYProgress, [0, 1], ['0%', '25%']);
 
    return (
-      <motion.div
-         ref={ref}
-         className={classNames(cls.HomeFirstScreen, {}, [className])}
-         {...animatePattern(pageEaseOut)}
-      >
+      <div ref={ref} className={classNames(cls.HomeFirstScreen, {}, [className])}>
          <Header />
          <TextSlider />
          <motion.div style={{ y: valueMove, opacity: valueOpacity }} className={cls.image}>
@@ -53,7 +47,7 @@ const HomeFirstScreen = memo((props: HomeFirstScreenProps) => {
                </h3>
             </motion.div>
          </div>
-      </motion.div>
+      </div>
    );
 });
 
