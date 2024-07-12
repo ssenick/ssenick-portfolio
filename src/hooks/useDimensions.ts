@@ -6,7 +6,10 @@ export interface Dimensions {
 }
 
 export function useDimensions(): Dimensions {
-   const [dimensions, setDimensions] = useState<Dimensions>({ width: 0, height: 0 });
+   const [dimensions, setDimensions] = useState<Dimensions>({
+      width: window.innerWidth ?? 0,
+      height: window.innerHeight ?? 0,
+   });
 
    useEffect(() => {
       const resize = () => {
