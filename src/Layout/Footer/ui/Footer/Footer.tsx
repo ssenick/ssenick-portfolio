@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import Arrow from '@/assets/arrow.svg?react';
 import { Socials } from '@/components/Socials/Socials';
-import { getRouteAbout } from '@/config/route/routeConfig';
+import { getRouteContact } from '@/config/route/routeConfig';
 import { classNames } from '@/helpers/classNames/classNames';
 import { FramerMagnetic } from '@/helpers/components/FramerMagnetic/FramerMagnetic';
 import { AppButton } from '@/UI/AppButton/AppButton';
@@ -27,11 +27,6 @@ const Footer = memo((props: FooterProps) => {
    const valueHeight = useTransform(scrollYProgress, [0, 1], [1, 0]);
    const valueMove = useTransform(scrollYProgress, [0, 1], ['-30%', '0%']);
 
-   // useMotionValueEvent(scrollYProgress, 'change', (latest) => {
-   //    console.log('x changed to', latest);
-   //    console.log(valueHeight);
-   // });
-   //
    return (
       <div ref={ref} className={classNames(cls.Footer, {}, [className])}>
          <motion.div className={cls.roundWrapper} style={{ scaleY: valueHeight }}>
@@ -41,7 +36,7 @@ const Footer = memo((props: FooterProps) => {
             <div className={cls.quickContact}>
                <Title className={cls.title}>Need a frontend developer?</Title>
                <FramerMagnetic>
-                  <Link to={getRouteAbout()} className={cls.linkAbout}>
+                  <Link to={getRouteContact()} className={cls.linkAbout}>
                      Let’s work together <Arrow className={cls.arrow} />
                   </Link>
                </FramerMagnetic>
