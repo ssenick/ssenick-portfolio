@@ -21,3 +21,8 @@ body {
   width: 0;               /* ширина scrollbar */
   height: 0;
 }
+
+*::selection {
+  background-color: var(--color-blue);
+  color: var(--color-bg);
+}
