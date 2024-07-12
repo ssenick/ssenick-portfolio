@@ -1,31 +1,12 @@
 import { motion } from 'framer-motion';
+import { useMemo } from 'react';
 
 import { animatePattern } from '@/helpers/func/animatePattern';
 import { useBrowserInfo } from '@/hooks/useBrowserInfo';
+import { useDimensions } from '@/hooks/useDimensions';
 
 import cls from './Curve.module.scss';
 
-const initialPath = `M100 0 L100 ${window.innerHeight} Q-100 ${window.innerHeight / 2} 100 0`;
-
-const targetPath = `M100 0 L100 ${window.innerHeight} Q100 ${window.innerHeight / 2} 100 0`;
-
-const curve = {
-   initial: {
-      d: initialPath,
-   },
-
-   animate: {
-      d: targetPath,
-
-      transition: { duration: 1, ease: [0.76, 0, 0.24, 1] },
-   },
-
-   exit: {
-      d: initialPath,
-
-      transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] },
-   },
-};
 const curveSafari = {
    initial: {
       x: 0,
@@ -49,6 +30,32 @@ const curveSafari = {
 
 const Curve = () => {
    const browserInfo = useBrowserInfo();
+   const { height } = useDimensions();
+
+   const initialPath = useMemo(() => `M100 0 L100 ${height} Q-100 ${height / 2} 100 0`, [height]);
+
+   const targetPath = useMemo(() => `M100 0 L100 ${height} Q100 ${height / 2} 100 0`, [height]);
+
+   const curve = useMemo(
+      () => ({
+         initial: {
+            d: initialPath,
+         },
+
+         animate: {
+            d: targetPath,
+
+            transition: { duration: 1, ease: [0.76, 0, 0.24, 1] },
+         },
+
+         exit: {
+            d: initialPath,
+
+            transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] },
+         },
+      }),
+      [initialPath, targetPath],
+   );
 
    if (browserInfo?.name === 'Safari') {
       return (
@@ -57,6 +64,7 @@ const Curve = () => {
          </motion.svg>
       );
    }
+
    return (
       <svg className={cls.Curve}>
          <motion.path {...animatePattern(curve)}></motion.path>
