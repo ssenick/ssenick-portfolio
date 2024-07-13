@@ -40,10 +40,7 @@ const HomeFirstScreen = memo((props: HomeFirstScreenProps) => {
                <h5>Ruslan Senchenko</h5>
                <h1>Frontend Developer</h1>
                <h3>
-                  Frontend: where technology meets creativity. We create interfaces that inspire. Every line
-                  of code is a stroke in a painting, with user experience at the forefront. Through a passion
-                  for details and teamwork, we shape the future of web technologies. Let&apos;s create
-                  something unique!
+                  Frontend: turning creative ideas into digital reality. Partnership for reaching new heights!
                </h3>
             </motion.div>
          </div>
