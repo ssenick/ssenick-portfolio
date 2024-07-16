@@ -1,0 +1,32 @@
+.TextMaskAnimated {
+  max-width: 1100px;
+  margin: 0 auto;
+
+  &.small {
+    font-size: var(--h5-font-size);
+  }
+
+  &.regular {
+    font-size: inherit;
+  }
+
+  &.medium {
+    font-size: var(--h3-font-size);
+    line-height: 1.2;
+  }
+
+  &.large {
+    font-size: var(--h1-font-size);
+    line-height: 1.1;
+  }
+
+  .letter {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+
+    span {
+      display: inline-block;
+    }
+  }
+}
