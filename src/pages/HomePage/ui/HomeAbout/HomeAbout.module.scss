@@ -1,0 +1,24 @@
+.HomeAbout {
+  display: grid;
+  padding: calc(var(--index) * 8)  var(--p-container) calc(var(--index) * 8) var(--p-container);
+  grid-template-columns: 1fr 30%;
+
+  // 30 / 150
+  gap: clamp(2.188rem, 1.329rem + 4.291vw, 9.375rem);
+  max-width: 70vw;
+  margin: 0 auto;
+
+  .paragraph {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    // 30 /80
+    gap: clamp(1.875rem, 1.502rem + 1.866vw, 5rem);
+  }
+
+  @media (max-width: 772px) {
+    grid-template-columns: auto;
+    max-width: none;
+  }
+}
