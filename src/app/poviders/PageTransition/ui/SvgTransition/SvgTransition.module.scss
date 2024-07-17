@@ -9,4 +9,8 @@
   will-change: top;
   user-select: none;
   fill: var(--color-bg-super-dark);
+
+  path {
+    will-change: d;
+  }
 }
