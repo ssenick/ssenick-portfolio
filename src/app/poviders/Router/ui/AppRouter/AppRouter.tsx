@@ -1,4 +1,4 @@
-import { Suspense } from 'react';
+import { Suspense, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { type Location } from 'react-router-dom';
 
@@ -11,6 +11,10 @@ interface AppRouterProps {
 
 export const AppRouter = (props: AppRouterProps) => {
    const { location } = props;
+
+   useEffect(() => {
+      window.scrollTo(0, 0);
+   }, [location]);
 
    return (
       <>
