@@ -12,6 +12,15 @@ export const slide = {
    }),
    exit: (i: number) => ({ x: 80, transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1], delay: 0.07 * i } }),
 };
+export const textMaskAnimation = {
+   initial: { y: '100%' },
+
+   animate: (i: number) => ({
+      y: '0',
+      transition: { duration: 0.5, ease: [0.33, 1, 0.68, 1], delay: 0.003 * i },
+   }),
+};
+
 export const opacity = {
    initial: { opacity: 0 },
    animate: { opacity: 1 },
@@ -51,5 +60,9 @@ export const fade = {
 };
 export const pageEaseOut = {
    initial: { top: '50vh', opacity: 0 },
+   animate: { top: 0, opacity: 1, transition: { duration: 1, ease: 'easeOut' } },
+};
+export const pageEaseOut100 = {
+   initial: { top: '100vh', opacity: 0 },
    animate: { top: 0, opacity: 1, transition: { duration: 1, ease: 'easeOut' } },
 };
