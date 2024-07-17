@@ -5,6 +5,7 @@ import { classNames } from '@/helpers/classNames/classNames';
 import { animatePattern } from '@/helpers/func/animatePattern';
 import { Footer } from '@/Layout';
 
+import { HomeAbout } from '../HomeAbout/HomeAbout';
 import { HomeFirstScreen } from '../HomeFirstScreen/HomeFirstScreen';
 import cls from './HomePage.module.scss';
 
@@ -18,7 +19,7 @@ const HomePage = (props: HomePageProps) => {
    return (
       <motion.div className={classNames(cls.HomePage, {}, [className])} {...animatePattern(pageEaseOut)}>
          <HomeFirstScreen />
-         <div style={{ backgroundColor: '#fff', height: '100vh', position: 'relative', zIndex: '2' }}></div>
+         <HomeAbout />
          <Footer />
       </motion.div>
    );
