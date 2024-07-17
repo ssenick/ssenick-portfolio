@@ -8,7 +8,7 @@ body {
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  font-size: clamp(0.875rem, 0.793rem + 0.41vw, 1.563rem);
+  font-size: var(--text-font-size);
   color: var(--color-text);
   background-color: var(--color-bg);
 
