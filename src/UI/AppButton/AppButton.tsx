@@ -9,7 +9,7 @@ import { useFramerMagnetic } from '@/hooks/useFramerMagnetic';
 
 import cls from './AppButton.module.scss';
 
-type ButtonVariant = 'clear' | 'burger' | 'menu' | 'link';
+type ButtonVariant = 'clear' | 'burger' | 'menu' | 'link' | 'round';
 
 interface AppButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
    className?: string;

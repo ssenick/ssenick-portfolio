@@ -24,7 +24,6 @@
     z-index: 200;
 
     .Button {
-      position: relative;
       width: clamp(3.125rem, 2.826rem + 1.49vw, 5.625rem);
       height: clamp(3.125rem, 2.826rem + 1.49vw, 5.625rem);
       border-radius: 50%;
@@ -34,33 +33,6 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
-
-      &::after {
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 150%;
-        height: 200%;
-        border-radius: 50%;
-        transform: translate(-50%, 30%);
-        background-color: var(--color-blue);
-      }
-
-      &.show {
-        &::after {
-          transition: transform 0.5s ease-in-out;
-          transform: translate(-50%, -50%);
-        }
-      }
-
-      &.hidden {
-        &::after {
-          transition: transform 0.5s ease-in-out;
-          transform: translate(-50%, -130%);
-        }
-      }
     }
 
     .children {
@@ -134,11 +106,58 @@
 
   &.link {
     .Button {
-      position: relative;
-      overflow: hidden;
       box-shadow: var(--color-shadow-opposite);
       padding: clamp(1rem, 0.513rem + 0.56vw, 1.563rem) clamp(1.25rem, 1.138rem + 0.56vw, 2.188rem);
       border-radius: clamp(1.875rem, 1.726rem + 0.746vw, 3.125rem);
+    }
+  }
+
+  &.round {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    // 90 / 250
+    width: clamp(5.625rem, 4.431rem + 5.97vw, 15.625rem);
+    height: clamp(5.625rem, 4.431rem + 5.97vw, 15.625rem);
+
+    .Button {
+      text-align: center;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+
+      // 10 / 25
+      padding: clamp(0.625rem, 0.513rem + 0.56vw, 1.563rem);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--color-bg);
+      border-radius: 50%;
+      background-color: var(--color-text);
+
+      .children {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+
+        > * {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+  }
+
+  &.link,
+  &.round,
+  &.burger {
+    .Button {
+      position: relative;
+      overflow: hidden;
 
       &::after {
         content: "";
