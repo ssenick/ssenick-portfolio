@@ -2,7 +2,10 @@
   // index
   --index: calc((1vw + 1vh) * 0.7);
   --base-size: calc(1vw + 1vh);
+  --text-font-size: clamp(0.875rem, 0.756rem + 0.597vw, 1.875rem);
   --h5-font-size: clamp(0.625rem, 0.573rem + 0.261vw, 1.063rem);
+  --h3-font-size: clamp(1.188rem, 0.993rem + 0.97vw, 2.813rem);
+  --h1-font-size: clamp(1.875rem, 1.5765rem + 1.4925vw, 4.375rem);
 
   // colors
   --overlay-color: rgb(0 0 0 / 30%);
