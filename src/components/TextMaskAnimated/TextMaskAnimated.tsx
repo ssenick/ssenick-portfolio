@@ -7,7 +7,8 @@ import { animatePattern } from '@/helpers/func/animatePattern';
 
 import cls from './TextMaskAnimated.module.scss';
 
-type variantSize = 'small' | 'medium' | 'large' | 'regular';
+type variantSize = 'smallSize' | 'mediumSize' | 'largeSize' | 'regularSize';
+type variantFontWeight = 'normal' | 'medium' | 'bold' | 'black';
 
 interface TextMaskAnimatedProps {
    className?: string;
@@ -15,16 +16,28 @@ interface TextMaskAnimatedProps {
    once?: boolean;
    children: string;
    size?: variantSize;
+   fontWeight?: variantFontWeight;
 }
+
 const TextMaskAnimated = memo((props: TextMaskAnimatedProps) => {
-   const { className, margin = '100%', once = true, children, size = 'regular' } = props;
+   const {
+      className,
+      margin = '100%',
+      once = true,
+      children,
+      size = 'regular',
+      fontWeight = 'normal',
+   } = props;
    const splitText = useMemo(() => children.split(''), [children]);
 
    const containerRef = useRef<HTMLDivElement | null>(null);
    const isInView = useInView(containerRef, { once, margin });
 
    return (
-      <p className={classNames(cls.TextMaskAnimated, {}, [className, cls[size]])} ref={containerRef}>
+      <p
+         className={classNames(cls.TextMaskAnimated, {}, [className, cls[size], cls[fontWeight]])}
+         ref={containerRef}
+      >
          {splitText.map((char, index) =>
             char === ' ' ? (
                ' '
