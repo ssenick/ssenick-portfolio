@@ -34,7 +34,7 @@ const PageTransition = memo((props: PageTransitionProps) => {
                <motion.span {...animatePattern(fade)}>{getPageName(location.pathname)}</motion.span>
             </motion.p>
             <div className={cls.background} style={{ opacity: width > 0 ? 0 : 1 }}></div>
-            {width > 0 && <SvgTransition width={width} height={height} />}
+            {width > 0 ? <SvgTransition width={width} height={height} /> : null}
          </motion.div>
       </AnimatePresence>
    );

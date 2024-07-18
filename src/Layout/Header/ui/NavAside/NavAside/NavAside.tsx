@@ -38,7 +38,7 @@ const NavAside = memo((props: NavAsideProps) => {
 
    return (
       <AnimatePresence mode="wait">
-         {isActive && (
+         {isActive ? (
             <div className={classNames(cls.NavAside, {}, [className])}>
                <motion.div onClick={closeModal} className={cls.overlay} {...animatePattern(opacity)} />
                <motion.div {...animatePattern(menuSlide)} className={cls.wrapper}>
@@ -88,7 +88,7 @@ const NavAside = memo((props: NavAsideProps) => {
                   </div>
                </motion.div>
             </div>
-         )}
+         ) : null}
       </AnimatePresence>
    );
 });

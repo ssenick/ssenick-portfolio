@@ -17,21 +17,20 @@ const Nav = memo((props: NavProps) => {
    return (
       <div className={classNames(cls.Nav, {}, [className])}>
          <ul className={cls.list}>
-            {navLinks.map(
-               ({ path, text }) =>
-                  path !== '/' && (
-                     <li key={path}>
-                        <FramerMagnetic>
-                           <Link
-                              className={classNames(cls.link, { [cls.active]: location === path }, [])}
-                              to={path}
-                           >
-                              {text}
-                              <span className={cls.dot}></span>
-                           </Link>
-                        </FramerMagnetic>
-                     </li>
-                  ),
+            {navLinks.map(({ path, text }) =>
+               path !== '/' ? (
+                  <li key={path}>
+                     <FramerMagnetic>
+                        <Link
+                           className={classNames(cls.link, { [cls.active]: location === path }, [])}
+                           to={path}
+                        >
+                           {text}
+                           <span className={cls.dot}></span>
+                        </Link>
+                     </FramerMagnetic>
+                  </li>
+               ) : null,
             )}
          </ul>
       </div>

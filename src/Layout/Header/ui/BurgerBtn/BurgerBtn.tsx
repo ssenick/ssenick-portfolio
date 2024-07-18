@@ -29,9 +29,9 @@ const BurgerBtn = memo((props: BurgerBtnProps) => {
 
    return (
       <AnimatePresence mode="wait">
-         {hiddeBurger && (
+         {hiddeBurger ? (
             <AppButton onClick={toggleButton} btnActive={activeButton} variant="burger"></AppButton>
-         )}
+         ) : null}
       </AnimatePresence>
    );
 });
