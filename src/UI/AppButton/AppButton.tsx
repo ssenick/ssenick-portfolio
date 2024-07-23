@@ -78,7 +78,7 @@ const AppButton = (props: AppButtonProps) => {
             ref={linkRef}
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
-            {...animatePattern(scale)}
+            {...(variant === 'burger' ? animatePattern(scale) : {})}
             style={{
                translateX: translateX,
                translateY: translateY,
@@ -96,7 +96,7 @@ const AppButton = (props: AppButtonProps) => {
                }}
             >
                {children}
-               {variant === 'burger' && <div className={cls.burger} />}
+               {variant === 'burger' ? <div className={cls.burger} /> : null}
             </motion.div>
          </motion.div>
       </button>
