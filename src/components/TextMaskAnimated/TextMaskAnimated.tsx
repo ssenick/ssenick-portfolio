@@ -28,7 +28,7 @@ const TextMaskAnimated = memo((props: TextMaskAnimatedProps) => {
       size = 'regular',
       fontWeight = 'normal',
    } = props;
-   const splitText = useMemo(() => children.split(''), [children]);
+   const splitText = useMemo(() => children.split(' '), [children]);
 
    const containerRef = useRef<HTMLDivElement | null>(null);
    const isInView = useInView(containerRef, { once, margin });
@@ -38,21 +38,17 @@ const TextMaskAnimated = memo((props: TextMaskAnimatedProps) => {
          className={classNames(cls.TextMaskAnimated, {}, [className, cls[size], cls[fontWeight]])}
          ref={containerRef}
       >
-         {splitText.map((char, index) =>
-            char === ' ' ? (
-               ' '
-            ) : (
-               <span key={index + char} className={cls.letter}>
-                  <motion.span
-                     custom={index}
-                     {...animatePattern(textMaskAnimation)}
-                     animate={isInView ? 'animate' : ''}
-                  >
-                     {char}
-                  </motion.span>
-               </span>
-            ),
-         )}
+         {splitText.map((char, index) => (
+            <span key={index + char} className={cls.letter}>
+               <motion.span
+                  custom={index}
+                  {...animatePattern(textMaskAnimation)}
+                  animate={isInView ? 'animate' : ''}
+               >
+                  &nbsp;{char}
+               </motion.span>
+            </span>
+         ))}
       </p>
    );
 });
