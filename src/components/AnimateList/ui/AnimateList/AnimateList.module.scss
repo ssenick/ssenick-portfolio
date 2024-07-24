@@ -1,0 +1,41 @@
+.AnimateList {
+  max-width: 70vw;
+  margin: 0 auto;
+  position: relative;
+
+  .row {
+    .link {
+      display: grid;
+      grid-template-columns: 1fr minmax(auto, 40%) minmax(15%, 20%);
+
+      // 20 / 70
+      padding: clamp(1.25rem, 0.877rem + 1.866vw, 4.375rem);
+
+      p {
+        padding: 0 5px;
+        position: relative;
+        z-index: 1;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        opacity: 0.5;
+      }
+
+      .bg {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color: var(--color-text);
+        display: flex;
+        top: 100%;
+      }
+    }
+  }
+
+  @media (max-width: 772px) {
+    max-width: none;
+
+    .row .link p {
+      font-size: var(--h5-font-size);
+    }
+  }
+}
