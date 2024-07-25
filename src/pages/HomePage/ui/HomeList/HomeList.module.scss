@@ -1,0 +1,16 @@
+.HomeList {
+  padding: calc(var(--index) * 1) 0 calc(var(--index) * 1);
+
+  .header {
+    padding: clamp(1.25rem, 0.802rem + 2.239vw, 5rem) var(--p-container);
+    max-width: 70vw;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  .footer {
+    padding-top: calc(var(--index) * 1);
+    display: flex;
+    justify-content: center;
+  }
+}
