@@ -28,6 +28,7 @@ const TextMaskAnimated = memo((props: TextMaskAnimatedProps) => {
       size = 'regular',
       fontWeight = 'normal',
    } = props;
+
    const splitText = useMemo(() => children.split(' '), [children]);
 
    const containerRef = useRef<HTMLDivElement | null>(null);
