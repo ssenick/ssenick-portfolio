@@ -12,6 +12,7 @@ const WorkPage = (props: WorkPageProps) => {
    return (
       <Page className={classNames(cls.WorkPage, {}, [className])}>
          <h1>WORK</h1>
+         <div style={{ height: '200vh' }}></div>
       </Page>
    );
 };
