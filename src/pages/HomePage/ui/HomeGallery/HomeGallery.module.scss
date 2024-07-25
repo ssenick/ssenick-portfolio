@@ -1,0 +1,5 @@
+.HomeGallery {
+  display: grid;
+  gap: calc(var(--index) * 2);
+  padding: calc(var(--index) * 5) 0 calc(var(--index) * 7);
+}
