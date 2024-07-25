@@ -60,8 +60,8 @@ const AnimateModal = memo((props: WorkModalProps) => {
                </div>
             ))}
          </div>
-         <motion.div className={cls.cursor}></motion.div>
-         <motion.div className={cls.cursorLabel}>View</motion.div>
+         <div className={cls.cursor}></div>
+         <div className={cls.cursorLabel}>View</div>
       </motion.div>
    );
 });

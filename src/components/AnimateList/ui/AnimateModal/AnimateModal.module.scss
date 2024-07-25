@@ -1,6 +1,9 @@
 .AnimateModal {
-  height: clamp(9.375rem, 7.136rem + 11.194vw, 28.125rem);
-  width: clamp(11.25rem, 8.489rem + 13.806vw, 34.375rem);
+  // 150 / 550
+  height: clamp(9.375rem, 6.39rem + 14.925vw, 34.375rem);
+
+  // 180 / 650
+  width: clamp(11.25rem, 7.743rem + 17.537vw, 40.625rem);
   position: fixed;
   background-color: white;
   overflow: hidden;
@@ -27,7 +30,7 @@
       align-items: center;
       justify-content: center;
       background-color: var(--color-cart-1);
-      padding: 18% 14%;
+      padding: 15% 10%;
 
       &:nth-child(even) {
         background-color: var(--color-cart-2);
