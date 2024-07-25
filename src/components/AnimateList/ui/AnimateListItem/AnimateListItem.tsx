@@ -37,8 +37,7 @@ const AnimateListItem = memo((props: AnimateListItemProps) => {
       >
          <div className={cls.line}></div>
          <Link to={getRouteWork()} className={cls.link}>
-            <p>{content.name}</p>
-            <p>{content.category}</p>
+            <p className={cls.name}>{content.name}</p>
             <p>{content.year}</p>
             <div className={cls.bg}></div>
          </Link>
