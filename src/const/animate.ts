@@ -21,6 +21,24 @@ export const textMaskAnimation = {
    }),
 };
 
+export const textAnimation = (delay: number) => ({
+   initial: { y: '100%' },
+
+   animate: {
+      y: '0',
+      transition: { duration: 0.3, ease: [0.33, 1, 0.68, 1], delay: delay * 0.1 },
+   },
+});
+
+export const lineWidth = (delay: number) => ({
+   initial: { width: 0 },
+
+   animate: {
+      width: '100%',
+      transition: { duration: 1, ease: [0.33, 1, 0.68, 1], delay: delay * 0.2 },
+   },
+});
+
 export const opacity = {
    initial: { opacity: 0 },
    animate: { opacity: 1 },
@@ -32,7 +50,10 @@ export const scale = {
    animate: { scale: 1, transition: { duration: 0.5, delay: 0, ease: [0.76, 0, 0.24, 1] } },
    exit: { scale: 0, transition: { duration: 0.5, delay: 0, ease: [0.76, 0, 0.24, 1] } },
 };
-
+export const scaleNoExit = {
+   initial: { scale: 0, transition: { duration: 0.5, delay: 0, ease: [0.76, 0, 0.24, 1] } },
+   animate: { scale: 1, transition: { duration: 0.5, delay: 0, ease: [0.76, 0, 0.24, 1] } },
+};
 export const text = {
    initial: {
       opacity: 1,
