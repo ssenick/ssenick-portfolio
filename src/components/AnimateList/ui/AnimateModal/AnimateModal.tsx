@@ -29,7 +29,7 @@ const AnimateModal = memo((props: WorkModalProps) => {
    };
 
    const manageMouseMove = useCallback(
-      (e) => {
+      (e: MouseEvent) => {
          mouse.x.set(e.clientX);
          mouse.y.set(e.clientY);
       },

@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom';
 import { getRouteWork } from '@/config/route/routeConfig';
 import { classNames } from '@/helpers/classNames/classNames';
 
-import type { animateListItemsType } from '../../model/types';
+import type { animateListItemsType, animateModalType } from '../../model/types';
 import cls from './AnimateListItem.module.scss';
 
 interface AnimateListItemProps {
    className?: string;
    content: animateListItemsType;
-   setModal: ({ active: boolean, index: number }) => void;
+   setModal: (props: animateModalType) => void;
    index: number;
 }
 
