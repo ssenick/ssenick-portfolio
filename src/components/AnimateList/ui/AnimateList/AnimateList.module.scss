@@ -6,18 +6,20 @@
   .row {
     .link {
       display: grid;
-      grid-template-columns: 1fr minmax(auto, 40%) minmax(15%, 20%);
+      grid-template-columns: 1fr   minmax(15%, auto);
 
       // 20 / 70
-      padding: clamp(1.25rem, 0.877rem + 1.866vw, 4.375rem);
+      padding: clamp(1.25rem, 0.877rem + 1.866vw, 4.375rem) var(--p-container);
 
       p {
         padding: 0 5px;
         position: relative;
+        overflow: hidden;
         z-index: 1;
         text-transform: uppercase;
-        letter-spacing: 4px;
+        letter-spacing: 2px;
         opacity: 0.5;
+        font-size: var(--h5-font-size);
       }
 
       .bg {
@@ -29,6 +31,10 @@
         top: 100%;
       }
     }
+  }
+
+  @media (max-width: 992px) {
+    max-width: 85vw;
   }
 
   @media (max-width: 772px) {

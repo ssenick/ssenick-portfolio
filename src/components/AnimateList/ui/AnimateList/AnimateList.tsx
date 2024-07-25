@@ -10,23 +10,25 @@ import cls from './AnimateList.module.scss';
 interface WorkListProps {
    className?: string;
    links: animateListItemsType[];
+   notHeader?: boolean;
 }
 
 //  перенести весь конент в отдельный файлн
 
 const AnimateList = memo((props: WorkListProps) => {
-   const { className, links } = props;
+   const { className, links, notHeader } = props;
    const [modal, setModal] = useState<animateModalType>({ active: false, index: 0 });
 
    return (
       <ul className={classNames(cls.AnimateList, {}, [className])}>
-         <li className={cls.row}>
-            <div className={cls.link}>
-               <p>Name</p>
-               <p>Category</p>
-               <p>Year</p>
-            </div>
-         </li>
+         {!notHeader && (
+            <li className={cls.row}>
+               <div className={cls.link}>
+                  <p>Name</p>
+                  <p>Year</p>
+               </div>
+            </li>
+         )}
          {links.map((item, i) => (
             <AnimateListItem key={i + item.name} content={item} setModal={setModal} index={i} />
          ))}
