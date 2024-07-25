@@ -3,7 +3,6 @@ import { memo, useMemo, useRef } from 'react';
 
 import { textMaskAnimation } from '@/const/animate';
 import { classNames } from '@/helpers/classNames/classNames';
-import { animatePattern } from '@/helpers/func/animatePattern';
 
 import cls from './TextMaskAnimated.module.scss';
 
@@ -20,19 +19,13 @@ interface TextMaskAnimatedProps {
 }
 
 const TextMaskAnimated = memo((props: TextMaskAnimatedProps) => {
-   const {
-      className,
-      margin = '100%',
-      once = true,
-      children,
-      size = 'regular',
-      fontWeight = 'normal',
-   } = props;
+   const { className, margin, once = true, children, size = 'regular', fontWeight = 'normal' } = props;
 
    const splitText = useMemo(() => children.split(' '), [children]);
 
    const containerRef = useRef<HTMLDivElement | null>(null);
-   const isInView = useInView(containerRef, { once, margin });
+
+   const isInView = useInView(containerRef, { once, margin: margin ? margin : '0' });
 
    return (
       <p
@@ -43,8 +36,8 @@ const TextMaskAnimated = memo((props: TextMaskAnimatedProps) => {
             <span key={index + char} className={cls.letter}>
                <motion.span
                   custom={index}
-                  {...animatePattern(textMaskAnimation)}
-                  animate={isInView ? 'animate' : ''}
+                  variants={textMaskAnimation}
+                  animate={isInView ? 'animate' : 'initial'}
                >
                   &nbsp;{char}
                </motion.span>
