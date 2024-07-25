@@ -9,12 +9,12 @@
 
   &.mediumSize {
     font-size: var(--h3-font-size);
-    line-height: 1.2;
+    line-height: 1.3;
   }
 
   &.largeSize {
     font-size: var(--h1-font-size);
-    line-height: 1.1;
+    line-height: 1.2;
   }
 
   &.normal {
@@ -37,6 +37,7 @@
     display: inline-block;
     position: relative;
     overflow: hidden;
+    line-height: 1.3;
 
     span {
       display: inline-block;
