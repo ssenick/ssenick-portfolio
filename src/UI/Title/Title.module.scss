@@ -6,4 +6,8 @@
 
   // 18 X 44
   padding-bottom: clamp(1.125rem, 0.931rem + 0.97vw, 2.75rem);
+
+  &.notPadding {
+    padding-bottom: 0;
+  }
 }
