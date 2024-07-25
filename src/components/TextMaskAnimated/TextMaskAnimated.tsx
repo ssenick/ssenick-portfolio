@@ -11,7 +11,6 @@ type variantFontWeight = 'normal' | 'medium' | 'bold' | 'black';
 
 interface TextMaskAnimatedProps {
    className?: string;
-   margin?: string;
    once?: boolean;
    children: string;
    size?: variantSize;
@@ -19,20 +18,13 @@ interface TextMaskAnimatedProps {
 }
 
 const TextMaskAnimated = memo((props: TextMaskAnimatedProps) => {
-   const {
-      className,
-      margin = '0px',
-      once = true,
-      children,
-      size = 'regular',
-      fontWeight = 'normal',
-   } = props;
+   const { className, once = true, children, size = 'regular', fontWeight = 'normal' } = props;
 
    const splitText = useMemo(() => children.split(' '), [children]);
 
    const containerRef = useRef<HTMLDivElement | null>(null);
 
-   const isInView = useInView(containerRef, { once, margin });
+   const isInView = useInView(containerRef, { once });
 
    return (
       <p

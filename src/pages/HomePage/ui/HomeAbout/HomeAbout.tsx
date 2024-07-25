@@ -24,13 +24,13 @@ const HomeAbout = memo((props: HomeAboutProps) => {
    const valueMove = useTransform(scrollYProgress, [0, 1], ['100%', '-50%']);
    return (
       <div className={classNames(cls.HomeAbout, {}, [className])}>
-         <TextMaskAnimated margin={'-9%'} size={'mediumSize'}>
+         <TextMaskAnimated size={'mediumSize'}>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias cupiditate fuga necessitatibus
             optio quae. Blanditiis dicta ipsum natus provident quos reiciendis repellendus repudiandae tempora
             totam?
          </TextMaskAnimated>
          <div ref={ref} className={cls.paragraph}>
-            <TextMaskAnimated margin={'-9%'}>
+            <TextMaskAnimated>
                The combination of my passion for design, code & interaction positions me in a unique place in
                the web design world.
             </TextMaskAnimated>
