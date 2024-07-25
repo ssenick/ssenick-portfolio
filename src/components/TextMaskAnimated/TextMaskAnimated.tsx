@@ -8,11 +8,10 @@ import cls from './TextMaskAnimated.module.scss';
 
 type variantSize = 'smallSize' | 'mediumSize' | 'largeSize' | 'regularSize';
 type variantFontWeight = 'normal' | 'medium' | 'bold' | 'black';
-type MarginType = string | undefined;
 
 interface TextMaskAnimatedProps {
    className?: string;
-   margin?: MarginType;
+   margin?: string;
    once?: boolean;
    children: string;
    size?: variantSize;
@@ -20,13 +19,20 @@ interface TextMaskAnimatedProps {
 }
 
 const TextMaskAnimated = memo((props: TextMaskAnimatedProps) => {
-   const { className, margin, once = true, children, size = 'regular', fontWeight = 'normal' } = props;
+   const {
+      className,
+      margin = '0px',
+      once = true,
+      children,
+      size = 'regular',
+      fontWeight = 'normal',
+   } = props;
 
    const splitText = useMemo(() => children.split(' '), [children]);
 
    const containerRef = useRef<HTMLDivElement | null>(null);
 
-   const isInView = useInView(containerRef, { once, margin: margin ?? '0px' });
+   const isInView = useInView(containerRef, { once, margin });
 
    return (
       <p
