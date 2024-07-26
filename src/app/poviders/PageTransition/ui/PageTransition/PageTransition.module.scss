@@ -9,7 +9,7 @@
     left: 0;
     top: -300px;
     cursor: wait;
-    background-color: var(--color-bg-super-dark);
+    background-color: var(--color-super-dark);
     z-index: 100;
   }
 
@@ -30,7 +30,7 @@
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      color: var(--color-bg);
+      color: var(--color-white);
 
       &::after,
       &::before {
@@ -38,7 +38,7 @@
         width: 7px;
         height: 7px;
         border-radius: 50%;
-        background-color: var(--color-bg);
+        background-color: var(--color-white);
       }
     }
   }

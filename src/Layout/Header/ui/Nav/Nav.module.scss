@@ -8,7 +8,7 @@
     transform: translate(-50%, -50%) scale(0) rotate(0.001deg);
     width: clamp(0.313rem, 0.275rem + 0.19vw, 0.625rem);
     height: clamp(0.313rem, 0.275rem + 0.19vw, 0.625rem);
-    background-color: var(--color-text);
+    background-color: var(--color-black);
     will-change: transform;
     transition: var(--animate-faster);
     transition-property: transform;

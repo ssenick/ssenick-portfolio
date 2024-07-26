@@ -10,10 +10,19 @@
   // colors
   --overlay-color: rgb(0 0 0 / 30%);
   --overlay-color-15: rgb(0 0 0 / 15%);
-  --white-color: #fff;
   --error-primary: #ff0101;
   --error-secondary: #b00202;
   --color-blue: #0064f8;
+  --color-black: #1c1d20;
+  --color-white: #fff;
+  --color-super-dark: #141517;
+  --color-border: rgb(28 29 32 / 17.5%);
+  --color-border-40: rgb(28 29 32 / 40%);
+  --color-shadow: rgb(255 255 255 / 20%) 0 0 0 1px;
+  --color-shadow-opposite: rgb(14 14 14 / 20%) 0 0 0 1px;
+  --drop-shadow: drop-shadow(18px 18px 16px #efefef);
+  --color-cart-1: #e3e8ee;
+  --color-cart-2: #e4dfdb;
 
   // animation
   --animate-faster: all 0.3s cubic-bezier(0.7, 0, 0.3, 1);
@@ -21,8 +30,4 @@
 
   // padding
   --p-container: clamp(1.375rem, 0.83rem + 2.72vw, 5.938rem);
-}
-
-@mixin adaptive-size($property, $min-value, $multiplier) {
-  #{$property}: clamp(#{$min-value}, calc(var(--index) * #{$multiplier}), calc(#{$min-value} * 2));
 }

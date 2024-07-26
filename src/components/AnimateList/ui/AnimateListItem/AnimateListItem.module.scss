@@ -6,7 +6,7 @@
     left: 0;
     top: 0;
     height: 1px;
-    background-color: var(--color-border-2);
+    background-color: var(--color-border-40);
     width: 100%;
     will-change: width;
   }
@@ -49,7 +49,7 @@
       position: absolute;
       height: 100%;
       width: 100%;
-      background-color: var(--color-text);
+      background-color: var(--color-black);
       display: flex;
       top: 0;
       transform: translate(0, -102%);
