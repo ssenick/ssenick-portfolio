@@ -1,7 +1,6 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { memo, useRef } from 'react';
 
-import { useTheme } from '@/app/poviders/ThemeProvider';
 import ImageMe from '@/assets/me_3.png';
 import { classNames } from '@/helpers/classNames/classNames';
 import { Header } from '@/Layout';
@@ -16,7 +15,6 @@ interface HomeFirstScreenProps {
 
 const HomeFirstScreen = memo((props: HomeFirstScreenProps) => {
    const { className } = props;
-   const { theme } = useTheme();
    const ref = useRef<HTMLDivElement | null>(null);
 
    const { scrollYProgress } = useScroll({
@@ -33,7 +31,7 @@ const HomeFirstScreen = memo((props: HomeFirstScreenProps) => {
          <Header />
          <TextSlider />
          <motion.div style={{ y: valueMove, opacity: valueOpacity }} className={cls.image}>
-            <AppImage className={classNames(cls.img, { [cls.dark]: theme === 'dark' }, [])} src={ImageMe} />
+            <AppImage className={classNames(cls.img, {}, [])} src={ImageMe} />
          </motion.div>
          <div className={cls.wrapper}>
             <motion.div style={{ y: valueMoveText }} className={cls.main}>

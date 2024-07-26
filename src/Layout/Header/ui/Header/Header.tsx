@@ -2,10 +2,8 @@ import { memo, useContext, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import { MediaQueryContext } from '@/app/poviders/MediaQueryProvider';
-import { useTheme } from '@/app/poviders/ThemeProvider';
 import { classNames } from '@/helpers/classNames/classNames';
 import { MenuBtn } from '@/Layout/Header/ui/MenuBtn/MenuBtn';
-import { AppButton } from '@/UI/AppButton/AppButton';
 
 import { BurgerBtn } from '../BurgerBtn/BurgerBtn';
 import { Nav } from '../Nav/Nav';
@@ -23,12 +21,11 @@ const Header = memo((props: HeaderProps) => {
    const [activeBurger, setActiveBurger] = useState(false);
    const { isMobile } = useContext(MediaQueryContext);
    const location = useLocation();
-   const { toggleTheme } = useTheme();
+
    return (
       <div className={classNames(cls.Header, {}, [className])}>
          <nav className={cls.wrapper}>
             <NavToHome />
-            <AppButton onClick={() => toggleTheme()}>+</AppButton>
             {isMobile ? <MenuBtn setActiveButton={setActiveBurger} /> : <Nav location={location.pathname} />}
             <BurgerBtn
                activeButton={activeBurger}
