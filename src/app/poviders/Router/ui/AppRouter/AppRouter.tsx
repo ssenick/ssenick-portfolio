@@ -1,4 +1,4 @@
-import { Suspense, useEffect } from 'react';
+import { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { type Location } from 'react-router-dom';
 
@@ -18,13 +18,11 @@ export const AppRouter = (props: AppRouterProps) => {
 
    return (
       <>
-         <Suspense fallback={'Loading...'}>
-            <Routes location={location}>
-               {Object.values(routeConfig).map((el: AppRoutersProps) => (
-                  <Route key={el.path} path={el.path} element={el.element} />
-               ))}
-            </Routes>
-         </Suspense>
+         <Routes location={location}>
+            {Object.values(routeConfig).map((el: AppRoutersProps) => (
+               <Route key={el.path} path={el.path} element={el.element} />
+            ))}
+         </Routes>
       </>
    );
 };
