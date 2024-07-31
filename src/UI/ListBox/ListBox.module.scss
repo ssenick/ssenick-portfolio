@@ -1,0 +1,80 @@
+.ListBox {
+  position: relative;
+
+  .dot {
+    position: absolute;
+    bottom: -0.5em;
+    left: 50%;
+    display: block;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0) rotate(0.001deg);
+    width: clamp(0.313rem, 0.275rem + 0.19vw, 0.625rem);
+    height: clamp(0.313rem, 0.275rem + 0.19vw, 0.625rem);
+    background-color: var(--color-black);
+    will-change: transform;
+    transition: var(--animate-faster);
+    transition-property: transform;
+  }
+
+  .button {
+    position: relative;
+    padding: clamp(0.625rem, 0.55rem + 0.37vw, 1.25rem) calc(var(--index));
+
+    @media (any-hover: hover) {
+      &:hover {
+        .dot {
+          transform: translate(-50%, -50%) scale(1) rotate(0.001deg);
+        }
+      }
+    }
+  }
+
+  .button,
+  .item {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    cursor: pointer;
+    font-weight: 500;
+
+    svg {
+      width: 1.3em;
+      height: 1.3em;
+    }
+  }
+
+  .list {
+    position: absolute;
+    top: 110%;
+    z-index: 15;
+    display: grid;
+    left: 0;
+    gap: 0;
+    background-color: var(--color-white);
+    box-shadow: var(--box-shadow);
+    border-radius: 0.7em;
+    overflow: hidden;
+  }
+
+  .item {
+    width: 100%;
+    padding: calc(var(--index) * 0.7) calc(var(--index));
+
+    &.disabled {
+      pointer-events: none;
+      opacity: 0.5;
+    }
+
+    &.selected {
+      background-color: var(--color-cart-1);
+    }
+
+    &.active {
+      background-color: var(--color-cart-3);
+    }
+
+    &.active.selected {
+      background-color: var(--color-cart-1);
+    }
+  }
+}
