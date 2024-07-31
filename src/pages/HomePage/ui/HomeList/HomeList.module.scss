@@ -6,6 +6,14 @@
     max-width: 70vw;
     margin: 0 auto;
     overflow: hidden;
+
+    @media (max-width: 992px) {
+      max-width: 85vw;
+    }
+
+    @media (max-width: 772px) {
+      max-width: none;
+    }
   }
 
   .footer {
