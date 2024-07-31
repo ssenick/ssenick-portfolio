@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react';
 import { memo } from 'react';
 
 import { classNames } from '@/helpers/classNames/classNames';
@@ -5,7 +6,7 @@ import { classNames } from '@/helpers/classNames/classNames';
 import cls from './Title.module.scss';
 interface TitleProps {
    className?: string;
-   children?: string;
+   children?: ReactNode;
    notPadding?: boolean;
 }
 
