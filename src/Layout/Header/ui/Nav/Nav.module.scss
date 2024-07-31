@@ -1,4 +1,7 @@
 .Nav {
+  display: flex;
+  align-items: center;
+
   .dot {
     position: absolute;
     bottom: -0.5em;
