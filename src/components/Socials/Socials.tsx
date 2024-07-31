@@ -1,4 +1,5 @@
 import { memo } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { socials } from '@/const/socials';
 import { classNames } from '@/helpers/classNames/classNames';
@@ -13,10 +14,10 @@ interface SocialsProps {
 
 const Socials = memo((props: SocialsProps) => {
    const { className } = props;
-
+   const { t } = useTranslation();
    return (
       <div className={classNames(cls.Socials, {}, [className])}>
-         <Title className={cls.title}>Socials</Title>
+         <Title className={cls.title}>{t('Socials')}</Title>
          <ul className={cls.list}>
             {socials.map(({ text, href }) => (
                <li key={href}>

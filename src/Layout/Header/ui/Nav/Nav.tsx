@@ -1,4 +1,5 @@
 import { memo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
 import { classNames } from '@/helpers/classNames/classNames';
@@ -14,6 +15,7 @@ interface NavProps {
 
 const Nav = memo((props: NavProps) => {
    const { className, location } = props;
+   const { t } = useTranslation();
    return (
       <div className={classNames(cls.Nav, {}, [className])}>
          <ul className={cls.list}>
@@ -25,7 +27,7 @@ const Nav = memo((props: NavProps) => {
                            className={classNames(cls.link, { [cls.active]: location === path }, [])}
                            to={path}
                         >
-                           {text}
+                           {t(text)}
                            <span className={cls.dot}></span>
                         </Link>
                      </FramerMagnetic>

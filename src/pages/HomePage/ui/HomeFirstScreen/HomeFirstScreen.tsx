@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { memo, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import ImageMe from '@/assets/me_3.png';
 import { classNames } from '@/helpers/classNames/classNames';
@@ -16,7 +17,7 @@ interface HomeFirstScreenProps {
 const HomeFirstScreen = memo((props: HomeFirstScreenProps) => {
    const { className } = props;
    const ref = useRef<HTMLDivElement | null>(null);
-
+   const { t } = useTranslation('page');
    const { scrollYProgress } = useScroll({
       target: ref,
       offset: ['end end', 'end start'],
@@ -35,11 +36,11 @@ const HomeFirstScreen = memo((props: HomeFirstScreenProps) => {
          </motion.div>
          <div className={cls.wrapper}>
             <motion.div style={{ y: valueMoveText }} className={cls.main}>
-               <h5>Ruslan Senchenko</h5>
-               <h1>Frontend Developer</h1>
-               <h3>
-                  Frontend: turning creative ideas into digital reality. Partnership for reaching new heights!
-               </h3>
+               <h5>
+                  {t('Ruslan')} {t('Senchenko')}
+               </h5>
+               <h1>{t('Frontend Developer')}</h1>
+               <h3>{t('Frontend description')}</h3>
             </motion.div>
          </div>
       </div>

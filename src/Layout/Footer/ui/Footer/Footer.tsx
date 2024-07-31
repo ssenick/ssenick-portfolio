@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { memo, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
 import Arrow from '@/assets/arrow.svg?react';
@@ -19,6 +20,7 @@ interface FooterProps {
 const Footer = memo((props: FooterProps) => {
    const { className } = props;
    const ref = useRef<HTMLDivElement | null>(null);
+   const { t } = useTranslation();
 
    const { scrollYProgress } = useScroll({
       target: ref,
@@ -34,19 +36,16 @@ const Footer = memo((props: FooterProps) => {
          </motion.div>
          <motion.div style={{ y: valueMove }}>
             <div className={cls.quickContact}>
-               <Title className={cls.title}>Need a frontend developer?</Title>
+               <Title className={cls.title}>{t('Footer title')}</Title>
                <FramerMagnetic>
                   <Link to={getRouteContact()} className={cls.linkAbout}>
-                     Let’s work together <Arrow className={cls.arrow} />
+                     {t('Footer link')} <Arrow className={cls.arrow} />
                   </Link>
                </FramerMagnetic>
             </div>
             <div className={cls.information}>
-               <Title>Contact information: </Title>
-               <p className={cls.description}>
-                  Feel free to contact me anytime. I prefer to communicate via email or social networks,
-                  especially since we can be located in several time zones.
-               </p>
+               <Title>{t('Footer inform title')} </Title>
+               <p className={cls.description}>{t('Footer description')}</p>
             </div>
             <div className={cls.buttons}>
                <AppButton className={cls.button} oppositeColor variant="link">
@@ -58,8 +57,8 @@ const Footer = memo((props: FooterProps) => {
             </div>
             <div className={cls.wrapper}>
                <div>
-                  <Title>Version</Title>
-                  <p>2024 © Edition</p>
+                  <Title>{t('Version')}</Title>
+                  <p>{t('2024 © Edition')}</p>
                </div>
                <div>
                   <Socials />

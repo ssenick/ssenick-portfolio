@@ -1,7 +1,9 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { memo, useCallback, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
+import { LangSwitcherMobile } from '@/components/LangSwitcher/ui/LangSwitcherMobile/LangSwitcherMobile';
 import { menuSlide, opacity, slide } from '@/const/animate';
 import { socials } from '@/const/socials';
 import { classNames } from '@/helpers/classNames/classNames';
@@ -22,7 +24,7 @@ interface NavAsideProps {
 
 const NavAside = memo((props: NavAsideProps) => {
    const { className, location, isActive, setIsActive, setIsHiddenBurger } = props;
-
+   const { t } = useTranslation();
    const closeModal = useCallback(() => {
       setIsActive(false);
    }, [setIsActive]);
@@ -45,8 +47,8 @@ const NavAside = memo((props: NavAsideProps) => {
                   <Curve />
                   <div className={cls.body}>
                      <nav className={cls.nav}>
-                        <motion.h5 {...animatePattern(slide)}>Navigation</motion.h5>
-                        <ul>
+                        <motion.h5 {...animatePattern(slide)}>{t('Navigation')}</motion.h5>
+                        <ul className={cls.list}>
                            {navLinks.map(({ path, text }, index) => (
                               <li key={path}>
                                  <FramerMagnetic>
@@ -60,7 +62,7 @@ const NavAside = memo((props: NavAsideProps) => {
                                           )}
                                           to={path}
                                        >
-                                          {text}
+                                          {t(text)}
                                           <span className={cls.dot}></span>
                                        </Link>
                                     </motion.div>
@@ -68,10 +70,11 @@ const NavAside = memo((props: NavAsideProps) => {
                               </li>
                            ))}
                         </ul>
+                        <LangSwitcherMobile className={cls.lang} />
                      </nav>
                      <div className={cls.footer}>
-                        <motion.h5 {...animatePattern(slide)}>Socials</motion.h5>
-                        <ul>
+                        <motion.h5 {...animatePattern(slide)}>{t('Socials')}</motion.h5>
+                        <ul className={cls.footerList}>
                            {socials.map(({ text, href }) => (
                               <li key={href}>
                                  <FramerMagnetic>
