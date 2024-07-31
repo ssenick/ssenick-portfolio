@@ -7,6 +7,7 @@ module.exports = {
       'plugin:react/jsx-runtime',
       'plugin:@typescript-eslint/stylistic-type-checked',
       'eslint:recommended',
+      'plugin:i18next/recommended',
       'plugin:@typescript-eslint/recommended',
       'plugin:react-hooks/recommended',
       'prettier',
@@ -16,14 +17,15 @@ module.exports = {
       'react-refresh',
       'react-hooks',
       'react',
-      // 'i18next',
+      'i18next',
       '@typescript-eslint',
       'simple-import-sort',
       'unused-imports',
       'prettier',
    ],
    rules: {
-      "@typescript-eslint/consistent-type-imports": "error",
+      '@typescript-eslint/consistent-type-imports': 'error',
+      'i18next/no-literal-string': ['error', { markupOnly: true }],
       // Упорядочивание импортов
       'simple-import-sort/imports': 'error',
       'simple-import-sort/exports': 'error',
@@ -63,6 +65,7 @@ module.exports = {
       // Проверка форматирования кода с использованием Prettier
       'prettier/prettier': 'error',
       '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
+      'i18next/no-literal-string': 'warn',
    },
    settings: {
       react: {
