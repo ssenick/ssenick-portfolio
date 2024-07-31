@@ -2,6 +2,7 @@ import { memo, useContext, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import { MediaQueryContext } from '@/app/poviders/MediaQueryProvider';
+import { LangSwitcher } from '@/components/LangSwitcher/ui/LangSwitcher/LangSwitcher';
 import { classNames } from '@/helpers/classNames/classNames';
 import { MenuBtn } from '@/Layout/Header/ui/MenuBtn/MenuBtn';
 
@@ -20,13 +21,21 @@ const Header = memo((props: HeaderProps) => {
    const [isHiddenBurger, setIsHiddenBurger] = useState(false);
    const [activeBurger, setActiveBurger] = useState(false);
    const { isMobile } = useContext(MediaQueryContext);
-   const location = useLocation();
 
+   const location = useLocation();
    return (
       <div className={classNames(cls.Header, {}, [className])}>
          <nav className={cls.wrapper}>
             <NavToHome />
-            {isMobile ? <MenuBtn setActiveButton={setActiveBurger} /> : <Nav location={location.pathname} />}
+            {isMobile ? (
+               <MenuBtn className={cls.nav} setActiveButton={setActiveBurger} />
+            ) : (
+               <div className={cls.nav}>
+                  <LangSwitcher />
+                  <Nav location={location.pathname} />
+               </div>
+            )}
+
             <BurgerBtn
                activeButton={activeBurger}
                setActiveButton={setActiveBurger}
