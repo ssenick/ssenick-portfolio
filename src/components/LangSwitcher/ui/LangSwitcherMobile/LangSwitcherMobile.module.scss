@@ -1,0 +1,16 @@
+.LangSwitcherMobile {
+  display: flex;
+  align-items: center;
+  margin: 0 calc(clamp(0.75em, 4vw, 1.25em) * -0.9);
+
+  li {
+    flex: 0 1 25%;
+    display: flex;
+    padding: 0  clamp(0.75em, 4vw, 1.25em);
+  }
+
+  .button {
+    color: var(--color-white);
+    cursor: pointer;
+  }
+}
