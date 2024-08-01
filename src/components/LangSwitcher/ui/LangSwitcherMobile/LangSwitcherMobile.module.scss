@@ -6,11 +6,46 @@
   li {
     flex: 0 1 25%;
     display: flex;
-    padding: 0  clamp(0.75em, 4vw, 1.25em);
   }
 
   .button {
+    position: relative;
     color: var(--color-white);
     cursor: pointer;
+    padding: clamp(0.75em, 4vw, 1.25em);
+
+    span {
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 120%;
+        left: 50%;
+        transform: translate(-50%, 0);
+        width: 0;
+        height: 1px;
+        background-color: var(--color-white);
+        transition: width 0.3s ease 0s;
+      }
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        span {
+          &::before {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    &.active {
+      span {
+        &::before {
+          width: 100%;
+        }
+      }
+    }
   }
 }

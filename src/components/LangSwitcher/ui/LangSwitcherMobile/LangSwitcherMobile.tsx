@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
-import { memo } from 'react';
+import { memo, useCallback } from 'react';
 
+import { useLanguage } from '@/app/poviders/LanguageProvider';
+import type { Languages } from '@/app/poviders/LanguageProvider/model/types';
 import { slide } from '@/const/animate';
 import { classNames } from '@/helpers/classNames/classNames';
 import { FramerMagnetic } from '@/helpers/components/FramerMagnetic/FramerMagnetic';
@@ -13,18 +15,31 @@ interface LangSwitcherMobileProps {
    className?: string;
 }
 
-// TODO 1) МОБИЛЬНАЯ ВЕРСИЯ СМЕНЫ ЯЗЫКА 2) ПЕРЕВОДЫ
-
 const LangSwitcherMobile = memo((props: LangSwitcherMobileProps) => {
    const { className } = props;
+   const { language, toggleLang } = useLanguage();
 
+   const handlerOnClick = useCallback(
+      (value: Languages) => () => {
+         const newLanguage = languages.find((lang) => value === lang.value)?.value;
+         if (newLanguage) {
+            toggleLang(newLanguage);
+         }
+      },
+      [toggleLang],
+   );
    return (
       <ul className={classNames(cls.LangSwitcherMobile, {}, [className])}>
-         {languages.map(({ content }, index) => (
+         {languages.map(({ value, content }, index) => (
             <li key={content.text}>
                <FramerMagnetic>
-                  <motion.button custom={index} {...animatePattern(slide)} className={cls.button}>
-                     {content.text}
+                  <motion.button
+                     custom={index}
+                     onClick={handlerOnClick(value)}
+                     {...animatePattern(slide)}
+                     className={classNames(cls.button, { [cls.active]: language === value }, [])}
+                  >
+                     <span> {content.text}</span>
                   </motion.button>
                </FramerMagnetic>
             </li>
