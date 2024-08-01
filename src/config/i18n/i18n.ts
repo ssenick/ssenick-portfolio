@@ -3,8 +3,10 @@ import i18n from 'i18next';
 import Backend from 'i18next-http-backend';
 import { initReactI18next } from 'react-i18next';
 
+import { Languages } from '@/app/poviders/LanguageProvider/model/types';
 import { LANGUAGE_LOCALSTORAGE_KEY } from '@/const/localstorage';
-const initialLanguage = 'en';
+
+export const initialLanguage = Languages.EN ?? 'en';
 
 if (!localStorage.getItem(LANGUAGE_LOCALSTORAGE_KEY)) {
    localStorage.setItem(LANGUAGE_LOCALSTORAGE_KEY, initialLanguage);
