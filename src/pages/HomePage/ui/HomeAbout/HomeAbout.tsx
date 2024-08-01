@@ -21,7 +21,7 @@ const HomeAbout = memo((props: HomeAboutProps) => {
       target: ref,
       offset: ['start end', 'end start'],
    });
-   const valueMove = useTransform(scrollYProgress, [0, 1], ['100%', '-50%']);
+   const valueMove = useTransform(scrollYProgress, [0, 1], ['200%', '-50%']);
    return (
       <div className={classNames(cls.HomeAbout, {}, [className])}>
          <TextMaskAnimated size={'mediumSize'}>
