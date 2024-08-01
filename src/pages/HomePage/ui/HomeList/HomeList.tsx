@@ -1,4 +1,5 @@
 import { memo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
 import type { animateListItemsType } from '@/components/AnimateList';
@@ -30,15 +31,16 @@ const menuLinks: animateListItemsType[] = [
 
 const HomeList = memo((props: HomeListProps) => {
    const { className } = props;
+   const { t } = useTranslation('page');
    return (
       <div className={classNames(cls.HomeList, {}, [className])}>
          <div className={cls.header}>
-            <Title notPadding>SELECTED PROJECTS</Title>
+            <Title notPadding>{t('Home list title')}</Title>
          </div>
          <AnimateList notHeader links={menuLinks} />
          <div className={cls.footer}>
             <AppButton>
-               <Link to={getRouteWork()}>More work</Link>
+               <Link to={getRouteWork()}>{t('More works')}</Link>
             </AppButton>
          </div>
       </div>
