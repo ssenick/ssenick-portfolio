@@ -70,7 +70,7 @@ const NavAside = memo((props: NavAsideProps) => {
                               </li>
                            ))}
                         </ul>
-                        <LangSwitcherMobile className={cls.lang} />
+                        <LangSwitcherMobile />
                      </nav>
                      <div className={cls.footer}>
                         <motion.h5 {...animatePattern(slide)}>{t('Socials')}</motion.h5>
