@@ -1,9 +1,9 @@
 import { memo } from 'react';
 
-import { useLanguage } from '@/app/poviders/LanguageProvider';
-import type { Languages } from '@/app/poviders/LanguageProvider/model/types';
+import { ListBox } from '@/components/UI/ListBox/ListBox';
 import { classNames } from '@/helpers/classNames/classNames';
-import { ListBox } from '@/UI/ListBox/ListBox';
+import { useLanguage } from '@/poviders/LanguageProvider';
+import type { Languages } from '@/poviders/LanguageProvider/model/types';
 
 import { languages } from '../../model/languages';
 

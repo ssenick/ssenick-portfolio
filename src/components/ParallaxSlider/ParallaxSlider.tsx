@@ -2,11 +2,10 @@ import type { MotionValue } from 'framer-motion';
 import { motion, useTransform } from 'framer-motion';
 import { memo, useMemo } from 'react';
 
+import { AppImage } from '@/components/UI/AppImage/AppImage';
 import { classNames } from '@/helpers/classNames/classNames';
-import { AppImage } from '@/UI/AppImage/AppImage';
 
 import cls from './ParallaxSlider.module.scss';
-
 interface ParallaxSliderProps {
    className?: string;
    images: string[];
@@ -35,6 +34,11 @@ const ParallaxSlider = memo((props: ParallaxSliderProps) => {
                <AppImage src={image} className={cls.img} />
             </div>
          ))}
+         {/*{images.map((image) => (*/}
+         {/*   <div key={image} className={cls.image}>*/}
+         {/*      <video src={image} autoPlay className={cls.img} playsInline muted loop></video>*/}
+         {/*   </div>*/}
+         {/*))}*/}
       </motion.div>
    );
 });

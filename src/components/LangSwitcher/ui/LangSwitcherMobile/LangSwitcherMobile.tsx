@@ -1,12 +1,12 @@
 import { motion } from 'framer-motion';
 import { memo, useCallback } from 'react';
 
-import { useLanguage } from '@/app/poviders/LanguageProvider';
-import type { Languages } from '@/app/poviders/LanguageProvider/model/types';
 import { slide } from '@/const/animate';
 import { classNames } from '@/helpers/classNames/classNames';
 import { FramerMagnetic } from '@/helpers/components/FramerMagnetic/FramerMagnetic';
 import { animatePattern } from '@/helpers/func/animatePattern';
+import { useLanguage } from '@/poviders/LanguageProvider';
+import type { Languages } from '@/poviders/LanguageProvider/model/types';
 
 import { languages } from '../../model/languages';
 import cls from './LangSwitcherMobile.module.scss';

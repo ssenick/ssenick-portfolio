@@ -3,6 +3,7 @@ export interface animateListItemsType {
    year: string;
    src: string;
 }
+
 export interface animateModalType {
    active: boolean;
    index: number;

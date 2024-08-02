@@ -7,8 +7,8 @@ import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 
 import App from '@/app/App.tsx';
-import { LanguageProvider } from '@/app/poviders/LanguageProvider';
-import { MediaQueryProvider } from '@/app/poviders/MediaQueryProvider';
+import { LanguageProvider } from '@/poviders/LanguageProvider';
+import { MediaQueryProvider } from '@/poviders/MediaQueryProvider';
 const container = document.getElementById('root');
 if (!container) throw new Error('Failed to mount the application, check the container!');
 

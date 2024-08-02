@@ -1,8 +1,8 @@
 import myImage from '@/assets/image.jpg';
 import { Page } from '@/components/Page/Page';
+import { AppButton } from '@/components/UI/AppButton/AppButton';
 import { classNames } from '@/helpers/classNames/classNames';
 import { FramerMagnetic } from '@/helpers/components/FramerMagnetic/FramerMagnetic';
-import { AppButton } from '@/UI/AppButton/AppButton';
 
 import cls from './ContactPage.module.scss';
 interface AboutPageProps {

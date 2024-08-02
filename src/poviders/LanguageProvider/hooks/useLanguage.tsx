@@ -1,7 +1,7 @@
 import { useCallback, useContext } from 'react';
 
-import type { Languages } from '@/app/poviders/LanguageProvider/model/types';
-import { LanguageContext } from '@/app/poviders/LanguageProvider/ui/LanguageContext';
+import type { Languages } from '@/poviders/LanguageProvider/model/types';
+import { LanguageContext } from '@/poviders/LanguageProvider/ui/LanguageContext';
 
 interface ReturnValue {
    language: Languages;

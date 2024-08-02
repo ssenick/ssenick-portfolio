@@ -1,9 +1,9 @@
 import type { PropsWithChildren } from 'react';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
-import type { Theme } from '@/app/poviders/ThemeProvider/ui/ThemeContext';
-import { Themes } from '@/app/poviders/ThemeProvider/ui/ThemeContext';
 import { THEME_LOCALSTORAGE_KEY } from '@/const/localstorage';
+import type { Theme } from '@/poviders/ThemeProvider/ui/ThemeContext';
+import { Themes } from '@/poviders/ThemeProvider/ui/ThemeContext';
 
 import { ThemeContext } from './ThemeContext';
 

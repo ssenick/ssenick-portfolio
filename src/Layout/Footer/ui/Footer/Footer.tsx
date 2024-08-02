@@ -5,11 +5,11 @@ import { Link } from 'react-router-dom';
 
 import Arrow from '@/assets/arrow.svg?react';
 import { Socials } from '@/components/Socials/Socials';
+import { AppButton } from '@/components/UI/AppButton/AppButton';
+import { Title } from '@/components/UI/Title/Title';
 import { getRouteContact } from '@/config/route/routeConfig';
 import { classNames } from '@/helpers/classNames/classNames';
 import { FramerMagnetic } from '@/helpers/components/FramerMagnetic/FramerMagnetic';
-import { AppButton } from '@/UI/AppButton/AppButton';
-import { Title } from '@/UI/Title/Title';
 
 import cls from './Footer.module.scss';
 

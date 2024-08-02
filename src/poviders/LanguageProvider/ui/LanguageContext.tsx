@@ -2,9 +2,9 @@ import type { FC, PropsWithChildren } from 'react';
 import { createContext, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { Languages } from '@/app/poviders/LanguageProvider/model/types';
 import { initialLanguage } from '@/config/i18n/i18n';
 import { LANGUAGE_LOCALSTORAGE_KEY } from '@/const/localstorage';
+import { Languages } from '@/poviders/LanguageProvider/model/types';
 
 interface LanguageContextProps {
    language: Languages;

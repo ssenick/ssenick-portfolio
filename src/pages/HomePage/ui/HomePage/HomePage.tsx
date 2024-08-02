@@ -21,9 +21,11 @@ const HomePage = (props: HomePageProps) => {
    return (
       <motion.div className={classNames(cls.HomePage, {}, [className])} {...animatePattern(pageEaseOut)}>
          <HomeFirstScreen />
-         <HomeAbout />
-         <HomeList />
-         <HomeGallery />
+         <main>
+            <HomeAbout />
+            <HomeList />
+            <HomeGallery />
+         </main>
          <Footer />
       </motion.div>
    );

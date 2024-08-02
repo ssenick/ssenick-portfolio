@@ -1,10 +1,10 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { socials } from '@/const/socials';
+import { Title } from '@/components/UI/Title/Title';
+import { socials } from '@/content/socials';
 import { classNames } from '@/helpers/classNames/classNames';
 import { FramerMagnetic } from '@/helpers/components/FramerMagnetic/FramerMagnetic';
-import { Title } from '@/UI/Title/Title';
 
 import cls from './Socials.module.scss';
 

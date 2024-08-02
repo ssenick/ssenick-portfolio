@@ -1,9 +1,9 @@
 import { motion, useMotionValue, useSpring } from 'framer-motion';
 import { memo, useCallback, useEffect } from 'react';
 
+import { AppImage } from '@/components/UI/AppImage/AppImage';
 import { scaleAnimation } from '@/const/animate';
 import { classNames } from '@/helpers/classNames/classNames';
-import { AppImage } from '@/UI/AppImage/AppImage';
 
 import type { animateListItemsType, animateModalType } from '../../model/types';
 import cls from './AnimateModal.module.scss';

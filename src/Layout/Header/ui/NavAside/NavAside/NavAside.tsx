@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 import { LangSwitcherMobile } from '@/components/LangSwitcher/ui/LangSwitcherMobile/LangSwitcherMobile';
 import { menuSlide, opacity, slide } from '@/const/animate';
-import { socials } from '@/const/socials';
+import { socials } from '@/content/socials';
 import { classNames } from '@/helpers/classNames/classNames';
 import { FramerMagnetic } from '@/helpers/components/FramerMagnetic/FramerMagnetic';
 import { animatePattern } from '@/helpers/func/animatePattern';

@@ -2,8 +2,8 @@ import type { MotionValue } from 'framer-motion';
 import { motion, useTransform } from 'framer-motion';
 import { memo, useMemo } from 'react';
 
-import { useTheme } from '@/app/poviders/ThemeProvider';
 import { classNames } from '@/helpers/classNames/classNames';
+import { useTheme } from '@/poviders/ThemeProvider';
 
 import cls from './Brain.module.scss';
 

@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 
-import { MediaQueryContext } from '@/app/poviders/MediaQueryProvider';
+import { MediaQueryContext } from '@/poviders/MediaQueryProvider';
 
 export const useMediaQueryValues = () => {
    const context = useContext(MediaQueryContext);

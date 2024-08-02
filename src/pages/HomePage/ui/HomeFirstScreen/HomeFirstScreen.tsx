@@ -3,9 +3,9 @@ import { memo, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import ImageMe from '@/assets/me_3.png';
+import { AppImage } from '@/components/UI/AppImage/AppImage';
 import { classNames } from '@/helpers/classNames/classNames';
 import { Header } from '@/Layout';
-import { AppImage } from '@/UI/AppImage/AppImage';
 
 import { TextSlider } from '../TextSlider/TextSlider';
 import cls from './HomeFirstScreen.module.scss';

@@ -1,8 +1,8 @@
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import { AppButton } from '@/components/UI/AppButton/AppButton';
 import { classNames } from '@/helpers/classNames/classNames';
-import { AppButton } from '@/UI/AppButton/AppButton';
 
 interface MenuBtnProps {
    setActiveButton: (activeButton: boolean) => void;
