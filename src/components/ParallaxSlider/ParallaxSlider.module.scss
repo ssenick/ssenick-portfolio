@@ -15,14 +15,15 @@
   .image {
     flex: 0 1 25%;
     position: relative;
-    padding-bottom: 18%;
+    padding-bottom: 17%;
     background-color: var(--color-cart-2);
 
     &:nth-child(odd) {
       background-color: var(--color-cart-1);
     }
 
-    .img {
+    .img,
+    .spare {
       padding: 7%;
       position: absolute;
       width: 100%;
@@ -30,6 +31,29 @@
       top: 0;
       left: 0;
       object-fit: contain;
+    }
+
+    .spare {
+      overflow: hidden;
+
+      &::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translateX(-100%);
+        background:
+          linear-gradient(
+            90deg,
+            transparent,
+            rgb(255 255 255 / 90%),
+            transparent
+          );
+        animation: loading 1.5s infinite;
+      }
     }
 
     @media (max-width: 992px) {
@@ -48,5 +72,15 @@
       padding-bottom: 43%;
       left: calc(-20vw - 11%);
     }
+  }
+}
+
+@keyframes loading {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
   }
 }
