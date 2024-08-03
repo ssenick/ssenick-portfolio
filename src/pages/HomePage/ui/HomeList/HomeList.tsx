@@ -23,7 +23,7 @@ const HomeList = memo((props: HomeListProps) => {
          <div className={cls.header}>
             <Title notPadding>{t('Home list title')}</Title>
          </div>
-         <AnimateList notHeader links={projects} />
+         <AnimateList links={projects} />
          <div className={cls.footer}>
             <AppButton>
                <Link to={getRouteWork()}>{t('More works')}</Link>
