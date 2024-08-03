@@ -12,7 +12,6 @@
   }
 
   .link {
-    overflow: hidden;
     position: relative;
     display: grid;
     grid-template-columns: 1fr  minmax(15%, auto);
@@ -27,7 +26,6 @@
       display: block;
       position: relative;
       z-index: 1;
-      overflow: hidden;
       transition: left 0.3s ease, right 0.3s ease;
 
       &:first-of-type {
@@ -42,16 +40,6 @@
         font-size: var(--h1-font-size);
         font-weight: 500;
       }
-    }
-
-    .bg {
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      background-color: var(--color-black);
-      display: flex;
-      top: 0;
-      transform: translate(0, -102%);
     }
   }
 
