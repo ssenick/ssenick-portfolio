@@ -1,4 +1,5 @@
 import { memo, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { classNames } from '@/helpers/classNames/classNames';
 
@@ -10,22 +11,23 @@ import cls from './AnimateList.module.scss';
 interface WorkListProps {
    className?: string;
    links: animateListItemsType[];
-   notHeader?: boolean;
+   header?: boolean;
 }
 
 //  перенести весь конент в отдельный файлн
 
 const AnimateList = memo((props: WorkListProps) => {
-   const { className, links, notHeader } = props;
+   const { className, links, header } = props;
+   const { t } = useTranslation();
    const [modal, setModal] = useState<animateModalType>({ active: false, index: 0 });
 
    return (
       <ul className={classNames(cls.AnimateList, {}, [className])}>
-         {!notHeader && (
+         {header && (
             <li className={cls.row}>
                <div className={cls.link}>
-                  <p>Name</p>
-                  <p>Year</p>
+                  <p>{t('Name')}</p>
+                  <p>{t('Year')}</p>
                </div>
             </li>
          )}
