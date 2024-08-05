@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { type Location } from 'react-router-dom';
 
@@ -17,12 +18,12 @@ export const AppRouter = (props: AppRouterProps) => {
    }, [location]);
 
    return (
-      <>
+      <Suspense fallback={''}>
          <Routes location={location}>
             {Object.values(routeConfig).map((el: AppRoutersProps) => (
                <Route key={el.path} path={el.path} element={el.element} />
             ))}
          </Routes>
-      </>
+      </Suspense>
    );
 };
