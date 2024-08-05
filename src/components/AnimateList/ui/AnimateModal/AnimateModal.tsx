@@ -1,22 +1,25 @@
 import { motion, useMotionValue, useSpring } from 'framer-motion';
 import { memo, useCallback, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { AppImage } from '@/components/UI/AppImage/AppImage';
 import { scaleAnimation } from '@/const/animate';
 import { classNames } from '@/helpers/classNames/classNames';
+import type { projectType } from '@/types/projectsItems';
 
-import type { animateListItemsType, animateModalType } from '../../model/types';
+import type { animateModalType } from '../../model/types';
 import cls from './AnimateModal.module.scss';
 
 interface WorkModalProps {
    className?: string;
    modal: animateModalType;
-   links: animateListItemsType[];
+   links: projectType[];
 }
 
 const AnimateModal = memo((props: WorkModalProps) => {
    const { className, links, modal } = props;
    const { index, active } = modal;
+   const { t } = useTranslation();
    const mouse = {
       x: useMotionValue(0),
       y: useMotionValue(0),
@@ -54,14 +57,14 @@ const AnimateModal = memo((props: WorkModalProps) => {
          className={classNames(cls.AnimateModal, {}, [className])}
       >
          <div style={{ top: index * -100 + '%' }} className={cls.modalSlider}>
-            {links.map(({ src }, index) => (
-               <div className={cls.modal} key={index + '_modal'}>
-                  <AppImage src={src} className={cls.img} />
+            {links.map(({ id, images }) => (
+               <div className={cls.modal} key={id + '_modal'}>
+                  <AppImage src={images?.preview} className={cls.img} />
                </div>
             ))}
          </div>
          <div className={cls.cursor}></div>
-         <div className={cls.cursorLabel}>View</div>
+         <div className={cls.cursorLabel}>{t('View')}</div>
       </motion.div>
    );
 });
