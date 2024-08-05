@@ -1,21 +1,22 @@
 import { memo, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 
-import { getRouteWork } from '@/config/route/routeConfig';
 import { classNames } from '@/helpers/classNames/classNames';
+import type { projectType } from '@/types/projectsItems';
 
-import type { animateListItemsType, animateModalType } from '../../model/types';
+import type { animateModalType } from '../../model/types';
 import cls from './AnimateListItem.module.scss';
 
 interface AnimateListItemProps {
    className?: string;
-   content: animateListItemsType;
+   content: projectType;
+   path: string;
    setModal: (props: animateModalType) => void;
    index: number;
 }
 
 const AnimateListItem = memo((props: AnimateListItemProps) => {
-   const { className, content, setModal, index } = props;
+   const { className, content, setModal, index, path } = props;
 
    const handleMouseEnter = useCallback(
       (i: number) => () => {
@@ -36,7 +37,7 @@ const AnimateListItem = memo((props: AnimateListItemProps) => {
          className={classNames(cls.item, {}, [className])}
       >
          <div className={cls.line}></div>
-         <Link to={getRouteWork()} className={cls.link}>
+         <Link to={path} className={cls.link}>
             <p className={cls.name}>{content.name}</p>
             <p>{content.year}</p>
          </Link>
