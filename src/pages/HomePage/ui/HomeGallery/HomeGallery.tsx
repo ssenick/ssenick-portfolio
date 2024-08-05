@@ -1,14 +1,14 @@
 import { useScroll } from 'framer-motion';
 import { memo, useRef } from 'react';
 
-import ImageBlog from '@/assets/projects/blog2.mp4';
-import ImageEurotex from '@/assets/projects/eurotex2.mp4';
-import ImageGart from '@/assets/projects/gart2.mp4';
-import ImageGreenShop from '@/assets/projects/greenshop2.mp4';
-import ImageHelp from '@/assets/projects/help2.mp4';
-import ImagePortfolio from '@/assets/projects/portfolio2.mp4';
-import ImageSportbet from '@/assets/projects/sportbet2.mp4';
-import ImageStatika from '@/assets/projects/statika2.mp4';
+import ImageBlog from '@/assets/projects/blog/blog2.mp4';
+import ImageEurotex from '@/assets/projects/eurotex/eurotex2.mp4';
+import ImageGart from '@/assets/projects/gart/gart2.mp4';
+import ImageGreenShop from '@/assets/projects/greenshop/greenshop2.mp4';
+import ImageHelp from '@/assets/projects/help/help2.mp4';
+import ImagePortfolio from '@/assets/projects/portfolio/portfolio2.mp4';
+import ImageSportbet from '@/assets/projects/sportbet/sportbet2.mp4';
+import ImageStatika from '@/assets/projects/statika/statika2.mp4';
 import { ParallaxSlider } from '@/components/ParallaxSlider/ParallaxSlider';
 import { classNames } from '@/helpers/classNames/classNames';
 
