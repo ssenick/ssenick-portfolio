@@ -5,6 +5,7 @@ import { type Location } from 'react-router-dom';
 
 import { AppRoutes, routeConfig } from '@/config/route/routeConfig';
 import { fade, text } from '@/const/animate';
+import { projects } from '@/content/projects';
 import { classNames } from '@/helpers/classNames/classNames';
 import { animatePattern } from '@/helpers/func/animatePattern';
 import { useDimensions } from '@/hooks/useDimensions';
@@ -22,8 +23,27 @@ const PageTransition = memo((props: PageTransitionProps) => {
    const { className, children, location } = props;
    const { width, height } = useDimensions();
 
+   // const getPageName = useCallback((path: string) => {
+   //    return Object.values(AppRoutes).find((route) => routeConfig[route]?.path === path);
+   // }, []);
    const getPageName = useCallback((path: string) => {
-      return Object.values(AppRoutes).find((route) => routeConfig[route]?.path === path);
+      const cleanPath = path.endsWith('/') && path !== '/' ? path.slice(0, -1) : path;
+
+      const values = Object.values(AppRoutes).find((route) => {
+         const filterValue = routeConfig[route]?.path.split('').includes('/:');
+         if (!filterValue) return routeConfig[route]?.path === cleanPath;
+      });
+
+      if (values) {
+         return values;
+      } else {
+         const finderValue = projects.find((project) => project.path === path.split('/')[2]);
+         if (finderValue) {
+            return finderValue.path;
+         } else {
+            return 'Not found page';
+         }
+      }
    }, []);
 
    return (
