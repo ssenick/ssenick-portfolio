@@ -30,14 +30,14 @@ const PageTransition = memo((props: PageTransitionProps) => {
       const cleanPath = path.endsWith('/') && path !== '/' ? path.slice(0, -1) : path;
 
       const values = Object.values(AppRoutes).find((route) => {
-         const filterValue = routeConfig[route]?.path.split('').includes('/:');
+         const filterValue = routeConfig[route]?.path?.split('')?.includes('/:');
          if (!filterValue) return routeConfig[route]?.path === cleanPath;
       });
 
       if (values) {
          return values;
       } else {
-         const finderValue = projects.find((project) => project.path === path.split('/')[2]);
+         const finderValue = projects?.find((project) => project.path === path.split('/')[2]);
          if (finderValue) {
             return finderValue.path;
          } else {
