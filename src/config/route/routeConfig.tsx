@@ -1,10 +1,11 @@
-import { type RouteProps } from 'react-router-dom';
+import type { RouteProps } from 'react-router-dom';
 
 import { AboutPage } from '@/pages/AboutPage';
 import { ContactPage } from '@/pages/ContactPage';
 import { ForbiddenPage } from '@/pages/ForbiddenPage';
 import { HomePage } from '@/pages/HomePage';
 import { NotFoundPage } from '@/pages/NotFoundPage';
+import { ProjectPage } from '@/pages/ProjectPage';
 import { WorkPage } from '@/pages/WorkPage';
 
 export type AppRoutersProps = RouteProps & {
@@ -15,6 +16,7 @@ export enum AppRoutes {
    HOME = 'home',
    ABOUT = 'about',
    WORK = 'work',
+   PROJECT = 'project',
    CONTACT = 'contact',
    FORBIDDEN = 'forbidden',
    // last
@@ -24,6 +26,7 @@ export enum AppRoutes {
 export const getRouteHome = (): string => '/';
 export const getRouteAbout = (): string => '/about';
 export const getRouteWork = (): string => '/work';
+export const getRouteProject = (name: string): string => `/work/${name}`;
 export const getRouteContact = (): string => '/contact';
 // last
 export const getRouteForbidden = (): string => '/forbidden';
@@ -40,6 +43,11 @@ export const routeConfig: Record<AppRoutes, AppRoutersProps> = {
    [AppRoutes.WORK]: {
       path: getRouteWork(),
       element: <WorkPage />,
+   },
+
+   [AppRoutes.PROJECT]: {
+      path: getRouteProject(':name'),
+      element: <ProjectPage />,
    },
    [AppRoutes.CONTACT]: {
       path: getRouteContact(),
