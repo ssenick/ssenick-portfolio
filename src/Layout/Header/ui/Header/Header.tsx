@@ -3,10 +3,10 @@ import { useLocation } from 'react-router-dom';
 
 import { LangSwitcher } from '@/components/LangSwitcher/ui/LangSwitcher/LangSwitcher';
 import { classNames } from '@/helpers/classNames/classNames';
-import { MenuBtn } from '@/Layout/Header/ui/MenuBtn/MenuBtn';
 import { MediaQueryContext } from '@/poviders/MediaQueryProvider';
 
 import { BurgerBtn } from '../BurgerBtn/BurgerBtn';
+import { MenuBtn } from '../MenuBtn/MenuBtn';
 import { Nav } from '../Nav/Nav';
 import { NavAside } from '../NavAside/NavAside/NavAside';
 import { NavToHome } from '../NavToHome/NavToHome';
