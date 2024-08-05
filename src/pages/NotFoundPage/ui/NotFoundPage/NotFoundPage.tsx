@@ -10,7 +10,7 @@ const NotFoundPage = (props: NotFoundPageProps) => {
    const { className } = props;
    return (
       <div className={classNames(cls.NotFoundPage, {}, [className])}>
-         <h1>NotFoundPage</h1>
+         <h1>1111111</h1>
       </div>
    );
 };

@@ -1,3 +1,4 @@
+import { Page } from '@/components/Page/Page';
 import { classNames } from '@/helpers/classNames/classNames';
 
 import cls from './ForbiddenPage.module.scss';
@@ -8,7 +9,7 @@ interface ForbiddenPageProps {
 
 const ForbiddenPage = (props: ForbiddenPageProps) => {
    const { className } = props;
-   return <div className={classNames(cls.ForbiddenPage, {}, [className])}>ForbiddenPage</div>;
+   return <Page className={classNames(cls.ForbiddenPage, {}, [className])}>ForbiddenPage</Page>;
 };
 
 ForbiddenPage.displayName = 'ForbiddenPage';
