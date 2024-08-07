@@ -33,6 +33,7 @@
       height: 100%;
       padding: 12vh 7.5vw 8vh;
       position: relative;
+      overflow: auto;
     }
 
     .nav,
@@ -81,7 +82,7 @@
 
             .dot {
               position: absolute;
-              left: -35px;
+              left: -40px;
               top: 50%;
               width: calc(clamp(0.65em, 4vw, 0.75em) / 3);
               height: calc(clamp(0.65em, 4vw, 0.75em) / 3);
@@ -91,6 +92,14 @@
               transition: var(--animate-faster);
               transition-property: transform;
               transform: translate(0, -50%) scale(0) rotate(0.001deg);
+
+              @media (max-width: 1440px) {
+                left: -20px;
+              }
+
+              @media (max-width: 500px) {
+                left: -12px;
+              }
             }
 
             &.active {
