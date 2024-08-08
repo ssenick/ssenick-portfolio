@@ -1,6 +1,6 @@
-import AdminPreview from '@/assets/projects/admin/admin-small.jpg';
-import BlogPreview from '@/assets/projects/blog/blog-small.jpg';
-import GreenShopPreview from '@/assets/projects/greenshop/greenshop-small.jpg';
+import AdminPreview from '@/assets/projects/admin/admin-small.webp';
+import BlogPreview from '@/assets/projects/blog/blog-small.webp';
+import GreenShopPreview from '@/assets/projects/greenshop/greenshop-small.webp';
 import type { projectType } from '@/types/projectsItems';
 
 export const projects: projectType[] = [
