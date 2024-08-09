@@ -1,0 +1,30 @@
+.Biography {
+  min-height: 70vh;
+
+  .description {
+    display: grid;
+    gap: calc(var(--index) * 1);
+
+    p {
+      line-height: 1.4;
+    }
+
+    .phrase {
+      padding-top: calc(var(--index) * 1.5);
+      font-style: italic;
+    }
+  }
+
+  .signature {
+    display: flex;
+    justify-content: flex-end;
+
+    .svg {
+      width: clamp(6.25rem, 4.384rem + 9.328vw, 21.875rem);
+
+      path {
+        will-change: stroke-dasharray;
+      }
+    }
+  }
+}
