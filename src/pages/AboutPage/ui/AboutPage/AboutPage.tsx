@@ -1,10 +1,14 @@
-import { motion, useMotionValueEvent, useScroll } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 
 import { Page } from '@/components/Page/Page';
 import { classNames } from '@/helpers/classNames/classNames';
-import { Brain } from '@/pages/AboutPage/ui/Brain/Brain';
+import { useBrowserInfo } from '@/hooks/useBrowserInfo';
+import { Skills } from '@/pages/AboutPage/ui/Skills/Skills';
 
+import { Biography } from '../Biography/Biography';
+import { Brain } from '../Brain/Brain';
+import { BrainSafari } from '../Brain/BrainSafari';
 import cls from './AboutPage.module.scss';
 
 interface AboutPageProps {
@@ -13,32 +17,39 @@ interface AboutPageProps {
 
 const AboutPage = (props: AboutPageProps) => {
    const { className } = props;
+   const browserInfo = useBrowserInfo();
    const ref = useRef<HTMLDivElement | null>(null);
-
    const { scrollYProgress } = useScroll({
       target: ref,
       offset: ['start start', 'end end'],
    });
-   // const valueMove = useTransform(scrollYProgress, [0, 1], ['0%', '70%']);
 
-   useMotionValueEvent(scrollYProgress, 'change', (latest) => {
-      console.log(latest);
-   });
+   const valueMove = useTransform(scrollYProgress, [0, 1], ['0%', '60%']);
+
+   // useMotionValueEvent(scrollYProgress, 'change', (latest) => {
+   //    console.log(wrapperHeight);
+   // });
+
    return (
       <Page className={classNames(cls.AboutPage, {}, [className])}>
          <div ref={ref} className={cls.wrapper}>
             <div className={cls.textBlock}>
                {/* Биография */}
-               <div className={cls.biography}>BIOGRAPHY</div>
+               <Biography className={cls.biography} />
                {/* Скилы */}
-               <div className={cls.skills}>SKILLS</div>
+               <Skills className={cls.skills} />
                {/* Опыт */}
                <div className={cls.experience}>EXPERIENCE</div>
             </div>
-            <motion.div className={cls.imageBlock}>
-               <Brain className={cls.brain} scrollYProgress={scrollYProgress} />
-            </motion.div>
-            <div style={{ height: '100vh' }}></div>
+            <div className={cls.imageBlock}>
+               <motion.div className={cls.image} style={{ top: valueMove }}>
+                  {browserInfo?.name !== 'Safari' ? (
+                     <Brain className={cls.brain} scrollYProgress={scrollYProgress} />
+                  ) : (
+                     <BrainSafari className={cls.brain} />
+                  )}
+               </motion.div>
+            </div>
          </div>
       </Page>
    );
