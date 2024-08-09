@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 
 interface BrowserInfo {
-   name: string;
+   name: 'Unknown' | 'Chrome' | 'Firefox' | 'Safari' | 'Edge' | 'Opera' | string;
    version: string;
 }
 
