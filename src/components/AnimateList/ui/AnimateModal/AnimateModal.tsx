@@ -59,7 +59,7 @@ const AnimateModal = memo((props: WorkModalProps) => {
          <div style={{ top: index * -100 + '%' }} className={cls.modalSlider}>
             {links.map(({ id, images }) => (
                <div className={cls.modal} key={id + '_modal'}>
-                  <AppImage src={images?.preview} className={cls.img} />
+                  <AppImage src={images?.preview} className={cls.img} loading="lazy" />
                </div>
             ))}
          </div>
