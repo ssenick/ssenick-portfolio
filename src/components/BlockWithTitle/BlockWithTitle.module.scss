@@ -1,0 +1,13 @@
+.BlockWithTitle {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--index) * 2);
+
+  .title {
+    font-size: var(--h3-font-size);
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: 0.2rem;
+  }
+}
