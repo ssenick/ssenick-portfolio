@@ -9,6 +9,7 @@ body {
   font-size: var(--text-font-size);
   color: var(--color-black);
   background-color: var(--color-white);
+  line-height: 1.3;
 
   &.lock {
     overflow: hidden;
