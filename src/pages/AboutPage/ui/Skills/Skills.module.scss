@@ -1,3 +1,25 @@
 .Skills {
-  position: static;
+  .content {
+    display: grid;
+    gap: calc(var(--index) * 3);
+  }
+
+  .wrapper {
+    display: grid;
+    gap: calc(var(--index) * 1.5);
+  }
+
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: calc(var(--index) * 1);
+  }
+
+  .item {
+    background-color: var(--color-black);
+    padding: clamp(0.438rem, 0.378rem + 0.299vw, 0.938rem) clamp(0.75rem, 0.69rem + 0.299vw, 1.25rem);
+    border-radius: clamp(0.313rem, 0.275rem + 0.187vw, 0.625rem);
+    color: var(--color-white);
+    letter-spacing: 0.1rem;
+  }
 }
