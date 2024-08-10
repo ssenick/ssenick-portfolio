@@ -1,0 +1,75 @@
+:root {
+  --line-width: 4px;
+}
+
+.Experience {
+  .wrapper {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 20px 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    height: 100%;
+  }
+
+  .item,
+  .item2,
+  .item3 {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: var(--color-white);
+      border: 5px solid var(--color-black);
+      z-index: 1;
+    }
+  }
+
+  .item {
+    background-color: green;
+
+    &::before {
+      left: 100%;
+    }
+  }
+
+  .item2 {
+    background-color: blue;
+    grid-row: 2;
+    grid-column: 3;
+
+    &::before {
+      right: 100%;
+    }
+  }
+
+  .item3 {
+    background-color: orange;
+    grid-row: 3;
+    grid-column: 1;
+
+    &::before {
+      left: 100%;
+    }
+  }
+
+  .line {
+    position: relative;
+    grid-row: span 3;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: calc(50% - (var(--line-width) / 2));
+      width: var(--line-width);
+      height: 100%;
+      background-color: red;
+      border-radius: var(--line-width);
+    }
+  }
+}

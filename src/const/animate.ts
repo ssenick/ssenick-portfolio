@@ -96,17 +96,13 @@ export const moveToTop = {
    animate: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.3 },
+      transition: { duration: 0.4 },
    },
    exit: { opacity: 0, y: '10%' },
 };
 export const pageEaseOut = {
-   initial: { top: '50vh', opacity: 0 },
-   animate: { top: 0, opacity: 1, transition: { duration: 1, ease: 'easeOut' } },
-};
-export const pageEaseOut100 = {
-   initial: { top: '100vh', opacity: 0 },
-   animate: { top: 0, opacity: 1, transition: { duration: 1, ease: 'easeOut' } },
+   initial: { y: '50vh', opacity: 0 },
+   animate: { y: 0, opacity: 1, transition: { duration: 1, ease: 'easeOut' } },
 };
 
 export const scaleAnimation = {
@@ -115,4 +111,9 @@ export const scaleAnimation = {
    enter: { scale: 1, x: '-50%', y: '-50%', transition: { duration: 0.4, ease: [0.76, 0, 0.24, 1] } },
 
    closed: { scale: 0, x: '-50%', y: '-50%', transition: { duration: 0.4, ease: [0.32, 0, 0.67, 0] } },
+};
+
+export const pathAnimation = {
+   initial: { pathLength: 0 },
+   animate: { pathLength: 1, transition: { duration: 2.2, delay: 1.2, ease: 'easeInOut' } },
 };
