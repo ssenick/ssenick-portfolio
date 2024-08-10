@@ -48,11 +48,23 @@ const Footer = memo((props: FooterProps) => {
                <p className={cls.description}>{t('Footer description')}</p>
             </div>
             <div className={cls.buttons}>
-               <AppButton className={cls.button} oppositeColor variant="link">
-                  <a href="tel:+14037085691">+1 403 708 5691</a>
+               <AppButton
+                  className={cls.button}
+                  oppositeColor
+                  variant="link"
+                  link
+                  linkHref={'tel:+14037085691'}
+               >
+                  +1 403 708 5691
                </AppButton>
-               <AppButton className={cls.button} oppositeColor variant="link">
-                  <a href="mailto:ssenick@ukr.net">ssenick@ukr.net</a>
+               <AppButton
+                  className={cls.button}
+                  oppositeColor
+                  variant="link"
+                  link
+                  linkHref={'mailto:ssenick@ukr.net'}
+               >
+                  ssenick@ukr.net
                </AppButton>
             </div>
             <div className={cls.wrapper}>
