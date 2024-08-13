@@ -46,8 +46,8 @@
 
   .cursor,
   .cursorLabel {
-    width: clamp(3.125rem, -1.339rem + 11.905vw, 9.375rem);
-    height: clamp(3.125rem, -1.339rem + 11.905vw, 9.375rem);
+    width: clamp(5.625rem, 5.028rem + 2.985vw, 10.625rem);
+    height: clamp(5.625rem, 5.028rem + 2.985vw, 10.625rem);
     border-radius: 50%;
     background-color: var(--color-blue);
     color: white;
@@ -58,7 +58,7 @@
     justify-content: center;
     pointer-events: none;
     white-space: nowrap;
-    font-size: var(--h4-font-size);
+    font-size: var(--h5-font-size);
     font-weight: 600;
   }
 
