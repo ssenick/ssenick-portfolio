@@ -23,14 +23,33 @@ export const textMaskAnimation = {
 };
 
 export const textAnimation = (delay: number) => ({
-   initial: { y: '100%' },
+   initial: { y: '100%', opacity: 0 },
 
    animate: {
       y: '0',
-      transition: { duration: 0.3, ease: [0.33, 1, 0.68, 1], delay: delay * 0.1 },
+      opacity: 1,
+      transition: { duration: 0.5, ease: [0.33, 1, 0.68, 1], delay: delay * 0.1 },
    },
 });
 
+export const textAnimationOpacity = (delay: number) => ({
+   initial: { opacity: 0 },
+
+   animate: {
+      opacity: 1,
+      transition: { duration: 0.5, ease: [0.33, 1, 0.68, 1], delay: delay * 0.1 },
+   },
+});
+
+export const textAnimationFromLeft = (delay: number) => ({
+   initial: { x: '-15%', opacity: 0 },
+
+   animate: {
+      x: '0',
+      opacity: 1,
+      transition: { duration: 0.5, ease: [0.33, 1, 0.68, 1], delay: delay * 0.1 },
+   },
+});
 export const lineWidth = (delay: number) => ({
    initial: { width: 0 },
 
@@ -50,7 +69,7 @@ export const opacityWithDelay = {
    initial: { opacity: 0 },
    animate: (i: number) => ({
       opacity: 1,
-      transition: { duration: 0.3, delay: 0.15 * i },
+      transition: { duration: 0.3, delay: 0.1 * i },
    }),
 };
 
@@ -100,6 +119,7 @@ export const moveToTop = {
    },
    exit: { opacity: 0, y: '10%' },
 };
+
 export const pageEaseOut = {
    initial: { y: '50vh', opacity: 0 },
    animate: { y: 0, opacity: 1, transition: { duration: 1, ease: 'easeOut' } },
