@@ -1,4 +1,3 @@
-import myImage from '@/assets/image.jpg';
 import { Page } from '@/components/Page/Page';
 import { AppButton } from '@/components/UI/AppButton/AppButton';
 import { classNames } from '@/helpers/classNames/classNames';
@@ -11,7 +10,6 @@ interface AboutPageProps {
 
 const ContactPage = (props: AboutPageProps) => {
    const { className } = props;
-   console.log(myImage);
    return (
       <Page className={classNames(cls.ContactPage, {}, [className])}>
          <FramerMagnetic>
