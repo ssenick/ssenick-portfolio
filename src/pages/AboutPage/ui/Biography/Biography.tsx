@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { memo } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { BlockWithTitle } from '@/components/BlockWithTitle/BlockWithTitle';
 import { pathAnimation } from '@/const/animate';
@@ -14,27 +15,14 @@ interface BiographyProps {
 /* eslint-disable max-len */
 const Biography = memo((props: BiographyProps) => {
    const { className } = props;
-
+   const { t } = useTranslation('about');
    return (
-      <BlockWithTitle className={classNames(cls.Biography, {}, [className])} title={'biography'}>
+      <BlockWithTitle className={classNames(cls.Biography, {}, [className])} title={t('titleBiography')}>
          <div className={cls.description}>
-            <p>
-               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis excepturi ipsa iste itaque
-               modi numquam quaerat quisquam rerum voluptas. A, earum, nulla? Distinctio eos, fugiat mollitia
-               nostrum reiciendis unde vero. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-               Blanditiis excepturi ipsa iste itaque modi numquam quaerat quisquam rerum voluptas. A, earum,
-               nulla? Distinctio eos, fugiat mollitia nostrum reiciendis unde vero. Lorem ipsum dolor sit
-               amet, consectetur adipisicing elit. Blanditiis excepturi ipsa iste itaque modi numquam quaerat
-               quisquam rerum voluptas. A, earum, nulla!
-            </p>
-            <p>
-               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis excepturi ipsa iste itaque
-               modi numquam quaerat quisquam rerum voluptas. A, earum, nulla? Distinctio eos, fugiat mollitia
-               nostrum reiciendis unde vero. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            </p>
-            <p className={cls.phrase}>
-               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Elit laborum!
-            </p>
+            <p>{t('firstDescriptionBiography')}</p>
+            <p>{t('secondDescriptionBiography')}</p>
+            <p>{t('thirdDescriptionBiography')}</p>
+            <p className={cls.phrase}>{t('phraseBiography')}</p>
          </div>
 
          <div className={cls.signature}>
