@@ -4,10 +4,10 @@
     display: flex;
     padding: var(--p-container);
     overflow: hidden;
-    gap: calc(var(--index) * 2.5);
+    gap: calc(var(--index) * 4);
 
     @media (max-width: 1440px) {
-      gap: calc(var(--index) * 2);
+      gap: calc(var(--index) * 3);
     }
   }
 
@@ -21,7 +21,7 @@
     .biography,
     .skills,
     .experience {
-      min-height: 70vh;
+      min-height: 60vh;
       max-width: 80%;
     }
 

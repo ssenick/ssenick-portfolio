@@ -4,6 +4,7 @@ import { useRef } from 'react';
 import { Page } from '@/components/Page/Page';
 import { classNames } from '@/helpers/classNames/classNames';
 import { useBrowserInfo } from '@/hooks/useBrowserInfo';
+import { Experience } from '@/pages/AboutPage/ui/Experience/Experience';
 import { Skills } from '@/pages/AboutPage/ui/Skills/Skills';
 
 import { Biography } from '../Biography/Biography';
@@ -24,11 +25,7 @@ const AboutPage = (props: AboutPageProps) => {
       offset: ['start start', 'end end'],
    });
 
-   const valueMove = useTransform(scrollYProgress, [0, 1], ['0%', '60%']);
-
-   // useMotionValueEvent(scrollYProgress, 'change', (latest) => {
-   //    console.log(wrapperHeight);
-   // });
+   const valueMove = useTransform(scrollYProgress, [0, 1], ['0%', '70%']);
 
    return (
       <Page className={classNames(cls.AboutPage, {}, [className])}>
@@ -39,7 +36,7 @@ const AboutPage = (props: AboutPageProps) => {
                {/* Скилы */}
                <Skills className={cls.skills} />
                {/* Опыт */}
-               <div className={cls.experience}>EXPERIENCE</div>
+               <Experience className={cls.experience} />
             </div>
             <div className={cls.imageBlock}>
                <motion.div className={cls.image} style={{ top: valueMove }}>
