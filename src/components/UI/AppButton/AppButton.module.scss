@@ -1,18 +1,23 @@
 .AppButton {
   &.clear {
+    border-radius: 2.125em;
+
     .Button {
-      height: 4.25em;
-      padding: 0 2.5em;
       border-radius: 2.125em;
       min-width: 1em;
       overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       position: relative;
       box-shadow: inset 0 0 0 1px var(--color-border);
       background-color: var(--color-black);
       color: var(--color-white);
+
+      .children a {
+        height: 4.25em;
+        padding: 0 2.5em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
     }
   }
 
@@ -107,9 +112,17 @@
 
   &.link {
     .Button {
+      position: relative;
       box-shadow: var(--color-shadow-opposite);
-      padding: clamp(1rem, 0.513rem + 0.56vw, 1.563rem) clamp(1.25rem, 1.138rem + 0.56vw, 2.188rem);
       border-radius: clamp(1.875rem, 1.726rem + 0.746vw, 3.125rem);
+
+      .children a {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        display: block;
+        padding: clamp(1rem, 0.513rem + 0.56vw, 1.563rem) clamp(1.25rem, 1.138rem + 0.56vw, 2.188rem);
+      }
     }
   }
 
@@ -117,6 +130,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 50%;
 
     // 100 / 350
     width: clamp(6.25rem, 4.384rem + 9.328vw, 21.875rem);
@@ -126,12 +140,9 @@
       text-align: center;
       width: 100%;
       height: 100%;
-      overflow: hidden;
 
       // 10 / 25
-      padding: clamp(0.625rem, 0.513rem + 0.56vw, 1.563rem);
-      display: flex;
-      justify-content: center;
+
       align-items: center;
       color: var(--color-white);
       border-radius: 50%;
@@ -142,12 +153,14 @@
         height: 100%;
         border-radius: 50%;
 
-        > * {
-          width: 100%;
+        a {
           height: 100%;
+          width: 100%;
           display: flex;
           justify-content: center;
           align-items: center;
+          padding: clamp(0.625rem, 0.513rem + 0.56vw, 1.563rem);
+          border-radius: 50%;
         }
       }
     }

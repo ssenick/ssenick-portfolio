@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import type { ButtonHTMLAttributes } from 'react';
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { scale } from '@/const/animate';
 import { classNames } from '@/helpers/classNames/classNames';
@@ -16,20 +16,9 @@ interface AppButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
    variant?: ButtonVariant;
    btnActive?: boolean;
    oppositeColor?: boolean;
-   link?: boolean;
-   linkHref?: string;
 }
 const AppButton = (props: AppButtonProps) => {
-   const {
-      className,
-      btnActive,
-      variant = 'clear',
-      oppositeColor,
-      link,
-      linkHref,
-      children,
-      ...otherProps
-   } = props;
+   const { className, btnActive, variant = 'clear', oppositeColor, children, ...otherProps } = props;
    const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
    const [isHovered, setIsHovered] = useState(false);
    const [isHiding, setIsHiding] = useState(false);
@@ -70,8 +59,20 @@ const AppButton = (props: AppButtonProps) => {
       };
    }, []);
 
-   const buttonContent = useMemo(
-      () => (
+   return (
+      <button
+         onMouseEnter={handleMouseEnter}
+         onMouseLeave={handleMouseLeaveWithState}
+         className={classNames(
+            cls.AppButton,
+            {
+               [cls.active]: btnActive,
+               [cls.oppositeColor]: oppositeColor,
+            },
+            [className, cls[variant]],
+         )}
+         {...otherProps}
+      >
          <motion.div
             className={classNames(cls.Button, { [cls.show]: isHovered, [cls.hidden]: isHiding }, [])}
             ref={linkRef}
@@ -98,58 +99,6 @@ const AppButton = (props: AppButtonProps) => {
                {variant === 'burger' ? <div className={cls.burger} /> : null}
             </motion.div>
          </motion.div>
-      ),
-      [
-         children,
-         handleMouseLeave,
-         handleMouseMove,
-         isHiding,
-         isHovered,
-         linkRef,
-         translateChildrenX,
-         translateChildrenY,
-         translateX,
-         translateY,
-         variant,
-      ],
-   );
-
-   if (link) {
-      return (
-         <a
-            href={linkHref ? linkHref : ''}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeaveWithState}
-            className={classNames(
-               cls.AppButton,
-               {
-                  [cls.active]: btnActive,
-                  [cls.oppositeColor]: oppositeColor,
-               },
-               [className, cls[variant]],
-            )}
-            {...otherProps}
-         >
-            {buttonContent}
-         </a>
-      );
-   }
-
-   return (
-      <button
-         onMouseEnter={handleMouseEnter}
-         onMouseLeave={handleMouseLeaveWithState}
-         className={classNames(
-            cls.AppButton,
-            {
-               [cls.active]: btnActive,
-               [cls.oppositeColor]: oppositeColor,
-            },
-            [className, cls[variant]],
-         )}
-         {...otherProps}
-      >
-         {buttonContent}
       </button>
    );
 };
