@@ -1,7 +1,7 @@
 import '@/app/styles/index.scss';
 import '@/config/i18n/i18n';
 
-import { ReactLenis } from '@studio-freight/react-lenis';
+import ReactLenis from '@studio-freight/react-lenis';
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
@@ -16,14 +16,14 @@ const root = createRoot(container);
 
 root.render(
    <StrictMode>
-      <LanguageProvider>
-         <MediaQueryProvider>
-            <BrowserRouter>
-               <ReactLenis root>
+      <ReactLenis root options={{ autoResize: true, smoothWheel: true }}>
+         <LanguageProvider>
+            <MediaQueryProvider>
+               <BrowserRouter>
                   <App />
-               </ReactLenis>
-            </BrowserRouter>
-         </MediaQueryProvider>
-      </LanguageProvider>
+               </BrowserRouter>
+            </MediaQueryProvider>
+         </LanguageProvider>
+      </ReactLenis>
    </StrictMode>,
 );
