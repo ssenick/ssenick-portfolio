@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { useEffect } from 'react';
 
 import { pageEaseOut } from '@/const/animate';
 import { classNames } from '@/helpers/classNames/classNames';
@@ -17,6 +18,10 @@ interface HomePageProps {
 
 const HomePage = (props: HomePageProps) => {
    const { className } = props;
+
+   useEffect(() => {
+      window.scrollTo(0, 0);
+   }, []);
 
    return (
       <motion.div className={classNames(cls.HomePage, {}, [className])} {...animatePattern(pageEaseOut)}>
