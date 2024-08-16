@@ -1,1 +1,1 @@
-export { NotFoundPage } from './ui/NotFoundPage/NotFoundPage';
+export { NotFoundPageAsync as NotFoundPage } from './ui/NotFoundPage/NotFoundPageAcync.tsx';
