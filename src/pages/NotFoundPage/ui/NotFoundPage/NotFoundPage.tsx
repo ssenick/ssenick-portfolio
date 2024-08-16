@@ -1,3 +1,4 @@
+import { Page } from '@/components/Page/Page.tsx';
 import { classNames } from '@/helpers/classNames/classNames';
 
 import cls from './NotFoundPage.module.scss';
@@ -9,11 +10,11 @@ interface NotFoundPageProps {
 const NotFoundPage = (props: NotFoundPageProps) => {
    const { className } = props;
    return (
-      <div className={classNames(cls.NotFoundPage, {}, [className])}>
+      <Page className={classNames(cls.NotFoundPage, {}, [className])}>
          <h1>1111111</h1>
-      </div>
+      </Page>
    );
 };
 
 NotFoundPage.displayName = 'NotFoundPage';
-export { NotFoundPage };
+export default NotFoundPage;
