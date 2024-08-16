@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import type { PropsWithChildren } from 'react';
+import { useEffect } from 'react';
 
 import { pageEaseOut } from '@/const/animate';
 import { classNames } from '@/helpers/classNames/classNames';
@@ -15,6 +16,10 @@ interface PageProps extends PropsWithChildren {
 
 const Page = (props: PageProps) => {
    const { className, children } = props;
+
+   useEffect(() => {
+      window.scrollTo(0, 0);
+   }, []);
 
    return (
       <motion.div className={classNames(cls.Page, {}, [className])} {...animatePattern(pageEaseOut)}>
