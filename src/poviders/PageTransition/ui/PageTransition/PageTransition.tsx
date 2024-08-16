@@ -23,7 +23,7 @@ const PageTransition = memo((props: PageTransitionProps) => {
    const { className, children, location } = props;
    const { width, height } = useDimensions();
 
-   // const getPageName = useCallback((path: string) => {
+   // const getPageName =s useCallback((path: string) => {
    //    return Object.values(AppRoutes).find((route) => routeConfig[route]?.path === path);
    // }, []);
    const getPageName = useCallback((path: string) => {
