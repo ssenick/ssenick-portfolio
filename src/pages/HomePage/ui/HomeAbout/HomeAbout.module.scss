@@ -17,6 +17,11 @@
     gap: clamp(1.875rem, 1.502rem + 1.866vw, 5rem);
   }
 
+  .btn {
+    position: relative;
+    z-index: 1;
+  }
+
   @media (max-width: 992px) {
     max-width: 85vw;
   }

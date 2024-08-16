@@ -29,7 +29,7 @@ const HomeAbout = memo((props: HomeAboutProps) => {
          <TextMaskAnimated size={'mediumSize'}>{t('HomeAbout title')}</TextMaskAnimated>
          <div ref={ref} className={cls.paragraph}>
             <TextMaskAnimated>{t('HomeAbout paragraph')}</TextMaskAnimated>
-            <motion.div style={{ y: valueMove }}>
+            <motion.div style={{ y: valueMove }} className={cls.btn}>
                <AppButton variant={'round'}>
                   <Link to={getRouteAbout()}>{t('HomeAbout about me')}</Link>
                </AppButton>
