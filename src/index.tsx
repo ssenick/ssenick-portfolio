@@ -16,7 +16,7 @@ const root = createRoot(container);
 
 root.render(
    <StrictMode>
-      <ReactLenis root options={{ autoResize: true, smoothWheel: true }}>
+      <ReactLenis root>
          <LanguageProvider>
             <MediaQueryProvider>
                <BrowserRouter>
