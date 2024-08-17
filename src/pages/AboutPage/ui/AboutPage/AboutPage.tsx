@@ -4,12 +4,12 @@ import { useRef } from 'react';
 import { Page } from '@/components/Page/Page';
 import { classNames } from '@/helpers/classNames/classNames';
 import { useBrowserInfo } from '@/hooks/useBrowserInfo';
-import { Experience } from '@/pages/AboutPage/ui/Experience/Experience';
-import { Skills } from '@/pages/AboutPage/ui/Skills/Skills';
 
 import { Biography } from '../Biography/Biography';
 import { Brain } from '../Brain/Brain';
 import { BrainSafari } from '../Brain/BrainSafari';
+import { Experience } from '../Experience/Experience';
+import { Skills } from '../Skills/Skills';
 import cls from './AboutPage.module.scss';
 
 interface AboutPageProps {
@@ -19,17 +19,17 @@ interface AboutPageProps {
 const AboutPage = (props: AboutPageProps) => {
    const { className } = props;
    const browserInfo = useBrowserInfo();
-   const ref = useRef<HTMLDivElement | null>(null);
+   const wrapperRef = useRef<HTMLDivElement | null>(null);
+
    const { scrollYProgress } = useScroll({
-      target: ref,
+      target: wrapperRef,
       offset: ['start start', 'end end'],
    });
 
    const valueMove = useTransform(scrollYProgress, [0, 1], ['0%', '70%']);
-
    return (
       <Page className={classNames(cls.AboutPage, {}, [className])}>
-         <div ref={ref} className={cls.wrapper}>
+         <div ref={wrapperRef} className={cls.wrapper}>
             <div className={cls.textBlock}>
                {/* Биография */}
                <Biography className={cls.biography} />
