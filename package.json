@@ -19,6 +19,7 @@
       "@headlessui/react": "^2.1.2",
       "@react-google-maps/api": "^2.19.3",
       "@studio-freight/react-lenis": "^0.0.47",
+      "@tanstack/virtual-core": "^3.9.0",
       "framer-motion": "^11.2.10",
       "i18next": "^23.12.2",
       "i18next-browser-languagedetector": "^8.0.0",
