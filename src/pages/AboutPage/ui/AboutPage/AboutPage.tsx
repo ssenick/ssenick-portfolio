@@ -27,6 +27,7 @@ const AboutPage = (props: AboutPageProps) => {
    });
 
    const valueMove = useTransform(scrollYProgress, [0, 1], ['0%', '70%']);
+
    return (
       <Page className={classNames(cls.AboutPage, {}, [className])}>
          <div ref={wrapperRef} className={cls.wrapper}>
