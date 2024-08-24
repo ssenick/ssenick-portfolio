@@ -1,25 +1,31 @@
 import { memo } from 'react';
-import { useTranslation } from 'react-i18next';
 
 import { Title } from '@/components/UI/Title/Title';
-import { socials } from '@/content/socials';
 import { classNames } from '@/helpers/classNames/classNames';
 import { FramerMagnetic } from '@/helpers/components/FramerMagnetic/FramerMagnetic';
 
-import cls from './Socials.module.scss';
+import cls from './LinksList.module.scss';
 
-interface SocialsProps {
-   className?: string;
+export interface ILinksList {
+   text: string;
+   href: string;
+   target: '_blank' | '_self';
 }
 
-const Socials = memo((props: SocialsProps) => {
-   const { className } = props;
-   const { t } = useTranslation();
+interface LinksListProps {
+   className?: string;
+   title: string;
+   items: ILinksList[];
+   column?: boolean;
+}
+
+const LinksList = memo((props: LinksListProps) => {
+   const { className, column, title, items } = props;
    return (
-      <div className={classNames(cls.Socials, {}, [className])}>
-         <Title className={cls.title}>{t('Socials')}</Title>
+      <div className={classNames(cls.LinksList, { [cls.column]: column }, [className])}>
+         <Title className={cls.title}>{title}</Title>
          <ul className={cls.list}>
-            {socials.map(({ text, href }) => (
+            {items.map(({ text, href }) => (
                <li key={href}>
                   <FramerMagnetic>
                      <a href={href} target="_blank" rel="noreferrer">
@@ -33,5 +39,5 @@ const Socials = memo((props: SocialsProps) => {
    );
 });
 
-Socials.displayName = 'Socials';
-export { Socials };
+LinksList.displayName = 'LinksList';
+export { LinksList };
