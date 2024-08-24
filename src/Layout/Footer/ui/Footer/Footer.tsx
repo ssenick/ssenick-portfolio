@@ -4,10 +4,11 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
 import Arrow from '@/assets/arrow.svg?react';
-import { Socials } from '@/components/Socials/Socials';
+import { LinksList } from '@/components/LinksList/LinksList.tsx';
 import { AppButton } from '@/components/UI/AppButton/AppButton';
 import { Title } from '@/components/UI/Title/Title';
 import { getRouteContact } from '@/config/route/routeConfig';
+import { socials } from '@/content/socials.ts';
 import { classNames } from '@/helpers/classNames/classNames';
 import { FramerMagnetic } from '@/helpers/components/FramerMagnetic/FramerMagnetic';
 
@@ -61,7 +62,7 @@ const Footer = memo((props: FooterProps) => {
                   <p>{t('2024 © Edition')}</p>
                </div>
                <div>
-                  <Socials />
+                  <LinksList items={socials} title={t('Socials')} />
                </div>
             </div>
          </motion.div>
