@@ -23,7 +23,7 @@
   --color-shadow: rgb(255 255 255 / 20%) 0 0 0 1px;
   --color-shadow-opposite: rgb(14 14 14 / 20%) 0 0 0 1px;
   --drop-shadow: drop-shadow(18px 18px 16px #efefef);
-  --box-shadow: 18px 18px 25px #e3e3e3;
+  --box-shadow: 10px 10px 25px rgb(227 227 227 / 75%);
   --color-cart-1: #e8eaee;
   --color-cart-2: #e4dfdb;
   --color-cart-3: rgb(227 232 238 / 40%);
@@ -35,4 +35,5 @@
 
   // padding
   --p-container: clamp(1.375rem, 0.83rem + 2.72vw, 5.938rem);
+  --padding-footer: clamp(1.875rem, 1.651rem + 1.119vw, 3.75rem);
 }
