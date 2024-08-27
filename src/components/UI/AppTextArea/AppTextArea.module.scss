@@ -1,0 +1,56 @@
+.AppTextArea {
+  display: block;
+  position: relative;
+
+  // 10 X 50 clamp(0.625rem, 0.326rem + 1.493vw, 3.125rem)
+  .label {
+    font-size: var(--h4-font-size);
+    opacity: 0.5;
+  }
+
+  .input {
+    display: block;
+    width: 100%;
+    font-size: var(--h3-font-size);
+    padding: clamp(1.25rem, 1.101rem + 0.746vw, 2.5rem) 0 clamp(0.625rem, 0.326rem + 1.493vw, 3.125rem) 0;
+    border-bottom: 1px solid var(--color-border);
+    transition: border-bottom-color 0.2s ease 0s;
+
+    // 200 X 400
+    height: clamp(12.5rem, 11.007rem + 7.463vw, 25rem);
+    appearance: none;
+    resize: none;
+
+    &:focus {
+      outline: none;
+      border-bottom-color: var(--color-black);
+    }
+  }
+
+  .error {
+    font-size: var(--h5-font-size);
+    color: var(--error-primary);
+  }
+
+  .wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  &.isError {
+    .input {
+      border-bottom-color: var(--error-primary);
+    }
+
+    .label {
+      color: var(--error-primary);
+    }
+  }
+
+  .chart {
+    margin-left: auto;
+    white-space: nowrap;
+    font-size: var(--h5-font-size);
+  }
+}
