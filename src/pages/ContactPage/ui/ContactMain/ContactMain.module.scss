@@ -1,4 +1,6 @@
 .ContactMain {
+  padding: var(--p-container) 0;
+
   .wrapper {
     padding: var(--p-container);
     max-width: 70vw;
@@ -22,7 +24,6 @@
     &.main {
       .form {
         background-color: blueviolet;
-        height: 50vh;
       }
 
       .sidebar {

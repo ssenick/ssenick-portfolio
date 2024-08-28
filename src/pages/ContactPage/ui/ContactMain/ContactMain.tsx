@@ -8,6 +8,7 @@ import { contacts } from '@/content/contacts.ts';
 import { socials } from '@/content/socials.ts';
 import { classNames } from '@/helpers/classNames/classNames';
 
+import { ContactForm } from '../ContactForm/ContactForm.tsx';
 import cls from './ContactMain.module.scss';
 
 interface ContactMainProps {
@@ -24,7 +25,7 @@ const ContactMain = memo((props: ContactMainProps) => {
             <h1 className={cls.title}>{t('title')}</h1>
          </div>
          <div className={classNames(cls.wrapper, {}, [cls.main])}>
-            <form action="" className={cls.form}></form>
+            <ContactForm />
             <div className={cls.sidebar}>
                <div className={cls.avatar}>
                   <AppImage src={AvatarImage} className={cls.image} />
