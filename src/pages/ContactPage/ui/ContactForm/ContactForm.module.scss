@@ -1,0 +1,31 @@
+.ContactForm {
+  display: flex;
+  flex-direction: column;
+
+  // 35 X 100
+  gap: clamp(2.188rem, 1.702rem + 2.425vw, 6.25rem);
+
+  .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(2.188rem, 1.702rem + 2.425vw, 6.25rem);
+    margin-bottom: 20px;
+  }
+
+  .input {
+    flex: 1 1 auto;
+    min-width: 250px;
+  }
+
+  .footer {
+    display: flex;
+    justify-content: center;
+  }
+
+  .btn {
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+}
