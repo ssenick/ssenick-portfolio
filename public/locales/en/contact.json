@@ -1,5 +1,12 @@
 {
   "title": "Get in touch, let’s work together.",
   "Socials": "Socials",
-  "Contact Details": "Contact Details"
+  "Contact Details": "Contact Details",
+  "Your name *": "Your name *",
+  "Your email *": "Your email *",
+  "Your message": "Your message",
+  "Send": "Send",
+  "required": "This field is required",
+  "valid email": "Please enter a valid email address",
+  "3000 characters": "Your message cannot exceed 3000 characters"
 }

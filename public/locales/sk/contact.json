@@ -1,5 +1,12 @@
 {
   "title": "Spojte sa so mnou, poďme spolupracovať.",
   "Socials": "Sociálne siete",
-  "Contact Details": "Kontaktné údaje"
+  "Contact Details": "Kontaktné údaje",
+  "Your name *": "Vaše meno *",
+  "Your email *": "Váš email *",
+  "Your message": "Vaša správa",
+  "Send": "Odoslať",
+  "required": "Toto pole je povinné",
+  "valid email": "Prosím, zadajte platnú emailovú adresul",
+  "3000 characters": "Vaša správa nemôže presiahnuť 3000 znakov"
 }
