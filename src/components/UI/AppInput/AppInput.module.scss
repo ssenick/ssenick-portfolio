@@ -8,7 +8,7 @@
     top: calc(clamp(0.625rem, 0.326rem + 1.493vw, 3.125rem) + clamp(1.25rem, 1.101rem + 0.746vw, 2.5rem));
     font-size: var(--h4-font-size);
     opacity: 0.5;
-    transition: top 0.2s ease 0s, left 0.2s ease 0s;
+    transition: all 0.2s ease 0s;
   }
 
   .error {
@@ -35,6 +35,7 @@
     &:not(:placeholder-shown) ~ .label {
       top: 0;
       left: 0;
+      opacity: 1;
     }
   }
 
