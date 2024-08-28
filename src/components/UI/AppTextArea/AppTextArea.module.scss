@@ -1,11 +1,14 @@
 .AppTextArea {
-  display: block;
+  display: grid;
   position: relative;
+  gap: 1em;
 
   // 10 X 50 clamp(0.625rem, 0.326rem + 1.493vw, 3.125rem)
   .label {
     font-size: var(--h4-font-size);
     opacity: 0.5;
+    transition: opacity 0.2s ease 0s;
+    grid-row: 1 / -1;
   }
 
   .input {
@@ -25,6 +28,10 @@
       outline: none;
       border-bottom-color: var(--color-black);
     }
+
+    &:focus ~ .label {
+      opacity: 1;
+    }
   }
 
   .error {
@@ -41,10 +48,10 @@
   &.isError {
     .input {
       border-bottom-color: var(--error-primary);
-    }
 
-    .label {
-      color: var(--error-primary);
+      & ~ .label {
+        color: var(--error-primary);
+      }
     }
   }
 
