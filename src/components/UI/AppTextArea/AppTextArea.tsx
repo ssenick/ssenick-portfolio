@@ -19,7 +19,6 @@ const AppTextArea = forwardRef<HTMLTextAreaElement, AppTextAreaProps>((props, re
    const maxLengthChars = maxLength;
 
    const handleInputChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
-      console.log(event);
       setCharCount(event.target.value.length);
       if (onChange) {
          onChange(event);
@@ -28,8 +27,8 @@ const AppTextArea = forwardRef<HTMLTextAreaElement, AppTextAreaProps>((props, re
 
    return (
       <label className={classNames(cls.AppTextArea, { [cls.isError]: error }, [className])}>
-         {label && <h5 className={cls.label}>{label}</h5>}
          <textarea ref={ref} onChange={handleInputChange} className={cls.input} {...otherProps} />
+         {label && <h5 className={cls.label}>{label}</h5>}
          <div className={cls.wrapper}>
             {error && <span className={cls.error}>{error}</span>}
             {maxLengthChars && (
