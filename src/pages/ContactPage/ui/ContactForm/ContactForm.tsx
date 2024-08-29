@@ -3,6 +3,7 @@ import { memo, useCallback } from 'react';
 import type { SubmitHandler } from 'react-hook-form';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
+import { toast, Toaster } from 'sonner';
 
 import PostIcon from '@/assets/post.svg?react';
 import { AppButton } from '@/components/UI/AppButton/AppButton.tsx';
@@ -22,7 +23,6 @@ interface ContactFormProps {
    className?: string;
 }
 
-// ПРИДУМАЙ ВСПЛЫВАШКИ ПРИ ОТПРАВКЕ ИЛИ УСПЕШНОМ ЗАПРОСЕ!
 const ContactForm = memo((props: ContactFormProps) => {
    const { className } = props;
 
@@ -38,6 +38,7 @@ const ContactForm = memo((props: ContactFormProps) => {
 
    const onSubmit: SubmitHandler<IForm> = useCallback(
       (data) => {
+         const loadingToastId = toast.loading(t('loading toast'));
          emailjs
             .send(
                import.meta.env.VITE_EMAIL_SERVICE_KEY,
@@ -49,64 +50,80 @@ const ContactForm = memo((props: ContactFormProps) => {
                },
                import.meta.env.VITE_EMAIL_USER_ID_KEY,
             )
-            .then((result) => {
-               console.log(result);
+            .then(() => {
+               toast.success(t('success toast'), {
+                  id: loadingToastId,
+               });
+               reset();
             })
             .catch((error) => {
                console.log(error);
+               toast.error(t('error toast'), {
+                  id: loadingToastId,
+               });
             });
-         reset();
       },
-      [reset],
+      [reset, t],
    );
 
    return (
-      <form onSubmit={handleSubmit(onSubmit)} className={classNames(cls.ContactForm, {}, [className])}>
-         <div className={cls.wrapper}>
-            <AppInput
+      <div>
+         <form onSubmit={handleSubmit(onSubmit)} className={classNames(cls.ContactForm, {}, [className])}>
+            <div className={cls.wrapper}>
+               <AppInput
+                  className={cls.input}
+                  type="text"
+                  label={t('Your name *')}
+                  {...register('name', {
+                     required: t('required'),
+                  })}
+                  error={nameError}
+               />
+               <AppInput
+                  className={cls.input}
+                  type="email"
+                  label={t('Your email *')}
+                  {...register('email', {
+                     required: t('required'),
+                     pattern: {
+                        value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+                        message: t('valid email'),
+                     },
+                  })}
+                  error={emailError}
+               />
+            </div>
+            <AppTextArea
                className={cls.input}
-               type="text"
-               label={t('Your name *')}
-               {...register('name', {
-                  required: t('required'),
-               })}
-               error={nameError}
-            />
-            <AppInput
-               className={cls.input}
-               type="email"
-               label={t('Your email *')}
-               {...register('email', {
-                  required: t('required'),
-                  pattern: {
-                     value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-                     message: t('valid email'),
+               label={t('Your message')}
+               maxLength={3000}
+               error={messageError}
+               {...register('message', {
+                  maxLength: {
+                     value: 3000,
+                     message: t('3000 characters'),
                   },
                })}
-               error={emailError}
             />
-         </div>
-         <AppTextArea
-            className={cls.input}
-            label={t('Your message')}
-            maxLength={3000}
-            error={messageError}
-            {...register('message', {
-               maxLength: {
-                  value: 3000,
-                  message: t('3000 characters'),
+            <div className={cls.footer}>
+               <AppButton type={'submit'}>
+                  <span className={cls.btn}>
+                     <span>{t('Send')}</span>
+                     <PostIcon />
+                  </span>
+               </AppButton>
+            </div>
+         </form>
+         <Toaster
+            richColors
+            toastOptions={{
+               style: {
+                  fontSize: 'var(--h5-font-size)',
+                  padding: '1em',
                },
-            })}
+            }}
          />
-         <div className={cls.footer}>
-            <AppButton type={'submit'}>
-               <span className={cls.btn}>
-                  <span>{t('Send')}</span>
-                  <PostIcon />
-               </span>
-            </AppButton>
-         </div>
-      </form>
+      </div>
    );
 });
 
