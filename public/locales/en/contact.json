@@ -8,5 +8,8 @@
   "Send": "Send",
   "required": "This field is required",
   "valid email": "Please enter a valid email address",
-  "3000 characters": "Your message cannot exceed 3000 characters"
+  "3000 characters": "Your message cannot exceed 3000 characters",
+  "error toast": "Failed to send :(",
+  "success toast": "Message sent!",
+  "loading toast": "Loading..."
 }

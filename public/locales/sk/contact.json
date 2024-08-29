@@ -8,5 +8,8 @@
   "Send": "Odoslať",
   "required": "Toto pole je povinné",
   "valid email": "Prosím, zadajte platnú emailovú adresul",
-  "3000 characters": "Vaša správa nemôže presiahnuť 3000 znakov"
+  "3000 characters": "Vaša správa nemôže presiahnuť 3000 znakov",
+  "error toast": "Nepodarilo sa odoslať :(",
+  "success toast": "Správa odoslaná!",
+  "loading toast": "Načítava sa..."
 }
