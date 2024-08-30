@@ -7,6 +7,7 @@
     .link {
       display: grid;
       grid-template-columns: 1fr   minmax(15%, auto);
+      gap: 20px;
 
       // 20 / 70
       padding: clamp(1.25rem, 0.877rem + 1.866vw, 4.375rem) var(--p-container);
