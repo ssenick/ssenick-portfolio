@@ -17,7 +17,7 @@
 
       .title {
         // 30 X 150
-        font-size: clamp(1.875rem, 0.979rem + 4.478vw, 9.375rem);
+        font-size: var(--big-font-size);
       }
     }
 
