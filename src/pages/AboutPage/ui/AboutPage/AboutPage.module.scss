@@ -2,12 +2,12 @@
   .wrapper {
     position: relative;
     display: flex;
-    padding: var(--p-container);
+    padding: calc(var(--p-container) * 2) var(--p-container);
     overflow: hidden;
-    gap: calc(var(--index) * 4);
+    gap: calc(var(--index) * 6);
 
     @media (max-width: 1440px) {
-      gap: calc(var(--index) * 3);
+      gap: calc(var(--index) * 5);
     }
   }
 
@@ -34,11 +34,11 @@
     }
 
     @media (max-width: 1440px) {
-      flex: 1 0 60%;
+      flex: 1 0 70%;
     }
 
     @media (max-width: 992px) {
-      flex: 1 0 70%;
+      flex: 1 0 80%;
     }
 
     @media (max-width: 772px) {
