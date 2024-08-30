@@ -1,6 +1,13 @@
 import AdminPreview from '@/assets/projects/admin/admin-small.webp';
+import BackMyMoneyPreview from '@/assets/projects/backmymoney/backmymoney-small.webp';
 import BlogPreview from '@/assets/projects/blog/blog-small.webp';
+import FoodRatePreview from '@/assets/projects/foodrate/foodrate-small.webp';
 import GreenShopPreview from '@/assets/projects/greenshop/greenshop-small.webp';
+import PizzaPreview from '@/assets/projects/pizza/pizza-small.webp';
+import PortfolioPreview from '@/assets/projects/portfolio/portfolio-small.webp';
+import GameSportBetPreview from '@/assets/projects/sportbet/gamesport-small.webp';
+import StatikarPreview from '@/assets/projects/statika/statika-small.webp';
+import WeatherPreview from '@/assets/projects/weather/weather-small.webp';
 import type { projectType } from '@/types/projectsItems';
 
 export const projects: projectType[] = [
@@ -27,5 +34,69 @@ export const projects: projectType[] = [
       src: 'https://greenshop.ssenick.fun/',
       path: 'green-shop',
       images: { preview: GreenShopPreview },
+   },
+   {
+      id: 4,
+      name: 'Pizza',
+      year: '2023',
+      src: 'https://web-application-react-v2.ssenick.fun/',
+      path: 'pizza',
+      images: { preview: PizzaPreview },
+   },
+   {
+      id: 5,
+      name: 'Weather',
+      year: '2023',
+      src: 'https://web-app-weather-typescript.ssenick.fun/',
+      path: 'weather',
+      images: { preview: WeatherPreview },
+   },
+   {
+      id: 6,
+      name: 'Portfolio',
+      year: '2023',
+      src: 'https://portfolio.ssenick.fun/',
+      path: 'portfolio',
+      images: { preview: PortfolioPreview },
+   },
+   {
+      id: 7,
+      name: 'Gamesportbet',
+      year: '2022',
+      src: 'https://gamesportbet.ssenick.fun/',
+      path: 'gamesportbet',
+      images: { preview: GameSportBetPreview },
+   },
+   {
+      id: 8,
+      name: 'Foodrate',
+      year: '2022',
+      src: 'https://foodrate.ssenick.fun/',
+      path: 'foodrate',
+      images: { preview: FoodRatePreview },
+   },
+   {
+      id: 9,
+      name: 'BackMyMoney',
+      year: '2022',
+      src: 'https://backmymoney.ssenick.fun/',
+      path: 'backmymoney',
+      images: { preview: BackMyMoneyPreview },
+   },
+   {
+      id: 10,
+      name: 'Statika',
+      year: '2022',
+      src: 'https://statika.ssenick.fun/',
+      path: 'statika',
+      images: { preview: StatikarPreview },
+   },
+   {
+      id: 11,
+      name: 'Gart',
+      year: '2021',
+      src: 'https://gart.ssenick.fun/',
+      path: 'gart',
+      images: { preview: StatikarPreview },
    },
 ];
