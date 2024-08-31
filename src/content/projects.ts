@@ -1,12 +1,18 @@
 import AdminPreview from '@/assets/projects/admin/admin-small.webp';
 import BackMyMoneyPreview from '@/assets/projects/backmymoney/backmymoney-small.webp';
 import BlogPreview from '@/assets/projects/blog/blog-small.webp';
+import EurotexPreview from '@/assets/projects/eurotex/eurotex-small.webp';
 import FoodRatePreview from '@/assets/projects/foodrate/foodrate-small.webp';
+import FunnyDoctorPreview from '@/assets/projects/funny-doctor/funny-doctor-small.webp';
+import GartPreview from '@/assets/projects/gart/gart-small.webp';
 import GreenShopPreview from '@/assets/projects/greenshop/greenshop-small.webp';
+import HelpPreview from '@/assets/projects/help/help-small.webp';
+import HoneyPreview from '@/assets/projects/honey/honey-small.webp';
 import PizzaPreview from '@/assets/projects/pizza/pizza-small.webp';
 import PortfolioPreview from '@/assets/projects/portfolio/portfolio-small.webp';
 import GameSportBetPreview from '@/assets/projects/sportbet/gamesport-small.webp';
 import StatikarPreview from '@/assets/projects/statika/statika-small.webp';
+import VignettePreview from '@/assets/projects/vignette/vignette-small.webp';
 import WeatherPreview from '@/assets/projects/weather/weather-small.webp';
 import type { projectType } from '@/types/projectsItems';
 
@@ -84,6 +90,14 @@ export const projects: projectType[] = [
       images: { preview: BackMyMoneyPreview },
    },
    {
+      id: 1010,
+      name: 'Eurotext',
+      year: '2022',
+      src: 'https://eurotex.ssenick.fun/',
+      path: 'eurotext',
+      images: { preview: EurotexPreview },
+   },
+   {
       id: 10,
       name: 'Statika',
       year: '2022',
@@ -97,6 +111,38 @@ export const projects: projectType[] = [
       year: '2021',
       src: 'https://gart.ssenick.fun/',
       path: 'gart',
-      images: { preview: StatikarPreview },
+      images: { preview: GartPreview },
+   },
+   {
+      id: 12,
+      name: 'Help',
+      year: '2021',
+      src: 'https://help.ssenick.fun/',
+      path: 'help',
+      images: { preview: HelpPreview },
+   },
+   {
+      id: 13,
+      name: 'Funny doctor',
+      year: '2021',
+      src: 'https://family-doctor.ssenick.fun/',
+      path: 'funny-doctor',
+      images: { preview: FunnyDoctorPreview },
+   },
+   {
+      id: 14,
+      name: 'Honey',
+      year: '2021',
+      src: 'https://honey.ssenick.fun/',
+      path: 'honey',
+      images: { preview: HoneyPreview },
+   },
+   {
+      id: 15,
+      name: 'Vignette',
+      year: '2021',
+      src: 'https://vignette.ssenick.fun/',
+      path: 'vignette',
+      images: { preview: VignettePreview },
    },
 ];
