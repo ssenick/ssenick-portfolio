@@ -24,6 +24,9 @@ export const projects: projectType[] = [
       src: 'https://dulcet-pudding-009166.netlify.app',
       path: 'blog',
       images: { preview: BlogPreview },
+      technologies:
+         'React, React Router, Redux toolkit, TypeScript, ' +
+         'Webpack, Vite, Storybook, Jest, Loki, i18next, Axios, Swiper',
    },
    {
       id: 2,
@@ -32,6 +35,8 @@ export const projects: projectType[] = [
       src: 'https://web-react-admin.ssenick.fun',
       path: 'admin-panel',
       images: { preview: AdminPreview },
+      technologies:
+         'React, React Router, Axios,React pro sidebar, Material UI, Fullcalendar, Formik, Yup, Nivo',
    },
    {
       id: 3,
@@ -40,6 +45,7 @@ export const projects: projectType[] = [
       src: 'https://greenshop.ssenick.fun/',
       path: 'green-shop',
       images: { preview: GreenShopPreview },
+      technologies: 'HTML, SCSS, JavaScript, Webpack, Gulp, GSAP, Barba, lightgallery, Swiper',
    },
    {
       id: 4,
@@ -48,6 +54,7 @@ export const projects: projectType[] = [
       src: 'https://web-application-react-v2.ssenick.fun/',
       path: 'pizza',
       images: { preview: PizzaPreview },
+      technologies: 'React, TypeScript, Redux Toolkit, React Router v6, Axios',
    },
    {
       id: 5,
@@ -56,6 +63,7 @@ export const projects: projectType[] = [
       src: 'https://web-app-weather-typescript.ssenick.fun/',
       path: 'weather',
       images: { preview: WeatherPreview },
+      technologies: 'React, TypeScript,Open Weather API, Axios',
    },
    {
       id: 6,
@@ -64,6 +72,7 @@ export const projects: projectType[] = [
       src: 'https://portfolio.ssenick.fun/',
       path: 'portfolio',
       images: { preview: PortfolioPreview },
+      technologies: 'HTML, SCSS, JavaScript, Webpack, Gulp',
    },
    {
       id: 7,
@@ -72,6 +81,7 @@ export const projects: projectType[] = [
       src: 'https://gamesportbet.ssenick.fun/',
       path: 'gamesportbet',
       images: { preview: GameSportBetPreview },
+      technologies: 'HTML, SCSS, JavaScript, Webpack, Gulp, Swiper and other',
    },
    {
       id: 8,
@@ -80,6 +90,7 @@ export const projects: projectType[] = [
       src: 'https://foodrate.ssenick.fun/',
       path: 'foodrate',
       images: { preview: FoodRatePreview },
+      technologies: 'HTML, SCSS, JavaScript, Webpack, Gulp, Swiper and other',
    },
    {
       id: 9,
@@ -88,6 +99,7 @@ export const projects: projectType[] = [
       src: 'https://backmymoney.ssenick.fun/',
       path: 'backmymoney',
       images: { preview: BackMyMoneyPreview },
+      technologies: 'HTML, SCSS, JavaScript, Webpack, Gulp, Swiper and other',
    },
    {
       id: 1010,
@@ -96,6 +108,7 @@ export const projects: projectType[] = [
       src: 'https://eurotex.ssenick.fun/',
       path: 'eurotext',
       images: { preview: EurotexPreview },
+      technologies: 'HTML, SCSS, JavaScript, Webpack, Gulp, Swiper and other',
    },
    {
       id: 10,
@@ -104,6 +117,7 @@ export const projects: projectType[] = [
       src: 'https://statika.ssenick.fun/',
       path: 'statika',
       images: { preview: StatikarPreview },
+      technologies: 'HTML, SCSS, JavaScript, Webpack, Gulp, Swiper and other',
    },
    {
       id: 11,
@@ -112,6 +126,7 @@ export const projects: projectType[] = [
       src: 'https://gart.ssenick.fun/',
       path: 'gart',
       images: { preview: GartPreview },
+      technologies: 'HTML, SCSS, JavaScript, Webpack, Gulp, Swiper and other',
    },
    {
       id: 12,
@@ -120,6 +135,7 @@ export const projects: projectType[] = [
       src: 'https://help.ssenick.fun/',
       path: 'help',
       images: { preview: HelpPreview },
+      technologies: 'HTML, SCSS, JavaScript, Webpack, Gulp, Swiper and other',
    },
    {
       id: 13,
@@ -128,6 +144,7 @@ export const projects: projectType[] = [
       src: 'https://family-doctor.ssenick.fun/',
       path: 'funny-doctor',
       images: { preview: FunnyDoctorPreview },
+      technologies: 'HTML, SCSS, JavaScript, Webpack, Gulp, Swiper and other',
    },
    {
       id: 14,
@@ -136,6 +153,7 @@ export const projects: projectType[] = [
       src: 'https://honey.ssenick.fun/',
       path: 'honey',
       images: { preview: HoneyPreview },
+      technologies: 'HTML, SCSS, JavaScript, Webpack, Gulp, Swiper and other',
    },
    {
       id: 15,
@@ -144,5 +162,6 @@ export const projects: projectType[] = [
       src: 'https://vignette.ssenick.fun/',
       path: 'vignette',
       images: { preview: VignettePreview },
+      technologies: 'HTML, SCSS, JavaScript, Webpack, Gulp, Swiper and other',
    },
 ];

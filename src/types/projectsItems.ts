@@ -9,4 +9,5 @@ export interface projectType {
    src: string;
    path: string;
    images: projectImages;
+   technologies: string;
 }
