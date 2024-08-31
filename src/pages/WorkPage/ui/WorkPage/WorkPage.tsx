@@ -18,7 +18,7 @@ const WorkPage = (props: WorkPageProps) => {
       <Page className={classNames(cls.WorkPage, {}, [className])}>
          <div className={cls.wrapper}>
             <h1 className={cls.title}>{t('title')}</h1>
-            <AnimateList links={projects} header />
+            <AnimateList links={projects} header full />
          </div>
       </Page>
    );
