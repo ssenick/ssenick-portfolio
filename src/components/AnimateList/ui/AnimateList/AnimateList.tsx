@@ -14,12 +14,13 @@ interface WorkListProps {
    className?: string;
    links: projectType[];
    header?: boolean;
+   full?: boolean;
 }
 
 //  перенести весь конент в отдельный файлн
 
 const AnimateList = memo((props: WorkListProps) => {
-   const { className, links, header } = props;
+   const { className, links, header, full } = props;
    const { t } = useTranslation();
    const [modal, setModal] = useState<animateModalType>({ active: false, index: 0 });
 
@@ -27,8 +28,9 @@ const AnimateList = memo((props: WorkListProps) => {
       <ul className={classNames(cls.AnimateList, {}, [className])}>
          {header && (
             <li className={cls.row}>
-               <div className={cls.link}>
+               <div className={classNames(cls.link, { [cls.full]: full }, [])}>
                   <p>{t('Name')}</p>
+                  {full && <p className={cls.technologies}>{t('Technologies')}</p>}
                   <p>{t('Year')}</p>
                </div>
             </li>
@@ -40,6 +42,7 @@ const AnimateList = memo((props: WorkListProps) => {
                setModal={setModal}
                index={i}
                path={getRouteProject(item.path)}
+               full={full}
             />
          ))}
          <AnimateModal modal={modal} links={links} />

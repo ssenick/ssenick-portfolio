@@ -30,6 +30,26 @@
         display: flex;
         top: 100%;
       }
+
+      &.full {
+        grid-template-columns: 1fr  35%  minmax(15%, auto);
+
+        p:last-child {
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1440px) {
+    .link.full {
+      &.full {
+        grid-template-columns: 1fr  minmax(15%, auto);
+
+        .technologies {
+          display: none;
+        }
+      }
     }
   }
 
