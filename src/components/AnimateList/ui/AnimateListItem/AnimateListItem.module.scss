@@ -41,6 +41,18 @@
         font-weight: 500;
       }
     }
+
+    .technologies {
+      font-size: var(--h5-font-size);
+    }
+
+    &.full {
+      grid-template-columns: 1fr 35% minmax(15%, auto);
+
+      p:last-child {
+        text-align: center;
+      }
+    }
   }
 
   &:hover {
@@ -53,6 +65,16 @@
 
       p:last-of-type {
         right: 15px;
+      }
+    }
+  }
+
+  @media (max-width: 1440px) {
+    .link.full {
+      grid-template-columns: 1fr  minmax(15%, auto);
+
+      .technologies {
+        display: none;
       }
     }
   }
