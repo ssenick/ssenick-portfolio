@@ -13,11 +13,11 @@ interface AnimateListItemProps {
    path: string;
    setModal: (props: animateModalType) => void;
    index: number;
+   full?: boolean;
 }
 
 const AnimateListItem = memo((props: AnimateListItemProps) => {
-   const { className, content, setModal, index, path } = props;
-
+   const { className, content, setModal, index, path, full } = props;
    const handleMouseEnter = useCallback(
       (i: number) => () => {
          setModal({ active: true, index: i });
@@ -37,8 +37,9 @@ const AnimateListItem = memo((props: AnimateListItemProps) => {
          className={classNames(cls.item, {}, [className])}
       >
          <div className={cls.line}></div>
-         <Link to={path} className={cls.link}>
+         <Link to={path} className={classNames(cls.link, { [cls.full]: full }, [])}>
             <p className={cls.name}>{content.name}</p>
+            {full && <p className={cls.technologies}>{content.technologies}</p>}
             <p>{content.year}</p>
          </Link>
       </li>
