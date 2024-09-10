@@ -16,9 +16,20 @@ interface AppButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
    variant?: ButtonVariant;
    btnActive?: boolean;
    oppositeColor?: boolean;
+   blueBgColor?: boolean;
+   roundSmall?: boolean;
 }
 const AppButton = (props: AppButtonProps) => {
-   const { className, btnActive, variant = 'clear', oppositeColor, children, ...otherProps } = props;
+   const {
+      className,
+      btnActive,
+      blueBgColor,
+      roundSmall,
+      variant = 'clear',
+      oppositeColor,
+      children,
+      ...otherProps
+   } = props;
    const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
    const [isHovered, setIsHovered] = useState(false);
    const [isHiding, setIsHiding] = useState(false);
@@ -68,6 +79,8 @@ const AppButton = (props: AppButtonProps) => {
             {
                [cls.active]: btnActive,
                [cls.oppositeColor]: oppositeColor,
+               [cls.blueBgColor]: blueBgColor,
+               [cls.roundSmall]: roundSmall,
             },
             [className, cls[variant]],
          )}

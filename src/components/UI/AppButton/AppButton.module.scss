@@ -166,6 +166,12 @@
     }
   }
 
+  &.roundSmall {
+    // 70 / 300
+    width: clamp(4.375rem, -5.893rem + 27.381vw, 18.75rem);
+    height: clamp(4.375rem, -5.893rem + 27.381vw, 18.75rem);
+  }
+
   &.clear,
   &.link,
   &.round,
@@ -206,6 +212,16 @@
         align-items: center;
         position: relative;
         z-index: 2;
+      }
+    }
+  }
+
+  &.blueBgColor {
+    .Button {
+      background-color: var(--color-blue);
+
+      &::after {
+        background-color: var(--color-black);
       }
     }
   }
