@@ -10,4 +10,12 @@
   &.notPadding {
     padding-bottom: 0;
   }
+
+  &.borderBottom {
+    border-bottom: 1px solid;
+  }
+
+  &.smallSize {
+    font-size: var(--h6-font-size);
+  }
 }
