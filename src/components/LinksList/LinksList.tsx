@@ -25,10 +25,10 @@ const LinksList = memo((props: LinksListProps) => {
       <div className={classNames(cls.LinksList, { [cls.column]: column }, [className])}>
          <Title className={cls.title}>{title}</Title>
          <ul className={cls.list}>
-            {items.map(({ text, href }) => (
+            {items.map(({ text, href, target }) => (
                <li key={href}>
                   <FramerMagnetic>
-                     <a href={href} target="_blank" rel="noreferrer">
+                     <a href={href} target={target} rel="noopener noreferrer">
                         <span className={cls.text}>{text}</span>
                      </a>
                   </FramerMagnetic>
