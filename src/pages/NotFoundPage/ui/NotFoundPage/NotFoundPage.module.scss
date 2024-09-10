@@ -9,7 +9,7 @@
     padding: calc(var(--p-container)) var(--p-container)  calc(var(--p-container) * 2);
     overflow: hidden;
     gap: calc(var(--index) * 6);
-    min-height: 80vh;
+    min-height: 90vh;
 
     @media (max-width: 1440px) {
       gap: calc(var(--index) * 5);
