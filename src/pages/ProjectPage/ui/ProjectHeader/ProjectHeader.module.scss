@@ -1,0 +1,32 @@
+.ProjectHeader {
+  .title {
+    font-size: var(--big-font-size);
+    line-height: 1.5;
+    padding-bottom: var(--p-container);
+  }
+
+  .content {
+    padding: var(--p-container) 0 calc(var(--p-container) * 2);
+  }
+
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: calc(var(--index) * 2);
+  }
+
+  .listItem {
+    flex: 1 1 450px;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1.125rem, 0.931rem + 0.97vw, 2.75rem);
+
+    span {
+      font-size: var(--h4-font-size);
+    }
+  }
+
+  .buttons {
+    display: flex;
+  }
+}
