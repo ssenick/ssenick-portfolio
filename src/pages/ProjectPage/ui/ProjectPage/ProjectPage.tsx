@@ -16,7 +16,6 @@ interface ProjectPageProps {
 //
 const ProjectPage = (props: ProjectPageProps) => {
    const { className } = props;
-
    const { name } = useParams<{ name: string }>();
    // Состояние для отсроченного удаления проекта
    const [project] = useState(() => projects.find((item) => item.path === name));
