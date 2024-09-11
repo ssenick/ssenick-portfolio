@@ -168,8 +168,8 @@
 
   &.roundSmall {
     // 70 / 300
-    width: clamp(4.375rem, -5.893rem + 27.381vw, 18.75rem);
-    height: clamp(4.375rem, -5.893rem + 27.381vw, 18.75rem);
+    width: clamp(4.375rem, 2.659rem + 8.582vw, 18.75rem);
+    height: clamp(4.375rem, 2.659rem + 8.582vw, 18.75rem);
   }
 
   &.clear,
