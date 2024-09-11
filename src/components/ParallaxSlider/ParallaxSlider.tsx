@@ -35,7 +35,11 @@ const ParallaxSlider = memo((props: ParallaxSliderProps) => {
       >
          {images?.map((image) => (
             <div key={image} className={cls.image}>
-               <AppImage src={image} className={cls.img} />
+               <AppImage
+                  src={image}
+                  className={cls.img}
+                  errorSpare={<img src={ErrorImage} className={cls.img} alt="error" />}
+               />
             </div>
          ))}
          {!images &&
