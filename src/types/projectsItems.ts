@@ -1,5 +1,8 @@
 interface projectImages {
    preview: string;
+   images: {
+      laptop: string;
+   };
 }
 
 export interface projectType {
@@ -8,7 +11,8 @@ export interface projectType {
    year: string;
    location: string;
    role: string;
-   projectPath: string;
+   projectURL: string;
+   gitURL?: string;
    path: string;
    images: projectImages;
    technologies: string;

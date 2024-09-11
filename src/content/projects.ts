@@ -1,18 +1,50 @@
+// Admin
 import AdminPreview from '@/assets/projects/admin/admin-small.webp';
+import AdminLaptop from '@/assets/projects/admin/laptop.png';
+// BackMyMoney
 import BackMyMoneyPreview from '@/assets/projects/backmymoney/backmymoney-small.webp';
+import BackMyMoneyLaptop from '@/assets/projects/backmymoney/laptop.png';
+//Blog
 import BlogPreview from '@/assets/projects/blog/blog-small.webp';
+import BlogLaptop from '@/assets/projects/blog/laptop.webp';
+//Eurotex
 import EurotexPreview from '@/assets/projects/eurotex/eurotex-small.webp';
+import EurotexLaptop from '@/assets/projects/eurotex/laptop.png';
+// FoodRate
 import FoodRatePreview from '@/assets/projects/foodrate/foodrate-small.webp';
+import FoodRateLaptop from '@/assets/projects/foodrate/laptop.png';
+// FamilyDoctor
 import FunnyDoctorPreview from '@/assets/projects/funny-doctor/funny-doctor-small.webp';
+import FunnyDoctorLaptop from '@/assets/projects/funny-doctor/laptop.png';
+// Gart
 import GartPreview from '@/assets/projects/gart/gart-small.webp';
+import GartLaptop from '@/assets/projects/gart/laptop.png';
+// GreenShop
 import GreenShopPreview from '@/assets/projects/greenshop/greenshop-small.webp';
+import GreenShopLaptop from '@/assets/projects/greenshop/laptop.png';
+// Help
 import HelpPreview from '@/assets/projects/help/help-small.webp';
+import HelpLaptop from '@/assets/projects/help/laptop.png';
+// Honey
 import HoneyPreview from '@/assets/projects/honey/honey-small.webp';
+import HoneyLaptop from '@/assets/projects/honey/laptop.png';
+// Pizza
+import PizzaLaptop from '@/assets/projects/pizza/laptop.png';
 import PizzaPreview from '@/assets/projects/pizza/pizza-small.webp';
+// Portfolio
+import PortfolioLaptop from '@/assets/projects/portfolio/laptop.png';
 import PortfolioPreview from '@/assets/projects/portfolio/portfolio-small.webp';
+// GameSportBet
 import GameSportBetPreview from '@/assets/projects/sportbet/gamesport-small.webp';
-import StatikarPreview from '@/assets/projects/statika/statika-small.webp';
+import GameSportBetLaptop from '@/assets/projects/sportbet/laptop.png';
+// Statika
+import StatikaLaptop from '@/assets/projects/statika/laptop.png';
+import StatikaPreview from '@/assets/projects/statika/statika-small.webp';
+// Vignette
+import VignetteLaptop from '@/assets/projects/vignette/laptop.png';
 import VignettePreview from '@/assets/projects/vignette/vignette-small.webp';
+// Weather
+import WeatherLaptop from '@/assets/projects/weather/laptop.png';
 import WeatherPreview from '@/assets/projects/weather/weather-small.webp';
 import type { projectType } from '@/types/projectsItems';
 
@@ -23,9 +55,10 @@ export const projects: projectType[] = [
       year: '2024',
       location: 'Canada',
       role: 'Frontend Developer',
-      projectPath: 'https://dulcet-pudding-009166.netlify.app',
+      projectURL: 'https://dulcet-pudding-009166.netlify.app',
+      gitURL: 'https://github.com/ssenick/web-mini-project',
       path: 'blog',
-      images: { preview: BlogPreview },
+      images: { preview: BlogPreview, images: { laptop: BlogLaptop } },
       technologies:
          'React, React Router, Redux toolkit, TypeScript, ' +
          'Webpack, Vite, Storybook, Jest, Loki, i18next, Axios, Swiper',
@@ -36,9 +69,10 @@ export const projects: projectType[] = [
       year: '2024',
       location: 'Canada',
       role: 'Frontend Developer',
-      projectPath: 'https://web-react-admin.ssenick.fun',
+      projectURL: 'https://web-react-admin.ssenick.fun',
+      gitURL: 'https://github.com/ssenick/web-react-admin',
       path: 'admin-panel',
-      images: { preview: AdminPreview },
+      images: { preview: AdminPreview, images: { laptop: AdminLaptop } },
       technologies:
          'React, React Router, Axios,React pro sidebar, Material UI, Fullcalendar, Formik, Yup, Nivo',
    },
@@ -48,9 +82,10 @@ export const projects: projectType[] = [
       year: '2023',
       location: 'Canada',
       role: 'Website Layout Developer',
-      projectPath: 'https://greenshop.ssenick.fun/',
+      projectURL: 'https://greenshop.ssenick.fun/',
+      gitURL: 'https://github.com/ssenick/greenshop',
       path: 'green-shop',
-      images: { preview: GreenShopPreview },
+      images: { preview: GreenShopPreview, images: { laptop: GreenShopLaptop } },
       technologies: 'HTML, SCSS, JavaScript, Webpack, Gulp, GSAP, Barba, lightgallery, Swiper',
    },
    {
@@ -59,9 +94,10 @@ export const projects: projectType[] = [
       year: '2023',
       location: 'Canada',
       role: 'Frontend Developer',
-      projectPath: 'https://web-application-react-v2.ssenick.fun/',
+      projectURL: 'https://web-application-react-v2.ssenick.fun/',
+      gitURL: 'https://github.com/ssenick/web-application-pizza-v2',
       path: 'pizza',
-      images: { preview: PizzaPreview },
+      images: { preview: PizzaPreview, images: { laptop: PizzaLaptop } },
       technologies: 'React, TypeScript, Redux Toolkit, React Router v6, Axios',
    },
    {
@@ -70,9 +106,10 @@ export const projects: projectType[] = [
       year: '2023',
       location: 'Slovakia',
       role: 'Frontend Developer',
-      projectPath: 'https://web-app-weather-typescript.ssenick.fun/',
+      projectURL: 'https://web-app-weather-typescript.ssenick.fun/',
+      gitURL: 'https://github.com/ssenick/web-app-weather-typescript',
       path: 'weather',
-      images: { preview: WeatherPreview },
+      images: { preview: WeatherPreview, images: { laptop: WeatherLaptop } },
       technologies: 'React, TypeScript,Open Weather API, Axios',
    },
    {
@@ -81,9 +118,10 @@ export const projects: projectType[] = [
       year: '2023',
       location: 'Ukraine',
       role: 'Website Layout Developer',
-      projectPath: 'https://portfolio.ssenick.fun/',
+      projectURL: 'https://portfolio.ssenick.fun/',
+      gitURL: 'https://github.com/ssenick/dark-portfolio',
       path: 'portfolio',
-      images: { preview: PortfolioPreview },
+      images: { preview: PortfolioPreview, images: { laptop: PortfolioLaptop } },
       technologies: 'HTML, SCSS, JavaScript, Webpack, Gulp',
    },
    {
@@ -92,9 +130,10 @@ export const projects: projectType[] = [
       year: '2022',
       location: 'Belarus',
       role: 'Website Layout Developer',
-      projectPath: 'https://gamesportbet.ssenick.fun/',
+      projectURL: 'https://gamesportbet.ssenick.fun/',
+      gitURL: 'https://github.com/ssenick/GameSportBet',
       path: 'gamesportbet',
-      images: { preview: GameSportBetPreview },
+      images: { preview: GameSportBetPreview, images: { laptop: GameSportBetLaptop } },
       technologies: 'HTML, SCSS, JavaScript, Webpack, Gulp, Swiper and other',
    },
    {
@@ -103,9 +142,10 @@ export const projects: projectType[] = [
       year: '2022',
       location: 'Belarus',
       role: 'Website Layout Developer',
-      projectPath: 'https://foodrate.ssenick.fun/',
+      projectURL: 'https://foodrate.ssenick.fun/',
+      gitURL: 'https://github.com/ssenick/FoodRate',
       path: 'foodrate',
-      images: { preview: FoodRatePreview },
+      images: { preview: FoodRatePreview, images: { laptop: FoodRateLaptop } },
       technologies: 'HTML, SCSS, JavaScript, Webpack, Gulp, Swiper and other',
    },
    {
@@ -114,9 +154,10 @@ export const projects: projectType[] = [
       year: '2022',
       location: 'Belarus',
       role: 'Website Layout Developer',
-      projectPath: 'https://backmymoney.ssenick.fun/',
+      projectURL: 'https://backmymoney.ssenick.fun/',
+      gitURL: 'https://github.com/ssenick/backmymoney',
       path: 'backmymoney',
-      images: { preview: BackMyMoneyPreview },
+      images: { preview: BackMyMoneyPreview, images: { laptop: BackMyMoneyLaptop } },
       technologies: 'HTML, SCSS, JavaScript, Webpack, Gulp, Swiper and other',
    },
    {
@@ -125,9 +166,9 @@ export const projects: projectType[] = [
       year: '2022',
       location: 'Canada',
       role: 'Website Layout Developer',
-      projectPath: 'https://eurotex.ssenick.fun/',
+      projectURL: 'https://eurotex.ssenick.fun/',
       path: 'eurotext',
-      images: { preview: EurotexPreview },
+      images: { preview: EurotexPreview, images: { laptop: EurotexLaptop } },
       technologies: 'HTML, SCSS, JavaScript, Webpack, Gulp, Swiper and other',
    },
    {
@@ -136,9 +177,10 @@ export const projects: projectType[] = [
       year: '2022',
       location: 'Slovakia',
       role: 'Website Layout Developer',
-      projectPath: 'https://statika.ssenick.fun/',
+      projectURL: 'https://statika.ssenick.fun/',
+      gitURL: 'https://github.com/ssenick/statika',
       path: 'statika',
-      images: { preview: StatikarPreview },
+      images: { preview: StatikaPreview, images: { laptop: StatikaLaptop } },
       technologies: 'HTML, SCSS, JavaScript, Webpack, Gulp, Swiper and other',
    },
    {
@@ -147,9 +189,10 @@ export const projects: projectType[] = [
       year: '2021',
       location: 'Russia',
       role: 'Website Layout Developer',
-      projectPath: 'https://gart.ssenick.fun/',
+      projectURL: 'https://gart.ssenick.fun/',
+      gitURL: 'https://github.com/ssenick/GART',
       path: 'gart',
-      images: { preview: GartPreview },
+      images: { preview: GartPreview, images: { laptop: GartLaptop } },
       technologies: 'HTML, SCSS, JavaScript, Webpack, Gulp, Swiper and other',
    },
    {
@@ -158,20 +201,22 @@ export const projects: projectType[] = [
       year: '2021',
       location: 'Russia',
       role: 'Website Layout Developer',
-      projectPath: 'https://help.ssenick.fun/',
+      projectURL: 'https://help.ssenick.fun/',
+      gitURL: 'https://github.com/ssenick/help',
       path: 'help',
-      images: { preview: HelpPreview },
+      images: { preview: HelpPreview, images: { laptop: HelpLaptop } },
       technologies: 'HTML, SCSS, JavaScript, Webpack, Gulp, Swiper and other',
    },
    {
       id: 13,
-      name: 'Funny doctor',
+      name: 'Family doctor',
       year: '2021',
       location: 'Russia',
       role: 'Website Layout Developer',
-      projectPath: 'https://family-doctor.ssenick.fun/',
-      path: 'funny-doctor',
-      images: { preview: FunnyDoctorPreview },
+      projectURL: 'https://family-doctor.ssenick.fun/',
+      gitURL: 'https://github.com/ssenick/family-doctor',
+      path: 'family-doctor',
+      images: { preview: FunnyDoctorPreview, images: { laptop: FunnyDoctorLaptop } },
       technologies: 'HTML, SCSS, JavaScript, Webpack, Gulp, Swiper and other',
    },
    {
@@ -180,9 +225,10 @@ export const projects: projectType[] = [
       year: '2021',
       location: 'Ukraine',
       role: 'Website Layout Developer',
-      projectPath: 'https://honey.ssenick.fun/',
+      projectURL: 'https://honey.ssenick.fun/',
+      gitURL: 'https://github.com/ssenick/honey',
       path: 'honey',
-      images: { preview: HoneyPreview },
+      images: { preview: HoneyPreview, images: { laptop: HoneyLaptop } },
       technologies: 'HTML, SCSS, JavaScript, Webpack, Gulp, Swiper and other',
    },
    {
@@ -191,9 +237,10 @@ export const projects: projectType[] = [
       year: '2021',
       location: 'Hungary',
       role: 'Website Layout Developer',
-      projectPath: 'https://vignette.ssenick.fun/',
+      projectURL: 'https://vignette.ssenick.fun/',
+      gitURL: 'https://github.com/ssenick/vignette',
       path: 'vignette',
-      images: { preview: VignettePreview },
+      images: { preview: VignettePreview, images: { laptop: VignetteLaptop } },
       technologies: 'HTML, SCSS, JavaScript, Webpack, Gulp, Swiper and other',
    },
 ];
