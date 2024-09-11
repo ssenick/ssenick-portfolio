@@ -14,6 +14,7 @@ interface ProjectPageProps {
    className?: string;
 }
 //
+
 const ProjectPage = (props: ProjectPageProps) => {
    const { className } = props;
    const { name } = useParams<{ name: string }>();
