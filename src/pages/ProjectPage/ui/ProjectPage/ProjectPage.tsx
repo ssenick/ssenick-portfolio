@@ -13,7 +13,6 @@ import cls from './ProjectPage.module.scss';
 interface ProjectPageProps {
    className?: string;
 }
-//
 
 const ProjectPage = (props: ProjectPageProps) => {
    const { className } = props;
