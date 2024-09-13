@@ -1,8 +1,11 @@
+export interface projectDevicesImages {
+   laptop: string;
+   mobile: string[];
+}
+
 interface projectImages {
    preview: string;
-   images: {
-      laptop: string;
-   };
+   devices: projectDevicesImages;
 }
 
 export interface projectType {
