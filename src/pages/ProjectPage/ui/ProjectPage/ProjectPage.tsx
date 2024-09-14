@@ -5,8 +5,8 @@ import { Page } from '@/components/Page/Page';
 import { projects } from '@/content/projects.ts';
 import { classNames } from '@/helpers/classNames/classNames';
 import { NotFoundPage } from '@/pages/NotFoundPage';
-import { ProjectLaptop } from '@/pages/ProjectPage/ui/ProjectLaptop/ProjectLaptop.tsx';
 
+import { ProjectDevices } from '../ProjectDevices/ProjectDevices.tsx';
 import { ProjectHeader } from '../ProjectHeader/ProjectHeader.tsx';
 import cls from './ProjectPage.module.scss';
 
@@ -27,10 +27,10 @@ const ProjectPage = (props: ProjectPageProps) => {
    return (
       <Page className={classNames(cls.ProjectPage, {}, [className])}>
          <div className={cls.wrapper}>
-            <ProjectHeader project={project} />
-            <ProjectLaptop project={project} />
-            <div style={{ height: '300vh' }}></div>
+            <ProjectHeader className={cls.container} project={project} />
          </div>
+         <ProjectDevices project={project} />
+         <div style={{ height: '300vh' }}></div>
       </Page>
    );
 };
