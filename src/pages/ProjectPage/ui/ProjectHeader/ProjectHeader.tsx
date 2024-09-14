@@ -22,8 +22,8 @@ const ProjectHeader = memo((props: ProjectHeaderProps) => {
       target: ref,
       offset: ['start end', 'end start'],
    });
-   const valueMove = useTransform(scrollYProgress, [0, 1], ['100%', '0%']);
-   const valueMoveDown = useTransform(scrollYProgress, [0, 1], ['-50%', '50%']);
+   const valueMove = useTransform(scrollYProgress, [0, 1], ['70%', '0%']);
+   const valueMoveDown = useTransform(scrollYProgress, [0, 1], ['-25%', '35%']);
 
    return (
       <section ref={ref} className={classNames(cls.ProjectHeader, {}, [className])}>
