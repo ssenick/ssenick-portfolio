@@ -6,7 +6,7 @@
   }
 
   .content {
-    padding: var(--p-container) 0 calc(var(--p-container) * 2);
+    padding: var(--p-container) 0;
   }
 
   .list {
@@ -27,8 +27,14 @@
   }
 
   .buttons {
+    position: relative;
+    z-index: 1;
     display: flex;
     gap: calc(var(--index) * 2);
     justify-content: flex-end;
+
+    .btn {
+      will-change: transform;
+    }
   }
 }
