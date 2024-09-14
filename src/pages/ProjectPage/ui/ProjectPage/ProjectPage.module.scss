@@ -3,6 +3,9 @@
 
   .wrapper {
     padding: calc(var(--p-container) * 2) 0;
+  }
+
+  .container {
     max-width: 70vw;
     margin: 0 auto;
     width: 100%;
@@ -11,6 +14,7 @@
   @media (max-width: 992px) {
     .wrapper {
       max-width: 85vw;
+      margin: 0 auto;
     }
   }
 
