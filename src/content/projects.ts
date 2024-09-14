@@ -78,7 +78,7 @@ export const projects: projectType[] = [
       projectURL: 'https://web-react-admin.ssenick.fun',
       gitURL: 'https://github.com/ssenick/web-react-admin',
       path: 'admin-panel',
-      images: { preview: AdminPreview, devices: { laptop: AdminLaptop } },
+      images: { preview: AdminPreview, devices: { laptop: AdminLaptop, mobile: [] } },
       technologies:
          'React, React Router, Axios,React pro sidebar, Material UI, Fullcalendar, Formik, Yup, Nivo',
    },
@@ -91,7 +91,7 @@ export const projects: projectType[] = [
       projectURL: 'https://greenshop.ssenick.fun/',
       gitURL: 'https://github.com/ssenick/greenshop',
       path: 'green-shop',
-      images: { preview: GreenShopPreview, devices: { laptop: GreenShopLaptop } },
+      images: { preview: GreenShopPreview, devices: { laptop: GreenShopLaptop, mobile: [] } },
       technologies: 'HTML, SCSS, JavaScript, Webpack, Gulp, GSAP, Barba, lightgallery, Swiper',
    },
    {
@@ -103,7 +103,7 @@ export const projects: projectType[] = [
       projectURL: 'https://web-application-react-v2.ssenick.fun/',
       gitURL: 'https://github.com/ssenick/web-application-pizza-v2',
       path: 'pizza',
-      images: { preview: PizzaPreview, devices: { laptop: PizzaLaptop } },
+      images: { preview: PizzaPreview, devices: { laptop: PizzaLaptop, mobile: [] } },
       technologies: 'React, TypeScript, Redux Toolkit, React Router v6, Axios',
    },
    {
@@ -115,7 +115,7 @@ export const projects: projectType[] = [
       projectURL: 'https://web-app-weather-typescript.ssenick.fun/',
       gitURL: 'https://github.com/ssenick/web-app-weather-typescript',
       path: 'weather',
-      images: { preview: WeatherPreview, devices: { laptop: WeatherLaptop } },
+      images: { preview: WeatherPreview, devices: { laptop: WeatherLaptop, mobile: [] } },
       technologies: 'React, TypeScript,Open Weather API, Axios',
    },
    {
@@ -127,7 +127,7 @@ export const projects: projectType[] = [
       projectURL: 'https://portfolio.ssenick.fun/',
       gitURL: 'https://github.com/ssenick/dark-portfolio',
       path: 'portfolio',
-      images: { preview: PortfolioPreview, devices: { laptop: PortfolioLaptop } },
+      images: { preview: PortfolioPreview, devices: { laptop: PortfolioLaptop, mobile: [] } },
       technologies: 'HTML, SCSS, JavaScript, Webpack, Gulp',
    },
    {
@@ -139,7 +139,7 @@ export const projects: projectType[] = [
       projectURL: 'https://gamesportbet.ssenick.fun/',
       gitURL: 'https://github.com/ssenick/GameSportBet',
       path: 'gamesportbet',
-      images: { preview: GameSportBetPreview, devices: { laptop: GameSportBetLaptop } },
+      images: { preview: GameSportBetPreview, devices: { laptop: GameSportBetLaptop, mobile: [] } },
       technologies: 'HTML, SCSS, JavaScript, Webpack, Gulp, Swiper and other',
    },
    {
@@ -151,7 +151,7 @@ export const projects: projectType[] = [
       projectURL: 'https://foodrate.ssenick.fun/',
       gitURL: 'https://github.com/ssenick/FoodRate',
       path: 'foodrate',
-      images: { preview: FoodRatePreview, devices: { laptop: FoodRateLaptop } },
+      images: { preview: FoodRatePreview, devices: { laptop: FoodRateLaptop, mobile: [] } },
       technologies: 'HTML, SCSS, JavaScript, Webpack, Gulp, Swiper and other',
    },
    {
@@ -163,7 +163,7 @@ export const projects: projectType[] = [
       projectURL: 'https://backmymoney.ssenick.fun/',
       gitURL: 'https://github.com/ssenick/backmymoney',
       path: 'backmymoney',
-      images: { preview: BackMyMoneyPreview, devices: { laptop: BackMyMoneyLaptop } },
+      images: { preview: BackMyMoneyPreview, devices: { laptop: BackMyMoneyLaptop, mobile: [] } },
       technologies: 'HTML, SCSS, JavaScript, Webpack, Gulp, Swiper and other',
    },
    {
@@ -174,7 +174,7 @@ export const projects: projectType[] = [
       role: 'Website Layout Developer',
       projectURL: 'https://eurotex.ssenick.fun/',
       path: 'eurotext',
-      images: { preview: EurotexPreview, devices: { laptop: EurotexLaptop } },
+      images: { preview: EurotexPreview, devices: { laptop: EurotexLaptop, mobile: [] } },
       technologies: 'HTML, SCSS, JavaScript, Webpack, Gulp, Swiper and other',
    },
    {
@@ -186,7 +186,7 @@ export const projects: projectType[] = [
       projectURL: 'https://statika.ssenick.fun/',
       gitURL: 'https://github.com/ssenick/statika',
       path: 'statika',
-      images: { preview: StatikaPreview, devices: { laptop: StatikaLaptop } },
+      images: { preview: StatikaPreview, devices: { laptop: StatikaLaptop, mobile: [] } },
       technologies: 'HTML, SCSS, JavaScript, Webpack, Gulp, Swiper and other',
    },
    {
@@ -198,7 +198,7 @@ export const projects: projectType[] = [
       projectURL: 'https://gart.ssenick.fun/',
       gitURL: 'https://github.com/ssenick/GART',
       path: 'gart',
-      images: { preview: GartPreview, devices: { laptop: GartLaptop } },
+      images: { preview: GartPreview, devices: { laptop: GartLaptop, mobile: [] } },
       technologies: 'HTML, SCSS, JavaScript, Webpack, Gulp, Swiper and other',
    },
    {
@@ -210,7 +210,7 @@ export const projects: projectType[] = [
       projectURL: 'https://help.ssenick.fun/',
       gitURL: 'https://github.com/ssenick/help',
       path: 'help',
-      images: { preview: HelpPreview, devices: { laptop: HelpLaptop } },
+      images: { preview: HelpPreview, devices: { laptop: HelpLaptop, mobile: [] } },
       technologies: 'HTML, SCSS, JavaScript, Webpack, Gulp, Swiper and other',
    },
    {
@@ -222,7 +222,7 @@ export const projects: projectType[] = [
       projectURL: 'https://family-doctor.ssenick.fun/',
       gitURL: 'https://github.com/ssenick/family-doctor',
       path: 'family-doctor',
-      images: { preview: FunnyDoctorPreview, devices: { laptop: FunnyDoctorLaptop } },
+      images: { preview: FunnyDoctorPreview, devices: { laptop: FunnyDoctorLaptop, mobile: [] } },
       technologies: 'HTML, SCSS, JavaScript, Webpack, Gulp, Swiper and other',
    },
    {
@@ -234,7 +234,7 @@ export const projects: projectType[] = [
       projectURL: 'https://honey.ssenick.fun/',
       gitURL: 'https://github.com/ssenick/honey',
       path: 'honey',
-      images: { preview: HoneyPreview, devices: { laptop: HoneyLaptop } },
+      images: { preview: HoneyPreview, devices: { laptop: HoneyLaptop, mobile: [] } },
       technologies: 'HTML, SCSS, JavaScript, Webpack, Gulp, Swiper and other',
    },
    {
@@ -246,7 +246,7 @@ export const projects: projectType[] = [
       projectURL: 'https://vignette.ssenick.fun/',
       gitURL: 'https://github.com/ssenick/vignette',
       path: 'vignette',
-      images: { preview: VignettePreview, devices: { laptop: VignetteLaptop } },
+      images: { preview: VignettePreview, devices: { laptop: VignetteLaptop, mobile: [] } },
       technologies: 'HTML, SCSS, JavaScript, Webpack, Gulp, Swiper and other',
    },
 ];
