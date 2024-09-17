@@ -1,6 +1,11 @@
+export interface projectsImageSizes {
+   small: string;
+   big: string;
+}
+
 export interface projectDevicesImages {
-   laptop: string;
-   mobile: string[];
+   laptop: projectsImageSizes;
+   mobile: projectsImageSizes[];
 }
 
 interface projectImages {
