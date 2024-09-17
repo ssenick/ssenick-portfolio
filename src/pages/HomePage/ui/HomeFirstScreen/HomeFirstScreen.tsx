@@ -2,7 +2,8 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { memo, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import ImageMe from '@/assets/me_3.webp';
+import ImageMe from '@/assets/me_half.webp';
+import ImageMeSmall from '@/assets/me_half_small.webp';
 import { AppImage } from '@/components/UI/AppImage/AppImage';
 import { classNames } from '@/helpers/classNames/classNames';
 import { Header } from '@/Layout';
@@ -32,7 +33,12 @@ const HomeFirstScreen = memo((props: HomeFirstScreenProps) => {
          <Header />
          <TextSlider />
          <motion.div style={{ y: valueMove, opacity: valueOpacity }} className={cls.image}>
-            <AppImage className={classNames(cls.img, {}, [])} src={ImageMe} loading="lazy" />
+            <AppImage
+               className={classNames(cls.img, {}, [])}
+               src={ImageMe}
+               spare={ImageMeSmall}
+               loading="lazy"
+            />
          </motion.div>
          <div className={cls.wrapper}>
             <motion.div style={{ y: valueMoveText }} className={cls.main}>
