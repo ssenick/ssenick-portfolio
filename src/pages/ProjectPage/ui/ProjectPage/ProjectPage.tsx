@@ -5,6 +5,7 @@ import { Page } from '@/components/Page/Page';
 import { projects } from '@/content/projects.ts';
 import { classNames } from '@/helpers/classNames/classNames';
 import { NotFoundPage } from '@/pages/NotFoundPage';
+import { ProjectLaptop } from '@/pages/ProjectPage/ui/ProjectLaptop/ProjectLaptop.tsx';
 
 import { ProjectDevices } from '../ProjectDevices/ProjectDevices.tsx';
 import { ProjectHeader } from '../ProjectHeader/ProjectHeader.tsx';
@@ -23,11 +24,12 @@ const ProjectPage = (props: ProjectPageProps) => {
    if (!project) {
       return <NotFoundPage />;
    }
-
+   const laptopImages = project?.images?.devices?.laptop;
    return (
       <Page className={classNames(cls.ProjectPage, {}, [className])}>
          <div className={cls.wrapper}>
             <ProjectHeader className={cls.container} project={project} />
+            <ProjectLaptop className={cls.container} images={laptopImages} />
          </div>
          <ProjectDevices project={project} />
          <div style={{ height: '300vh' }}></div>
