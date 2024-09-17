@@ -2,7 +2,7 @@ import { type ImgHTMLAttributes, memo, type ReactElement, useLayoutEffect, useSt
 
 interface AppImageProps extends ImgHTMLAttributes<HTMLImageElement> {
    className?: string;
-   spare?: ReactElement;
+   spare?: string;
    errorSpare?: ReactElement;
 }
 
@@ -27,7 +27,7 @@ const AppImage = memo((props: AppImageProps) => {
    }, [src, isLoading]);
 
    if (isLoading && spare) {
-      return spare;
+      return <img className={className} src={spare} alt={alt} />;
    }
    if (errorSpare && hasError) {
       return errorSpare;
