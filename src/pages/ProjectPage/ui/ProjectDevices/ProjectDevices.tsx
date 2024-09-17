@@ -2,7 +2,6 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { memo, useRef } from 'react';
 
 import { classNames } from '@/helpers/classNames/classNames';
-import { ProjectLaptop } from '@/pages/ProjectPage/ui/ProjectLaptop/ProjectLaptop.tsx';
 import { ProjectMobile } from '@/pages/ProjectPage/ui/ProjectMobile/ProjectMobile.tsx';
 import type { projectType } from '@/types/projectsItems.ts';
 
@@ -26,16 +25,14 @@ const ProjectDevices = memo((props: ProjectDevicesProps) => {
    const valueMoveThree = useTransform(scrollYProgress, [0, 1], ['-12%', '12%']);
    const animations = [valueMoveOne, valueMoveTwo, valueMoveThree];
 
-   const laptopImage = project?.images?.devices?.laptop;
    const mobileImages = project?.images?.devices?.mobile;
    return (
       <div ref={ref} className={classNames(cls.ProjectDevices, {}, [className])}>
          <div className={cls.wrapper}>
-            <ProjectLaptop image={laptopImage} />
             <div className={cls.mobiles}>
                {mobileImages?.map((picture, i) => (
                   <motion.div key={i} style={{ y: animations[i] }} className={cls.mobile}>
-                     <ProjectMobile image={picture} />
+                     <ProjectMobile images={picture} />
                   </motion.div>
                ))}
             </div>
