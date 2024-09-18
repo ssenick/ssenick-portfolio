@@ -5,6 +5,7 @@ export interface projectsImageSizes {
 
 export interface projectDevicesImages {
    laptop: projectsImageSizes;
+   tablet: projectsImageSizes;
    mobile: projectsImageSizes[];
 }
 

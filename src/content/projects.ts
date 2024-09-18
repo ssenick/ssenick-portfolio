@@ -14,6 +14,8 @@ import BlogMobile2 from '@/assets/projects/blog/mobile2.webp';
 import BlogMobile2Small from '@/assets/projects/blog/mobile2_small.webp';
 import BlogMobile3 from '@/assets/projects/blog/mobile3.webp';
 import BlogMobile3Small from '@/assets/projects/blog/mobile3_small.webp';
+import BlogTablet from '@/assets/projects/blog/tablet.webp';
+import BlogTabletSmall from '@/assets/projects/blog/tablet_small.webp';
 //Eurotex
 import EurotexPreview from '@/assets/projects/eurotex/eurotex-small.webp';
 import EurotexLaptop from '@/assets/projects/eurotex/laptop.png';
@@ -72,6 +74,10 @@ export const projects: projectType[] = [
                small: BlogLaptopSmall,
                big: BlogLaptop,
             },
+            tablet: {
+               small: BlogTabletSmall,
+               big: BlogTablet,
+            },
             mobile: [
                { big: BlogMobile1, small: BlogMobile1Small },
                { big: BlogMobile2, small: BlogMobile2Small },
@@ -92,7 +98,17 @@ export const projects: projectType[] = [
       projectURL: 'https://web-react-admin.ssenick.fun',
       gitURL: 'https://github.com/ssenick/web-react-admin',
       path: 'admin-panel',
-      images: { preview: AdminPreview, devices: { laptop: { small: '', big: AdminLaptop }, mobile: [] } },
+      images: {
+         preview: AdminPreview,
+         devices: {
+            laptop: { small: '', big: AdminLaptop },
+            tablet: {
+               small: BlogTabletSmall,
+               big: BlogTablet,
+            },
+            mobile: [],
+         },
+      },
       technologies:
          'React, React Router, Axios,React pro sidebar, Material UI, Fullcalendar, Formik, Yup, Nivo',
    },
@@ -107,7 +123,14 @@ export const projects: projectType[] = [
       path: 'green-shop',
       images: {
          preview: GreenShopPreview,
-         devices: { laptop: { small: '', big: GreenShopLaptop }, mobile: [] },
+         devices: {
+            laptop: { small: '', big: GreenShopLaptop },
+            tablet: {
+               small: BlogTabletSmall,
+               big: BlogTablet,
+            },
+            mobile: [],
+         },
       },
       technologies: 'HTML, SCSS, JavaScript, Webpack, Gulp, GSAP, Barba, lightgallery, Swiper',
    },
@@ -120,7 +143,17 @@ export const projects: projectType[] = [
       projectURL: 'https://web-application-react-v2.ssenick.fun/',
       gitURL: 'https://github.com/ssenick/web-application-pizza-v2',
       path: 'pizza',
-      images: { preview: PizzaPreview, devices: { laptop: { small: '', big: PizzaLaptop }, mobile: [] } },
+      images: {
+         preview: PizzaPreview,
+         devices: {
+            laptop: { small: '', big: PizzaLaptop },
+            tablet: {
+               small: BlogTabletSmall,
+               big: BlogTablet,
+            },
+            mobile: [],
+         },
+      },
       technologies: 'React, TypeScript, Redux Toolkit, React Router v6, Axios',
    },
    {
@@ -132,7 +165,17 @@ export const projects: projectType[] = [
       projectURL: 'https://web-app-weather-typescript.ssenick.fun/',
       gitURL: 'https://github.com/ssenick/web-app-weather-typescript',
       path: 'weather',
-      images: { preview: WeatherPreview, devices: { laptop: { small: '', big: WeatherLaptop }, mobile: [] } },
+      images: {
+         preview: WeatherPreview,
+         devices: {
+            laptop: { small: '', big: WeatherLaptop },
+            tablet: {
+               small: BlogTabletSmall,
+               big: BlogTablet,
+            },
+            mobile: [],
+         },
+      },
       technologies: 'React, TypeScript,Open Weather API, Axios',
    },
    {
@@ -146,7 +189,14 @@ export const projects: projectType[] = [
       path: 'portfolio',
       images: {
          preview: PortfolioPreview,
-         devices: { laptop: { small: '', big: PortfolioLaptop }, mobile: [] },
+         devices: {
+            laptop: { small: '', big: PortfolioLaptop },
+            tablet: {
+               small: BlogTabletSmall,
+               big: BlogTablet,
+            },
+            mobile: [],
+         },
       },
       technologies: 'HTML, SCSS, JavaScript, Webpack, Gulp',
    },
@@ -161,7 +211,14 @@ export const projects: projectType[] = [
       path: 'gamesportbet',
       images: {
          preview: GameSportBetPreview,
-         devices: { laptop: { small: '', big: GameSportBetLaptop }, mobile: [] },
+         devices: {
+            laptop: { small: '', big: GameSportBetLaptop },
+            tablet: {
+               small: BlogTabletSmall,
+               big: BlogTablet,
+            },
+            mobile: [],
+         },
       },
       technologies: 'HTML, SCSS, JavaScript, Webpack, Gulp, Swiper and other',
    },
@@ -176,7 +233,14 @@ export const projects: projectType[] = [
       path: 'foodrate',
       images: {
          preview: FoodRatePreview,
-         devices: { laptop: { small: '', big: FoodRateLaptop }, mobile: [] },
+         devices: {
+            laptop: { small: '', big: FoodRateLaptop },
+            tablet: {
+               small: BlogTabletSmall,
+               big: BlogTablet,
+            },
+            mobile: [],
+         },
       },
       technologies: 'HTML, SCSS, JavaScript, Webpack, Gulp, Swiper and other',
    },
@@ -191,7 +255,14 @@ export const projects: projectType[] = [
       path: 'backmymoney',
       images: {
          preview: BackMyMoneyPreview,
-         devices: { laptop: { small: '', big: BackMyMoneyLaptop }, mobile: [] },
+         devices: {
+            laptop: { small: '', big: BackMyMoneyLaptop },
+            tablet: {
+               small: BlogTabletSmall,
+               big: BlogTablet,
+            },
+            mobile: [],
+         },
       },
       technologies: 'HTML, SCSS, JavaScript, Webpack, Gulp, Swiper and other',
    },
@@ -203,7 +274,17 @@ export const projects: projectType[] = [
       role: 'Website Layout Developer',
       projectURL: 'https://eurotex.ssenick.fun/',
       path: 'eurotext',
-      images: { preview: EurotexPreview, devices: { laptop: { small: '', big: EurotexLaptop }, mobile: [] } },
+      images: {
+         preview: EurotexPreview,
+         devices: {
+            laptop: { small: '', big: EurotexLaptop },
+            tablet: {
+               small: BlogTabletSmall,
+               big: BlogTablet,
+            },
+            mobile: [],
+         },
+      },
       technologies: 'HTML, SCSS, JavaScript, Webpack, Gulp, Swiper and other',
    },
    {
@@ -215,7 +296,17 @@ export const projects: projectType[] = [
       projectURL: 'https://statika.ssenick.fun/',
       gitURL: 'https://github.com/ssenick/statika',
       path: 'statika',
-      images: { preview: StatikaPreview, devices: { laptop: { small: '', big: StatikaLaptop }, mobile: [] } },
+      images: {
+         preview: StatikaPreview,
+         devices: {
+            laptop: { small: '', big: StatikaLaptop },
+            tablet: {
+               small: BlogTabletSmall,
+               big: BlogTablet,
+            },
+            mobile: [],
+         },
+      },
       technologies: 'HTML, SCSS, JavaScript, Webpack, Gulp, Swiper and other',
    },
    {
@@ -227,7 +318,17 @@ export const projects: projectType[] = [
       projectURL: 'https://gart.ssenick.fun/',
       gitURL: 'https://github.com/ssenick/GART',
       path: 'gart',
-      images: { preview: GartPreview, devices: { laptop: { small: '', big: GartLaptop }, mobile: [] } },
+      images: {
+         preview: GartPreview,
+         devices: {
+            laptop: { small: '', big: GartLaptop },
+            tablet: {
+               small: BlogTabletSmall,
+               big: BlogTablet,
+            },
+            mobile: [],
+         },
+      },
       technologies: 'HTML, SCSS, JavaScript, Webpack, Gulp, Swiper and other',
    },
    {
@@ -239,7 +340,17 @@ export const projects: projectType[] = [
       projectURL: 'https://help.ssenick.fun/',
       gitURL: 'https://github.com/ssenick/help',
       path: 'help',
-      images: { preview: HelpPreview, devices: { laptop: { small: '', big: HelpLaptop }, mobile: [] } },
+      images: {
+         preview: HelpPreview,
+         devices: {
+            laptop: { small: '', big: HelpLaptop },
+            tablet: {
+               small: BlogTabletSmall,
+               big: BlogTablet,
+            },
+            mobile: [],
+         },
+      },
       technologies: 'HTML, SCSS, JavaScript, Webpack, Gulp, Swiper and other',
    },
    {
@@ -253,7 +364,14 @@ export const projects: projectType[] = [
       path: 'family-doctor',
       images: {
          preview: FunnyDoctorPreview,
-         devices: { laptop: { small: '', big: FunnyDoctorLaptop }, mobile: [] },
+         devices: {
+            laptop: { small: '', big: FunnyDoctorLaptop },
+            tablet: {
+               small: BlogTabletSmall,
+               big: BlogTablet,
+            },
+            mobile: [],
+         },
       },
       technologies: 'HTML, SCSS, JavaScript, Webpack, Gulp, Swiper and other',
    },
@@ -266,7 +384,17 @@ export const projects: projectType[] = [
       projectURL: 'https://honey.ssenick.fun/',
       gitURL: 'https://github.com/ssenick/honey',
       path: 'honey',
-      images: { preview: HoneyPreview, devices: { laptop: { small: '', big: HoneyLaptop }, mobile: [] } },
+      images: {
+         preview: HoneyPreview,
+         devices: {
+            laptop: { small: '', big: HoneyLaptop },
+            tablet: {
+               small: BlogTabletSmall,
+               big: BlogTablet,
+            },
+            mobile: [],
+         },
+      },
       technologies: 'HTML, SCSS, JavaScript, Webpack, Gulp, Swiper and other',
    },
    {
@@ -280,7 +408,14 @@ export const projects: projectType[] = [
       path: 'vignette',
       images: {
          preview: VignettePreview,
-         devices: { laptop: { small: '', big: VignetteLaptop }, mobile: [] },
+         devices: {
+            laptop: { small: '', big: VignetteLaptop },
+            tablet: {
+               small: BlogTabletSmall,
+               big: BlogTablet,
+            },
+            mobile: [],
+         },
       },
       technologies: 'HTML, SCSS, JavaScript, Webpack, Gulp, Swiper and other',
    },
