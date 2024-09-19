@@ -1,0 +1,6 @@
+.ParallaxVideosGroupSliders {
+  overflow: hidden;
+  display: grid;
+  gap: calc(var(--index) * 2);
+  padding: calc(var(--p-container) * 2) 0;
+}
