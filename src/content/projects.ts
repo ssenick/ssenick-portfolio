@@ -5,17 +5,17 @@ import AdminLaptop from '@/assets/projects/admin/laptop.png';
 import BackMyMoneyPreview from '@/assets/projects/backmymoney/backmymoney-small.webp';
 import BackMyMoneyLaptop from '@/assets/projects/backmymoney/laptop.png';
 //Blog
-import BlogPreview from '@/assets/projects/blog/blog-small.webp';
-import BlogLaptop from '@/assets/projects/blog/laptop.webp';
-import BlogLaptopSmall from '@/assets/projects/blog/laptop_small.webp';
-import BlogMobile1 from '@/assets/projects/blog/mobile1.webp';
-import BlogMobile1Small from '@/assets/projects/blog/mobile1_small.webp';
-import BlogMobile2 from '@/assets/projects/blog/mobile2.webp';
-import BlogMobile2Small from '@/assets/projects/blog/mobile2_small.webp';
-import BlogMobile3 from '@/assets/projects/blog/mobile3.webp';
-import BlogMobile3Small from '@/assets/projects/blog/mobile3_small.webp';
-import BlogTablet from '@/assets/projects/blog/tablet.webp';
-import BlogTabletSmall from '@/assets/projects/blog/tablet_small.webp';
+import BlogLaptop from '@/assets/projects/blog/laptop/laptop.webp';
+import BlogLaptopSmall from '@/assets/projects/blog/laptop/laptop_small.webp';
+import BlogMobile1 from '@/assets/projects/blog/mobile/mobile_1.webp';
+import BlogMobile1Small from '@/assets/projects/blog/mobile/mobile_1_small.webp';
+import BlogMobile2 from '@/assets/projects/blog/mobile/mobile_2.webp';
+import BlogMobile2Small from '@/assets/projects/blog/mobile/mobile_2_small.webp';
+import BlogMobile3 from '@/assets/projects/blog/mobile/mobile_3.webp';
+import BlogMobile3Small from '@/assets/projects/blog/mobile/mobile_3_small.webp';
+import BlogPreview from '@/assets/projects/blog/preview.webp';
+import BlogTablet from '@/assets/projects/blog/tablet/tablet.webp';
+import BlogTabletSmall from '@/assets/projects/blog/tablet/tablet_small.webp';
 //Eurotex
 import EurotexPreview from '@/assets/projects/eurotex/eurotex-small.webp';
 import EurotexLaptop from '@/assets/projects/eurotex/laptop.png';
@@ -68,6 +68,10 @@ export const projects: projectType[] = [
       gitURL: 'https://github.com/ssenick/web-mini-project',
       path: 'blog',
       images: {
+         sliders: {
+            first: ['', '', '', ''],
+            second: ['', '', '', ''],
+         },
          preview: BlogPreview,
          devices: {
             laptop: {
@@ -100,6 +104,10 @@ export const projects: projectType[] = [
       path: 'admin-panel',
       images: {
          preview: AdminPreview,
+         sliders: {
+            first: ['', '', '', ''],
+            second: ['', '', '', ''],
+         },
          devices: {
             laptop: { small: '', big: AdminLaptop },
             tablet: {
@@ -123,6 +131,10 @@ export const projects: projectType[] = [
       path: 'green-shop',
       images: {
          preview: GreenShopPreview,
+         sliders: {
+            first: ['', '', '', ''],
+            second: ['', '', '', ''],
+         },
          devices: {
             laptop: { small: '', big: GreenShopLaptop },
             tablet: {
@@ -145,6 +157,10 @@ export const projects: projectType[] = [
       path: 'pizza',
       images: {
          preview: PizzaPreview,
+         sliders: {
+            first: ['', '', '', ''],
+            second: ['', '', '', ''],
+         },
          devices: {
             laptop: { small: '', big: PizzaLaptop },
             tablet: {
@@ -167,6 +183,10 @@ export const projects: projectType[] = [
       path: 'weather',
       images: {
          preview: WeatherPreview,
+         sliders: {
+            first: ['', '', '', ''],
+            second: ['', '', '', ''],
+         },
          devices: {
             laptop: { small: '', big: WeatherLaptop },
             tablet: {
@@ -189,6 +209,10 @@ export const projects: projectType[] = [
       path: 'portfolio',
       images: {
          preview: PortfolioPreview,
+         sliders: {
+            first: ['', '', '', ''],
+            second: ['', '', '', ''],
+         },
          devices: {
             laptop: { small: '', big: PortfolioLaptop },
             tablet: {
@@ -211,6 +235,10 @@ export const projects: projectType[] = [
       path: 'gamesportbet',
       images: {
          preview: GameSportBetPreview,
+         sliders: {
+            first: ['', '', '', ''],
+            second: ['', '', '', ''],
+         },
          devices: {
             laptop: { small: '', big: GameSportBetLaptop },
             tablet: {
@@ -233,6 +261,10 @@ export const projects: projectType[] = [
       path: 'foodrate',
       images: {
          preview: FoodRatePreview,
+         sliders: {
+            first: ['', '', '', ''],
+            second: ['', '', '', ''],
+         },
          devices: {
             laptop: { small: '', big: FoodRateLaptop },
             tablet: {
@@ -255,6 +287,10 @@ export const projects: projectType[] = [
       path: 'backmymoney',
       images: {
          preview: BackMyMoneyPreview,
+         sliders: {
+            first: ['', '', '', ''],
+            second: ['', '', '', ''],
+         },
          devices: {
             laptop: { small: '', big: BackMyMoneyLaptop },
             tablet: {
@@ -276,6 +312,10 @@ export const projects: projectType[] = [
       path: 'eurotext',
       images: {
          preview: EurotexPreview,
+         sliders: {
+            first: ['', '', '', ''],
+            second: ['', '', '', ''],
+         },
          devices: {
             laptop: { small: '', big: EurotexLaptop },
             tablet: {
@@ -298,6 +338,10 @@ export const projects: projectType[] = [
       path: 'statika',
       images: {
          preview: StatikaPreview,
+         sliders: {
+            first: ['', '', '', ''],
+            second: ['', '', '', ''],
+         },
          devices: {
             laptop: { small: '', big: StatikaLaptop },
             tablet: {
@@ -320,6 +364,10 @@ export const projects: projectType[] = [
       path: 'gart',
       images: {
          preview: GartPreview,
+         sliders: {
+            first: ['', '', '', ''],
+            second: ['', '', '', ''],
+         },
          devices: {
             laptop: { small: '', big: GartLaptop },
             tablet: {
@@ -342,6 +390,10 @@ export const projects: projectType[] = [
       path: 'help',
       images: {
          preview: HelpPreview,
+         sliders: {
+            first: ['', '', '', ''],
+            second: ['', '', '', ''],
+         },
          devices: {
             laptop: { small: '', big: HelpLaptop },
             tablet: {
@@ -364,6 +416,10 @@ export const projects: projectType[] = [
       path: 'family-doctor',
       images: {
          preview: FunnyDoctorPreview,
+         sliders: {
+            first: ['', '', '', ''],
+            second: ['', '', '', ''],
+         },
          devices: {
             laptop: { small: '', big: FunnyDoctorLaptop },
             tablet: {
@@ -386,6 +442,10 @@ export const projects: projectType[] = [
       path: 'honey',
       images: {
          preview: HoneyPreview,
+         sliders: {
+            first: ['', '', '', ''],
+            second: ['', '', '', ''],
+         },
          devices: {
             laptop: { small: '', big: HoneyLaptop },
             tablet: {
@@ -408,6 +468,10 @@ export const projects: projectType[] = [
       path: 'vignette',
       images: {
          preview: VignettePreview,
+         sliders: {
+            first: ['', '', '', ''],
+            second: ['', '', '', ''],
+         },
          devices: {
             laptop: { small: '', big: VignetteLaptop },
             tablet: {
