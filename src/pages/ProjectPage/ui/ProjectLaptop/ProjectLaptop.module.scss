@@ -1,5 +1,12 @@
 .ProjectLaptop {
-  position: relative;
+  padding: calc(var(--p-container) * 2) 0;
+
+  .wrapper {
+    position: relative;
+    max-width: 70vw;
+    margin: 0 auto;
+    width: 100%;
+  }
 
   .picture {
     background: rgb(100 100 100 / 40%);
@@ -7,9 +14,9 @@
     position: absolute;
     transform: translate(-50%, -50%);
     transform-origin: bottom;
-    border-radius: 1%;
+    border-radius: 1.1%;
     width: 73.7%;
-    top: 47.5%;
+    top: 47.7%;
     left: 49.9%;
 
     &::before {
@@ -44,6 +51,21 @@
       top: 0;
       left: 0;
       object-fit: contain;
+    }
+  }
+
+  @media (max-width: 992px) {
+    .wrapper {
+      max-width: 85vw;
+      margin: 0 auto;
+    }
+  }
+
+  @media (max-width: 772px) {
+    padding: calc(var(--p-container) * 2)  calc(var(--p-container) * 0.3);
+
+    .wrapper {
+      max-width: none;
     }
   }
 }

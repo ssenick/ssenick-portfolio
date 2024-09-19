@@ -18,16 +18,18 @@ const ProjectLaptop = memo((props: ProjectLaptopProps) => {
    const { className, images, tablet } = props;
    const { big, small } = images;
    return (
-      <div className={classNames(cls.ProjectLaptop, {}, [className])}>
-         <div className={cls.picture}>
-            <AppImage className={cls.image} src={big} spare={small} alt="project image" loading="lazy" />
-         </div>
-         <div className={cls.device}>
-            <AppImage
-               className={cls.laptopImage}
-               src={tablet ? TabletImage : LaptopImage}
-               alt="macbook image"
-            />
+      <div className={classNames(cls.ProjectLaptop, { [cls.tablet]: tablet }, [className])}>
+         <div className={cls.wrapper}>
+            <div className={cls.picture}>
+               <AppImage className={cls.image} src={big} spare={small} alt="project image" loading="lazy" />
+            </div>
+            <div className={cls.device}>
+               <AppImage
+                  className={cls.laptopImage}
+                  src={tablet ? TabletImage : LaptopImage}
+                  alt="macbook image"
+               />
+            </div>
          </div>
       </div>
    );
