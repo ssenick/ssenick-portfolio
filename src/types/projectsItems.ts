@@ -8,12 +8,15 @@ export interface projectDevicesImages {
    tablet: projectsImageSizes;
    mobile: projectsImageSizes[];
 }
-
+export interface projectsSlidersImages {
+   first: [string, string, string, string];
+   second: [string, string, string, string];
+}
 interface projectImages {
    preview: string;
+   sliders: projectsSlidersImages;
    devices: projectDevicesImages;
 }
-
 export interface projectType {
    id: number;
    name: string;
