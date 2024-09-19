@@ -27,47 +27,49 @@ const ProjectHeader = memo((props: ProjectHeaderProps) => {
 
    return (
       <section ref={ref} className={classNames(cls.ProjectHeader, {}, [className])}>
-         <h1 className={cls.title}>{project.name}</h1>
-         <div className={cls.content}>
-            <ul className={cls.list}>
-               <li className={cls.listItem}>
-                  <Title borderBottom smallSize>
-                     {t('my role')}
-                  </Title>
-                  <span>{project.role}</span>
-               </li>
-               <li className={cls.listItem}>
-                  <Title borderBottom smallSize>
-                     {t('location and year')}
-                  </Title>
-                  <span>
-                     {project.location} © {project.year}
-                  </span>
-               </li>
-               <li className={cls.listItem}>
-                  <Title borderBottom smallSize>
-                     {t('technologies')}
-                  </Title>
-                  <span>{project.technologies}</span>
-               </li>
-            </ul>
-            <div className={cls.buttons}>
-               <motion.div style={{ y: valueMove }} className={cls.btn}>
-                  <AppButton variant={'round'} blueBgColor>
-                     <a href={project.projectURL} target="_blank" rel="noreferrer">
-                        {t('Live site')}
-                     </a>
-                  </AppButton>
-               </motion.div>
-               {project.gitURL && (
-                  <motion.div style={{ y: valueMoveDown }} className={cls.btn}>
-                     <AppButton variant={'round'} roundSmall>
-                        <a href={project.gitURL} target="_blank" rel="noreferrer">
-                           {t('Code')}
+         <div className={cls.wrapper}>
+            <h1 className={cls.title}>{project.name}</h1>
+            <div className={cls.content}>
+               <ul className={cls.list}>
+                  <li className={cls.listItem}>
+                     <Title borderBottom smallSize>
+                        {t('my role')}
+                     </Title>
+                     <span>{project.role}</span>
+                  </li>
+                  <li className={cls.listItem}>
+                     <Title borderBottom smallSize>
+                        {t('location and year')}
+                     </Title>
+                     <span>
+                        {project.location} © {project.year}
+                     </span>
+                  </li>
+                  <li className={cls.listItem}>
+                     <Title borderBottom smallSize>
+                        {t('technologies')}
+                     </Title>
+                     <span>{project.technologies}</span>
+                  </li>
+               </ul>
+               <div className={cls.buttons}>
+                  <motion.div style={{ y: valueMove }} className={cls.btn}>
+                     <AppButton variant={'round'} blueBgColor>
+                        <a href={project.projectURL} target="_blank" rel="noreferrer">
+                           {t('Live site')}
                         </a>
                      </AppButton>
                   </motion.div>
-               )}
+                  {project.gitURL && (
+                     <motion.div style={{ y: valueMoveDown }} className={cls.btn}>
+                        <AppButton variant={'round'} roundSmall>
+                           <a href={project.gitURL} target="_blank" rel="noreferrer">
+                              {t('Code')}
+                           </a>
+                        </AppButton>
+                     </motion.div>
+                  )}
+               </div>
             </div>
          </div>
       </section>
