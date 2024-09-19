@@ -1,5 +1,4 @@
 .ProjectDevices {
-  background-color: var(--color-light-green);
   padding: calc(var(--p-container) * 2) 0;
 
   .wrapper {
@@ -28,9 +27,10 @@
   }
 
   @media (max-width: 772px) {
+    padding: calc(var(--p-container) * 2) calc(var(--p-container) * 0.3);
+
     .wrapper {
       max-width: none;
-      padding: calc(var(--p-container) * 2) var(--p-container);
     }
   }
 }
