@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import { Page } from '@/components/Page/Page';
+import { ParallaxImagesGroupSliders } from '@/components/ParallaxImagesGroupSliders/ParallaxImagesGroupSliders.tsx';
 import { projects } from '@/content/projects.ts';
 import { classNames } from '@/helpers/classNames/classNames';
 import { NotFoundPage } from '@/pages/NotFoundPage';
@@ -28,16 +29,15 @@ const ProjectPage = (props: ProjectPageProps) => {
    const laptopImages = project?.images?.devices?.laptop;
    const mainImages = project?.images?.devices?.tablet;
    const mobileImages = project?.images?.devices?.mobile;
+   const slidersImages = project?.images?.sliders;
+
    return (
       <Page className={classNames(cls.ProjectPage, {}, [className])}>
-         <div className={classNames('', {}, [cls.wrapper, cls.container])}>
-            <ProjectHeader project={project} />
-            <ProjectLaptop images={laptopImages} />
-         </div>
-         <ProjectDevices images={mobileImages} />
-         <div className={classNames('', {}, [cls.wrapper, cls.container])}>
-            <ProjectLaptop images={mainImages} tablet />
-         </div>
+         <ProjectHeader project={project} />
+         <ProjectLaptop images={laptopImages} className={cls.laptop} />
+         <ProjectDevices className={cls.bgGreen} images={mobileImages} />
+         <ProjectLaptop className={cls.bgOrange} images={mainImages} tablet />
+         <ParallaxImagesGroupSliders slidersImages={slidersImages} />
       </Page>
    );
 };
