@@ -1,4 +1,4 @@
-import { type ImgHTMLAttributes, memo, type ReactElement, useLayoutEffect, useState } from 'react';
+import { type ImgHTMLAttributes, memo, type ReactElement, useEffect, useState } from 'react';
 
 interface AppImageProps extends ImgHTMLAttributes<HTMLImageElement> {
    className?: string;
@@ -11,20 +11,23 @@ const AppImage = memo((props: AppImageProps) => {
    const [isLoading, setIsLoading] = useState(true);
    const [hasError, setHasError] = useState(false);
 
-   useLayoutEffect(() => {
+   useEffect(() => {
+      if (!src) return;
+
       const img = new Image();
-      img.src = src ?? '';
+      setIsLoading(true);
+      setHasError(false);
+
+      img.src = src;
       img.onload = () => {
          setIsLoading(false);
+         setHasError(false);
       };
       img.onerror = () => {
          setIsLoading(false);
          setHasError(true);
       };
-      if (src && !isLoading) {
-         setHasError(false);
-      }
-   }, [src, isLoading]);
+   }, [src]);
 
    if (isLoading && spare) {
       return <img className={className} src={spare} alt={alt} />;
