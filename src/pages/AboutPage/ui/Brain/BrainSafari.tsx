@@ -1,7 +1,7 @@
 import type { MotionValue } from 'framer-motion';
 import { memo } from 'react';
 
-import BrainSvg from '@/assets/brain.svg?react';
+import BrainSvg from '@/assets/icons/brain.svg?react';
 import { classNames } from '@/helpers/classNames/classNames';
 
 import cls from './Brain.module.scss';

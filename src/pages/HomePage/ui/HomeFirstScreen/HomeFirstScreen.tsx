@@ -2,8 +2,8 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { memo, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import ImageMe from '@/assets/me_half.webp';
-import ImageMeSmall from '@/assets/me_half_small.webp';
+import ImageMe from '@/assets/images/me_half.webp';
+import ImageMeSmall from '@/assets/images/me_half_small.webp';
 import { AppImage } from '@/components/UI/AppImage/AppImage';
 import { classNames } from '@/helpers/classNames/classNames';
 import { Header } from '@/Layout';

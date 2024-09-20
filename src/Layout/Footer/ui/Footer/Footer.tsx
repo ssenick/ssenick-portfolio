@@ -3,7 +3,7 @@ import { memo, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
-import Arrow from '@/assets/arrow.svg?react';
+import Arrow from '@/assets/icons/arrow.svg?react';
 import { LinksList } from '@/components/LinksList/LinksList.tsx';
 import { AppButton } from '@/components/UI/AppButton/AppButton';
 import { Title } from '@/components/UI/Title/Title';

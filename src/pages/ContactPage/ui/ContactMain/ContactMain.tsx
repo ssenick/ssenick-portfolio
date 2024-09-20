@@ -1,7 +1,7 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import AvatarImage from '@/assets/me.webp';
+import AvatarImage from '@/assets/images/me.webp';
 import { LinksList } from '@/components/LinksList/LinksList.tsx';
 import { AppImage } from '@/components/UI/AppImage/AppImage.tsx';
 import { contacts } from '@/content/contacts.ts';

@@ -1,7 +1,7 @@
-import IconEN from '@/assets/flag_en.svg?react';
-import IconRU from '@/assets/flag_ru.svg?react';
-import IconSK from '@/assets/flag_sk.svg?react';
-import IconUA from '@/assets/flag_ua.svg?react';
+import IconEN from '@/assets/icons/flag_en.svg?react';
+import IconRU from '@/assets/icons/flag_ru.svg?react';
+import IconSK from '@/assets/icons/flag_sk.svg?react';
+import IconUA from '@/assets/icons/flag_ua.svg?react';
 import type { ListBoxItem } from '@/components/UI/ListBox/ListBox';
 import { Languages } from '@/poviders/LanguageProvider/model/types';
 

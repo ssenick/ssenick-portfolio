@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import { toast, Toaster } from 'sonner';
 
-import PostIcon from '@/assets/post.svg?react';
+import PostIcon from '@/assets/icons/post.svg?react';
 import { AppButton } from '@/components/UI/AppButton/AppButton.tsx';
 import { AppInput } from '@/components/UI/AppInput/AppInput.tsx';
 import { AppTextArea } from '@/components/UI/AppTextArea/AppTextArea.tsx';

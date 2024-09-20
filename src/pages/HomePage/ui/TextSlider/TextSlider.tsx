@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { memo } from 'react';
 
-import ImageFront from '@/assets/front.svg?react';
+import ImageFront from '@/assets/icons/front.svg?react';
 import { classNames } from '@/helpers/classNames/classNames';
 import { useParallaxSlider } from '@/hooks/useParallaxSlider';
 
