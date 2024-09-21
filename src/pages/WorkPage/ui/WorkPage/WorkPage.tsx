@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 
 import { AnimateList } from '@/components/AnimateList';
 import { Page } from '@/components/Page/Page';
-import { projects } from '@/content/projects.ts';
+import { projects } from '@/content/projects/projects.ts';
 import { classNames } from '@/helpers/classNames/classNames';
 
 import cls from './WorkPage.module.scss';

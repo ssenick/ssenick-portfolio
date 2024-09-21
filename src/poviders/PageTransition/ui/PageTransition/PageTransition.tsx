@@ -5,7 +5,7 @@ import { type Location } from 'react-router-dom';
 
 import { AppRoutes, routeConfig } from '@/config/route/routeConfig';
 import { fade, text } from '@/const/animate';
-import { projects } from '@/content/projects';
+import { projects } from '@/content/projects/projects.ts';
 import { classNames } from '@/helpers/classNames/classNames';
 import { animatePattern } from '@/helpers/func/animatePattern';
 import { useDimensions } from '@/hooks/useDimensions';

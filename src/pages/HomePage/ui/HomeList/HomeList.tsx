@@ -6,7 +6,7 @@ import { AnimateList } from '@/components/AnimateList';
 import { AppButton } from '@/components/UI/AppButton/AppButton';
 import { Title } from '@/components/UI/Title/Title';
 import { getRouteWork } from '@/config/route/routeConfig';
-import { projects } from '@/content/projects';
+import { projects } from '@/content/projects/projects.ts';
 import { classNames } from '@/helpers/classNames/classNames';
 
 import cls from './HomeList.module.scss';
