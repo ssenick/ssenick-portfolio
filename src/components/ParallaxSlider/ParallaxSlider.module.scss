@@ -17,6 +17,7 @@
     position: relative;
     padding-bottom: 17%;
     background-color: var(--color-cart-2);
+    will-change: transform, opacity;
 
     &:nth-child(odd) {
       background-color: var(--color-cart-1);
@@ -31,6 +32,7 @@
       top: 0;
       left: 0;
       object-fit: contain;
+      will-change: transform, opacity;
     }
 
     .spare {
