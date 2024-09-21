@@ -12,13 +12,15 @@ const AppImage = memo((props: AppImageProps) => {
    const [hasError, setHasError] = useState(false);
 
    useEffect(() => {
-      if (!src) return;
+      if (!src) {
+         setHasError(true);
+      }
 
       const img = new Image();
       setIsLoading(true);
       setHasError(false);
 
-      img.src = src;
+      img.src = src ?? '';
       img.onload = () => {
          setIsLoading(false);
          setHasError(false);
