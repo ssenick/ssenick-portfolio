@@ -2,16 +2,18 @@ import type { MotionValue } from 'framer-motion';
 import { motion, useTransform } from 'framer-motion';
 import { memo, useMemo } from 'react';
 
-import ErrorImage from '@/assets/errorImage.svg';
+import ErrorImage from '@/assets/icons/errorImage.svg';
 import { AppImage } from '@/components/UI/AppImage/AppImage';
 import { AppVideo } from '@/components/UI/AppVideo/AppVideo';
 import { classNames } from '@/helpers/classNames/classNames';
 import { useBrowserInfo } from '@/hooks/useBrowserInfo';
+import type { parallaxImagesSlider } from '@/types/projectsItems.ts';
 
 import cls from './ParallaxSlider.module.scss';
+
 interface ParallaxSliderProps {
    className?: string;
-   images?: string[];
+   images?: parallaxImagesSlider;
    videos?: string[];
    progress: MotionValue<number>;
    direction?: 'left' | 'right';
@@ -27,24 +29,25 @@ const ParallaxSlider = memo((props: ParallaxSliderProps) => {
       [0, 1],
       [`${5 * handlerDirection}vw`, `${-7 * handlerDirection}vw`],
    );
-
    return (
       <motion.div
          className={classNames(cls.ParallaxSlider, { [cls.revers]: revers }, [className])}
          style={{ x: translateX }}
       >
-         {images?.map((image) => (
-            <div key={image} className={cls.image}>
+         {images?.map((image, index) => (
+            <div key={index} className={cls.image}>
                <AppImage
-                  src={image}
+                  src={image.big}
                   className={cls.img}
+                  loading="lazy"
+                  spare={image.small}
                   errorSpare={<img src={ErrorImage} className={cls.img} alt="error" />}
                />
             </div>
          ))}
          {!images &&
-            videos?.map((video) => (
-               <div key={video} className={cls.image}>
+            videos?.map((video, index) => (
+               <div key={index} className={cls.image}>
                   {/*<video className={cls.img} src={video} autoPlay muted loop></video>*/}
                   <AppVideo
                      className={cls.img}
