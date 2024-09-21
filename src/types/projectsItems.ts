@@ -1,3 +1,12 @@
+export type parallaxImages = [...parallaxImagesSlider, ...parallaxImagesSlider];
+
+export type parallaxImagesSlider = [
+   projectsImageSizes,
+   projectsImageSizes,
+   projectsImageSizes,
+   projectsImageSizes,
+];
+
 export interface projectsImageSizes {
    small: string;
    big: string;
@@ -8,13 +17,9 @@ export interface projectDevicesImages {
    tablet: projectsImageSizes;
    mobile: projectsImageSizes[];
 }
-export interface projectsSlidersImages {
-   first: [string, string, string, string];
-   second: [string, string, string, string];
-}
 interface projectImages {
    preview: string;
-   sliders: projectsSlidersImages;
+   sliders: parallaxImages;
    devices: projectDevicesImages;
 }
 export interface projectType {
