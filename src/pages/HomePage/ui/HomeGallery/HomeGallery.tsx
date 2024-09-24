@@ -1,9 +1,9 @@
 import { memo } from 'react';
 
-import VideoBlog from '@/assets/projects/blog/video/video_1.mp4';
+import VideoBlog from '@/assets/projects/blog/video/video.mp4';
 import VideoEurotex from '@/assets/projects/eurotex/eurotex2.mp4';
 import VideoGart from '@/assets/projects/gart/gart2.mp4';
-import VideoGreenShop from '@/assets/projects/greenshop/greenshop2.mp4';
+import VideoGreenShop from '@/assets/projects/greenshop/video/video.mp4';
 import VideoHelp from '@/assets/projects/help/help2.mp4';
 import VideoPortfolio from '@/assets/projects/portfolio/portfolio2.mp4';
 import VideoSportbet from '@/assets/projects/sportbet/sportbet2.mp4';
