@@ -7,7 +7,7 @@ import VideoGreenShop from '@/assets/projects/greenshop/video/video.mp4';
 import VideoHelp from '@/assets/projects/help/help2.mp4';
 import VideoPortfolio from '@/assets/projects/portfolio/video/video.mp4';
 import VideoSportbet from '@/assets/projects/sportbet/video/video.mp4';
-import VideoStatika from '@/assets/projects/statika/statika2.mp4';
+import VideoStatika from '@/assets/projects/statika/video/video.mp4';
 import { ParallaxVideosGroupSliders } from '@/components/ParallaxVideosGroupSliders/ParallaxVideosGroupSliders.tsx';
 
 interface HomeGalleryProps {
