@@ -8,6 +8,7 @@ import { LinksList } from '@/components/LinksList/LinksList.tsx';
 import { AppButton } from '@/components/UI/AppButton/AppButton';
 import { Title } from '@/components/UI/Title/Title';
 import { getRouteContact } from '@/config/route/routeConfig';
+import { EMAIL, PHONE } from '@/content/contacts.ts';
 import { socials } from '@/content/socials.ts';
 import { classNames } from '@/helpers/classNames/classNames';
 import { FramerMagnetic } from '@/helpers/components/FramerMagnetic/FramerMagnetic';
@@ -50,10 +51,10 @@ const Footer = memo((props: FooterProps) => {
             </div>
             <div className={cls.buttons}>
                <AppButton className={cls.button} oppositeColor variant={'link'}>
-                  <a href="tel:+14037085691">+14037085691</a>
+                  <a href={`tel${PHONE}`}>{PHONE}</a>
                </AppButton>
                <AppButton className={cls.button} oppositeColor variant={'link'}>
-                  <a href="mailto:ssenick@ukr.net">ssenick@ukr.net</a>
+                  <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
                </AppButton>
             </div>
             <div className={cls.wrapper}>

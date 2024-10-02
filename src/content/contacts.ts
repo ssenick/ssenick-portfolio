@@ -1,14 +1,17 @@
 import type { ILinksList } from '@/components/LinksList/LinksList.tsx';
 
+export const PHONE = '+14037085691';
+export const EMAIL = 'ssenick@ukr.net';
+
 export const contacts: ILinksList[] = [
    {
-      text: '+14037085691',
-      href: 'tel:+14037085691',
+      text: PHONE,
+      href: `tel:${PHONE}`,
       target: '_self',
    },
    {
-      text: 'ssenick@ukr.net',
-      href: 'mailto:ssenick@ukr.net',
+      text: EMAIL,
+      href: `mailto:${EMAIL}`,
       target: '_self',
    },
 ];
