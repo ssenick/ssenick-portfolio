@@ -1,0 +1,29 @@
+.ProjectButtons {
+  padding: 0 var(--p-container) var(--p-container) var(--p-container);
+
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: calc(var(--index) * 2);
+  }
+
+  .link {
+    display: flex;
+    align-items: center;
+    gap: var(--index);
+
+    .arrow {
+      fill: var(--color-white);
+      transform: rotate(-135deg);
+    }
+
+    &.prev {
+      flex-direction: row-reverse;
+
+      .arrow {
+        transform: rotate(45deg);
+      }
+    }
+  }
+}
