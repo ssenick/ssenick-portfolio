@@ -7,6 +7,7 @@ import { projects } from '@/content/projects/projects.ts';
 import { classNames } from '@/helpers/classNames/classNames';
 import { NotFoundPage } from '@/pages/NotFoundPage';
 
+import { ProjectButtons } from '../ProjectButtons/ProjectButtons.tsx';
 import { ProjectDevices } from '../ProjectDevices/ProjectDevices.tsx';
 import { ProjectHeader } from '../ProjectHeader/ProjectHeader.tsx';
 import { ProjectLaptop } from '../ProjectLaptop/ProjectLaptop.tsx';
@@ -38,6 +39,7 @@ const ProjectPage = (props: ProjectPageProps) => {
          <ProjectDevices className={cls.bgGreen} images={mobileImages} />
          <ProjectLaptop className={cls.bgOrange} images={mainImages} tablet />
          <ParallaxImagesGroupSliders sliders={slidersImage} />
+         <ProjectButtons nameProject={name} />
       </Page>
    );
 };
