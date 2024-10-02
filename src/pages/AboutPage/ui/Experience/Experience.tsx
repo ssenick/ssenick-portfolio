@@ -25,7 +25,7 @@ const Experience = memo((props: ExperienceProps) => {
                   ' Storybook, Git, Jest, i18n, Prettier, ESLint, StyleLint'
                }
                company={'Freelance (Self employed)'}
-               period={'2023 - 2024'}
+               period={'2023 - current'}
             />
             <div className={cls.line}></div>
             <ExperienceItem
