@@ -3,10 +3,11 @@ import { useRef } from 'react';
 
 import { Page } from '@/components/Page/Page';
 import { classNames } from '@/helpers/classNames/classNames';
-import { AboutParticleImage } from '@/pages/AboutPage/ui/AboutParticleImage/AboutParticleImage.tsx';
+import { useBrowserInfo } from '@/hooks/useBrowserInfo';
 
-// import { useBrowserInfo } from '@/hooks/useBrowserInfo';
 import { Biography } from '../Biography/Biography';
+import { Brain } from '../Brain/Brain';
+import { BrainSafari } from '../Brain/BrainSafari';
 import { Experience } from '../Experience/Experience';
 import { Skills } from '../Skills/Skills';
 import cls from './AboutPage.module.scss';
@@ -17,7 +18,7 @@ interface AboutPageProps {
 
 const AboutPage = (props: AboutPageProps) => {
    const { className } = props;
-   // const browserInfo = useBrowserInfo();
+   const browserInfo = useBrowserInfo();
    const wrapperRef = useRef<HTMLDivElement | null>(null);
 
    const { scrollYProgress } = useScroll({
@@ -40,13 +41,11 @@ const AboutPage = (props: AboutPageProps) => {
             </div>
             <div className={cls.imageBlock}>
                <motion.div className={cls.image} style={{ top: valueMove }}>
-                  {/*{browserInfo?.name !== 'Safari' ? (*/}
-                  {/*   <Brain className={cls.brain} scrollYProgress={scrollYProgress} />*/}
-                  {/*) : (*/}
-                  {/*   <BrainSafari className={cls.brain} />*/}
-                  {/*)}*/}
-                  {/*<Brain className={cls.brain} scrollYProgress={scrollYProgress} />*/}
-                  <AboutParticleImage />
+                  {browserInfo?.name !== 'Safari' ? (
+                     <Brain className={cls.brain} scrollYProgress={scrollYProgress} />
+                  ) : (
+                     <BrainSafari className={cls.brain} />
+                  )}
                </motion.div>
             </div>
          </div>
