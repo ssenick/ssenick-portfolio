@@ -9,7 +9,7 @@
   }
 
   .picture {
-    background: rgb(100 100 100 / 40%);
+    background: var(--color-black);
     overflow: hidden;
     position: absolute;
     transform: translate(-50%, -50%);
