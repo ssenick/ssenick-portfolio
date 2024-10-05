@@ -1,30 +1,3 @@
-import Laptop from '@/assets/projects/eurotex/laptop/laptop.webp';
-import Laptop_small from '@/assets/projects/eurotex/laptop/laptop_small.webp';
-import Mobile_1 from '@/assets/projects/eurotex/mobile/image_1.webp';
-import Mobile_1_small from '@/assets/projects/eurotex/mobile/image_1_small.webp';
-import Mobile_2 from '@/assets/projects/eurotex/mobile/image_2.webp';
-import Mobile_2_small from '@/assets/projects/eurotex/mobile/image_2_small.webp';
-import Mobile_3 from '@/assets/projects/eurotex/mobile/image_3.webp';
-import Mobile_3_small from '@/assets/projects/eurotex/mobile/image_3_small.webp';
-import Preview from '@/assets/projects/eurotex/preview.webp';
-import Slider_1 from '@/assets/projects/eurotex/sliders/image_1.webp';
-import Slider_1_small from '@/assets/projects/eurotex/sliders/image_1_small.webp';
-import Slider_2 from '@/assets/projects/eurotex/sliders/image_2.webp';
-import Slider_2_small from '@/assets/projects/eurotex/sliders/image_2_small.webp';
-import Slider_3 from '@/assets/projects/eurotex/sliders/image_3.webp';
-import Slider_3_small from '@/assets/projects/eurotex/sliders/image_3_small.webp';
-import Slider_4 from '@/assets/projects/eurotex/sliders/image_4.webp';
-import Slider_4_small from '@/assets/projects/eurotex/sliders/image_4_small.webp';
-import Slider_5 from '@/assets/projects/eurotex/sliders/image_5.webp';
-import Slider_5_small from '@/assets/projects/eurotex/sliders/image_5_small.webp';
-import Slider_6 from '@/assets/projects/eurotex/sliders/image_6.webp';
-import Slider_6_small from '@/assets/projects/eurotex/sliders/image_6_small.webp';
-import Slider_7 from '@/assets/projects/eurotex/sliders/image_7.webp';
-import Slider_7_small from '@/assets/projects/eurotex/sliders/image_7_small.webp';
-import Slider_8 from '@/assets/projects/eurotex/sliders/image_8.webp';
-import Slider_8_small from '@/assets/projects/eurotex/sliders/image_8_small.webp';
-import Tablet from '@/assets/projects/eurotex/tablet/tablet.webp';
-import Tablet_small from '@/assets/projects/eurotex/tablet/tablet_small.webp';
 import type { projectType } from '@/types/projectsItems.ts';
 export const eurotex: projectType = {
    id: 10,
@@ -35,27 +8,63 @@ export const eurotex: projectType = {
    projectURL: 'https://eurotex.ssenick.fun/',
    path: 'eurotex',
    images: {
-      preview: Preview,
+      preview: 'https://files.ssenick.fun/portfolio/eurotex/preview.webp',
       sliders: [
-         { big: Slider_1, small: Slider_1_small },
-         { big: Slider_2, small: Slider_2_small },
-         { big: Slider_3, small: Slider_3_small },
-         { big: Slider_4, small: Slider_4_small },
-         { big: Slider_5, small: Slider_5_small },
-         { big: Slider_6, small: Slider_6_small },
-         { big: Slider_7, small: Slider_7_small },
-         { big: Slider_8, small: Slider_8_small },
+         {
+            big: 'https://files.ssenick.fun/portfolio/eurotex/sliders/image_1.webp',
+            small: 'https://files.ssenick.fun/portfolio/eurotex/sliders/image_1_small.webp',
+         },
+         {
+            big: 'https://files.ssenick.fun/portfolio/eurotex/sliders/image_2.webp',
+            small: 'https://files.ssenick.fun/portfolio/eurotex/sliders/image_2_small.webp',
+         },
+         {
+            big: 'https://files.ssenick.fun/portfolio/eurotex/sliders/image_3.webp',
+            small: 'https://files.ssenick.fun/portfolio/eurotex/sliders/image_3_small.webp',
+         },
+         {
+            big: 'https://files.ssenick.fun/portfolio/eurotex/sliders/image_4.webp',
+            small: 'https://files.ssenick.fun/portfolio/eurotex/sliders/image_4_small.webp',
+         },
+         {
+            big: 'https://files.ssenick.fun/portfolio/eurotex/sliders/image_5.webp',
+            small: 'https://files.ssenick.fun/portfolio/eurotex/sliders/image_5_small.webp',
+         },
+         {
+            big: 'https://files.ssenick.fun/portfolio/eurotex/sliders/image_6.webp',
+            small: 'https://files.ssenick.fun/portfolio/eurotex/sliders/image_6_small.webp',
+         },
+         {
+            big: 'https://files.ssenick.fun/portfolio/eurotex/sliders/image_8.webp',
+            small: 'https://files.ssenick.fun/portfolio/eurotex/sliders/image_8_small.webp',
+         },
+         {
+            big: 'https://files.ssenick.fun/portfolio/eurotex/sliders/image_7.webp',
+            small: 'https://files.ssenick.fun/portfolio/eurotex/sliders/image_7_small.webp',
+         },
       ],
       devices: {
-         laptop: { small: Laptop_small, big: Laptop },
+         laptop: {
+            big: 'https://files.ssenick.fun/portfolio/eurotex/laptop/laptop.webp',
+            small: 'https://files.ssenick.fun/portfolio/eurotex/laptop/laptop_small.webp',
+         },
          tablet: {
-            small: Tablet_small,
-            big: Tablet,
+            big: 'https://files.ssenick.fun/portfolio/eurotex/tablet/tablet.webp',
+            small: 'https://files.ssenick.fun/portfolio/eurotex/tablet/tablet_small.webp',
          },
          mobile: [
-            { big: Mobile_1, small: Mobile_1_small },
-            { big: Mobile_2, small: Mobile_2_small },
-            { big: Mobile_3, small: Mobile_3_small },
+            {
+               big: 'https://files.ssenick.fun/portfolio/eurotex/mobile/image_1.webp',
+               small: 'https://files.ssenick.fun/portfolio/eurotex/mobile/image_1_small.webp',
+            },
+            {
+               big: 'https://files.ssenick.fun/portfolio/eurotex/mobile/image_2.webp',
+               small: 'https://files.ssenick.fun/portfolio/eurotex/mobile/image_2_small.webp',
+            },
+            {
+               big: 'https://files.ssenick.fun/portfolio/eurotex/mobile/image_3.webp',
+               small: 'https://files.ssenick.fun/portfolio/eurotex/mobile/image_3_small.webp',
+            },
          ],
       },
    },
