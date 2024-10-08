@@ -22,4 +22,4 @@ const BrainSafari = memo((props: BrainProps) => {
 });
 
 BrainSafari.displayName = 'BrainSafari';
-export { BrainSafari };
+export default BrainSafari;
