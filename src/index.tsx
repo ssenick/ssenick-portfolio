@@ -1,7 +1,6 @@
 import '@/app/styles/index.scss';
 import '@/config/i18n/i18n';
 
-import ReactLenis from '@studio-freight/react-lenis';
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
@@ -19,15 +18,13 @@ const root = createRoot(container);
 root.render(
    <StrictMode>
       <ErrorBoundary>
-         <ReactLenis root>
-            <LanguageProvider>
-               <MediaQueryProvider>
-                  <BrowserRouter>
-                     <App />
-                  </BrowserRouter>
-               </MediaQueryProvider>
-            </LanguageProvider>
-         </ReactLenis>
+         <LanguageProvider>
+            <MediaQueryProvider>
+               <BrowserRouter>
+                  <App />
+               </BrowserRouter>
+            </MediaQueryProvider>
+         </LanguageProvider>
       </ErrorBoundary>
    </StrictMode>,
 );
