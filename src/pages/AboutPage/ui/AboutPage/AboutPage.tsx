@@ -1,13 +1,13 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
+import { lazy, Suspense, useRef } from 'react';
 
 import { Page } from '@/components/Page/Page';
 import { classNames } from '@/helpers/classNames/classNames';
 import { useBrowserInfo } from '@/hooks/useBrowserInfo';
 
 import { Biography } from '../Biography/Biography';
-import { Brain } from '../Brain/Brain';
-import { BrainSafari } from '../Brain/BrainSafari';
+const BrainSafari = lazy(() => import('../Brain/BrainSafari'));
+import { Brain } from '../Brain/Brain.tsx';
 import { Experience } from '../Experience/Experience';
 import { Skills } from '../Skills/Skills';
 import cls from './AboutPage.module.scss';
@@ -44,7 +44,9 @@ const AboutPage = (props: AboutPageProps) => {
                   {browserInfo?.name !== 'Safari' ? (
                      <Brain className={cls.brain} scrollYProgress={scrollYProgress} />
                   ) : (
-                     <BrainSafari className={cls.brain} />
+                     <Suspense fallback={''}>
+                        <BrainSafari className={cls.brain} />
+                     </Suspense>
                   )}
                </motion.div>
             </div>
