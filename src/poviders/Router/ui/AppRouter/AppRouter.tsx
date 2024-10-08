@@ -1,3 +1,4 @@
+import ReactLenis from '@studio-freight/react-lenis';
 import { Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { type Location } from 'react-router-dom';
@@ -20,7 +21,11 @@ export const AppRouter = (props: AppRouterProps) => {
                <Route
                   key={el.path}
                   path={el.path}
-                  element={<PageTransition location={location}>{el.element}</PageTransition>}
+                  element={
+                     <PageTransition location={location}>
+                        <ReactLenis root>{el.element}</ReactLenis>
+                     </PageTransition>
+                  }
                />
             ))}
          </Routes>
