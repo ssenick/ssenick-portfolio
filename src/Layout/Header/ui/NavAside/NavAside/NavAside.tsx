@@ -43,7 +43,7 @@ const NavAside = memo((props: NavAsideProps) => {
          {isActive ? (
             <div className={classNames(cls.NavAside, {}, [className])}>
                <motion.div onClick={closeModal} className={cls.overlay} {...animatePattern(opacity)} />
-               <motion.div {...animatePattern(menuSlide)} className={cls.wrapper}>
+               <motion.div className={cls.wrapper} {...animatePattern(menuSlide)}>
                   <Curve />
                   <div className={cls.body}>
                      <nav className={cls.nav}>
