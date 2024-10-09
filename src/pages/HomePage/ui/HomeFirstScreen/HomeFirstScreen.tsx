@@ -6,7 +6,7 @@ import ImageMe from '@/assets/images/me_half.webp';
 import ImageMeSmall from '@/assets/images/me_half_small.webp';
 import { AppImage } from '@/components/UI/AppImage/AppImage';
 import { classNames } from '@/helpers/classNames/classNames';
-import { Header } from '@/Layout';
+import { Header } from '@/layout';
 
 import { TextSlider } from '../TextSlider/TextSlider';
 import cls from './HomeFirstScreen.module.scss';
