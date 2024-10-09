@@ -3,6 +3,6 @@
   display: grid;
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
-  will-change: auto !important;
+  will-change: auto ;
   background-color: var(--color-white);
 }
