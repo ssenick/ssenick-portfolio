@@ -122,7 +122,7 @@ export const moveToTop = {
 
 export const pageEaseOut = {
    initial: { y: '50vh', opacity: 0 },
-   animate: { y: 0, opacity: 1, transition: { duration: 1, ease: 'easeOut' } },
+   animate: { y: 0, opacity: 1, willChange: 'auto', transition: { duration: 1, ease: 'easeOut' } },
 };
 
 export const scaleAnimation = {
