@@ -10,7 +10,9 @@ import { LanguageProvider } from '@/poviders/LanguageProvider';
 import { MediaQueryProvider } from '@/poviders/MediaQueryProvider';
 
 import { ErrorBoundary } from './poviders/ErrorBoundary';
+
 const container = document.getElementById('root');
+
 if (!container) throw new Error('Failed to mount the application, check the container!');
 
 const root = createRoot(container);
