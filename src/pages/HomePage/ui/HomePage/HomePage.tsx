@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { pageEaseOut } from '@/const/animate';
 import { classNames } from '@/helpers/classNames/classNames';
 import { animatePattern } from '@/helpers/func/animatePattern';
-import { Footer } from '@/Layout';
+import { Footer } from '@/layout';
 import { HomeGallery } from '@/pages/HomePage/ui/HomeGallery/HomeGallery';
 import { HomeList } from '@/pages/HomePage/ui/HomeList/HomeList';
 
