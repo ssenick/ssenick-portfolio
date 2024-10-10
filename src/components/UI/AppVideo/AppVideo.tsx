@@ -42,9 +42,9 @@ const AppVideo = memo((props: AppVideoProps) => {
       };
    }, [src]);
 
-   if (status === 'loading' && spareImage) {
-      return <img className={className} src={spareImage} alt={`${spareImage} preview`} />;
-   }
+   // if (status === 'loading' && spareImage) {
+   //    return <img className={className} src={spareImage} alt={`${spareImage} preview`} />;
+   // }
    if (status === 'error' && errorSpare) {
       return errorSpare;
    } else if (status === 'error' && !errorSpare) {
