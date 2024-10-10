@@ -48,7 +48,7 @@ const AppVideo = memo((props: AppVideoProps) => {
       return <img className={className} src={ErrorImage} alt={`error preview`} />;
    }
 
-   return <video className={className} src={src} {...otherProps} />;
+   return <video className={className} poster={spareImage} playsInline muted src={src} {...otherProps} />;
 });
 
 AppVideo.displayName = 'AppVideo';
