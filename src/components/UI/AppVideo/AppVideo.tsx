@@ -1,20 +1,21 @@
 import type { ReactElement, VideoHTMLAttributes } from 'react';
-import { memo, useLayoutEffect, useState } from 'react';
+import { useEffect } from 'react';
+import { memo, useState } from 'react';
 
+import ErrorImage from '@/assets/icons/errorImage.svg';
 interface AppVideoProps extends VideoHTMLAttributes<HTMLVideoElement> {
    className?: string;
-   spare?: ReactElement;
+   spareImage?: string;
    errorSpare?: ReactElement;
 }
 
 const AppVideo = memo((props: AppVideoProps) => {
-   const { className, src, spare, errorSpare, ...otherProps } = props;
-   const [isLoading, setIsLoading] = useState(true);
-   const [hasError, setHasError] = useState(false);
+   const { className, src, spareImage, errorSpare, ...otherProps } = props;
+   const [status, setStatus] = useState<'loading' | 'error' | 'loaded'>('loading');
 
-   useLayoutEffect(() => {
+   useEffect(() => {
       if (!src) {
-         setHasError(true);
+         setStatus('error');
          return;
       }
 
@@ -22,12 +23,11 @@ const AppVideo = memo((props: AppVideoProps) => {
       video.src = src;
 
       const handleLoadedData = () => {
-         setIsLoading(false);
-         setHasError(false);
+         setStatus('loaded');
       };
+
       const handleError = () => {
-         setIsLoading(false);
-         setHasError(true);
+         setStatus('error');
       };
 
       video.addEventListener('loadeddata', handleLoadedData);
@@ -39,11 +39,13 @@ const AppVideo = memo((props: AppVideoProps) => {
       };
    }, [src]);
 
-   if (isLoading && spare) {
-      return spare;
+   if (status === 'loading' && spareImage) {
+      return <img className={className} src={spareImage} alt={`${spareImage} preview`} />;
    }
-   if (errorSpare && hasError) {
+   if (status === 'error' && errorSpare) {
       return errorSpare;
+   } else if (status === 'error' && !errorSpare) {
+      return <img className={className} src={ErrorImage} alt={`error preview`} />;
    }
 
    return <video className={className} src={src} {...otherProps} />;
