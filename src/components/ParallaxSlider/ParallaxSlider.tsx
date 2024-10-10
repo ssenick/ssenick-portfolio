@@ -6,7 +6,7 @@ import ErrorImage from '@/assets/icons/errorImage.svg';
 import { AppImage } from '@/components/UI/AppImage/AppImage';
 import { AppVideo } from '@/components/UI/AppVideo/AppVideo';
 import { classNames } from '@/helpers/classNames/classNames';
-import { useBrowserInfo } from '@/hooks/useBrowserInfo';
+// import { useBrowserInfo } from '@/hooks/useBrowserInfo';
 import type { parallaxImagesSlider } from '@/types/projectsItems.ts';
 import type { VideoGroup } from '@/types/videoGroup.ts';
 
@@ -23,7 +23,7 @@ interface ParallaxSliderProps {
 
 const ParallaxSlider = memo((props: ParallaxSliderProps) => {
    const { className, images, videos, progress, direction = 'left', revers } = props;
-   const browser = useBrowserInfo();
+   // const browser = useBrowserInfo();
    const handlerDirection = useMemo(() => (direction === 'left' ? -1 : 1), [direction]);
    const translateX = useTransform(
       progress,
@@ -57,7 +57,8 @@ const ParallaxSlider = memo((props: ParallaxSliderProps) => {
                      autoPlay
                      playsInline
                      muted
-                     loop={browser?.name !== 'Safari'}
+                     loop
+                     // loop={browser?.name !== 'Safari'}
                      preload="auto"
                   />
                </div>
