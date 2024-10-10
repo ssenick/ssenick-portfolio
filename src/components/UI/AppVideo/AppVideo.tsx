@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { memo, useState } from 'react';
 
 import ErrorImage from '@/assets/icons/errorImage.svg';
+
 interface AppVideoProps extends VideoHTMLAttributes<HTMLVideoElement> {
    className?: string;
    spareImage?: string;
@@ -42,19 +43,20 @@ const AppVideo = memo((props: AppVideoProps) => {
       };
    }, [src]);
 
-   // if (status === 'loading' && spareImage) {
-   //    return <img className={className} src={spareImage} alt={`${spareImage} preview`} />;
-   // }
+   const handleTimeUpdate = (event: SyntheticEvent<HTMLVideoElement>) => {
+      const video = event.currentTarget;
+      if (video.currentTime >= video.duration - 0.1) {
+         video.currentTime = 0;
+         video.play();
+      }
+   };
+
    if (status === 'error' && errorSpare) {
       return errorSpare;
    } else if (status === 'error' && !errorSpare) {
       return <img className={className} src={ErrorImage} alt={`error preview`} />;
    }
-   const handleVideoEnd = async (event: SyntheticEvent<HTMLVideoElement>) => {
-      const video = event.currentTarget;
-      video.currentTime = 0;
-      await video.play();
-   };
+
    return (
       <video
          className={className}
@@ -64,7 +66,7 @@ const AppVideo = memo((props: AppVideoProps) => {
          muted
          autoPlay
          onLoadedData={() => setStatus('loaded')}
-         onEnded={handleVideoEnd}
+         onTimeUpdate={handleTimeUpdate}
          {...otherProps}
       />
    );
