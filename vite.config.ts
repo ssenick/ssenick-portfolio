@@ -28,9 +28,6 @@ export default defineConfig({
    resolve: {
       alias: [{ find: '@', replacement: '/src' }],
    },
-   define: {
-      __IS_DEV__: 'import.meta.env.DEV',
-   },
    esbuild: {
       treeShaking: true,
    },
