@@ -51,7 +51,7 @@ const Footer = memo((props: FooterProps) => {
             </div>
             <div className={cls.buttons}>
                <AppButton className={cls.button} oppositeColor variant={'link'}>
-                  <a href={`tel${PHONE}`}>{PHONE}</a>
+                  <a href={`tel:${PHONE}`}>{PHONE}</a>
                </AppButton>
                <AppButton className={cls.button} oppositeColor variant={'link'}>
                   <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
