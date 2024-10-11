@@ -1,8 +1,9 @@
-import type { ReactElement, SyntheticEvent, VideoHTMLAttributes } from 'react';
-import { useEffect } from 'react';
-import { memo, useState } from 'react';
+import type { ReactElement, VideoHTMLAttributes } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { memo } from 'react';
 
 import ErrorImage from '@/assets/icons/errorImage.svg';
+import { useBrowserInfo } from '@/hooks/useBrowserInfo.ts';
 
 interface AppVideoProps extends VideoHTMLAttributes<HTMLVideoElement> {
    className?: string;
@@ -11,64 +12,64 @@ interface AppVideoProps extends VideoHTMLAttributes<HTMLVideoElement> {
 }
 
 const AppVideo = memo((props: AppVideoProps) => {
-   const { className, src, spareImage, errorSpare, ...otherProps } = props;
+   const { className, src, spareImage, errorSpare } = props;
    const [status, setStatus] = useState<'loading' | 'error' | 'loaded'>('loading');
+   const videoRef = useRef<HTMLVideoElement | null>(null);
+   const browser = useBrowserInfo();
+
+   const handleLoadedMetadata = useCallback(() => {
+      setStatus('loaded');
+      if (videoRef.current) {
+         videoRef.current.play().catch(() => {
+            setStatus('error');
+         });
+      }
+   }, []);
+
+   const handleError = useCallback(() => {
+      setStatus('error');
+   }, []);
 
    useEffect(() => {
       if (!src) {
          setStatus('error');
          return;
       }
+      const video = videoRef.current;
 
-      const video = document.createElement('video');
-      video.src = src;
-      video.playsInline = true;
-      video.muted = true;
+      if (video) {
+         video.addEventListener('loadedmetadata', handleLoadedMetadata);
+         video.addEventListener('error', handleError);
 
-      const handleLoadedData = async () => {
-         await video.play();
-         setStatus('loaded');
-      };
-
-      const handleError = () => {
-         setStatus('error');
-      };
-
-      video.addEventListener('loadeddata', handleLoadedData);
-      video.addEventListener('error', handleError);
-
-      return () => {
-         video.removeEventListener('loadeddata', handleLoadedData);
-         video.removeEventListener('error', handleError);
-      };
-   }, [src]);
-
-   const handleTimeUpdate = (event: SyntheticEvent<HTMLVideoElement>) => {
-      const video = event.currentTarget;
-      if (video.currentTime >= video.duration - 0.1) {
-         video.currentTime = 0;
-         video.play();
+         return () => {
+            video.removeEventListener('loadedmetadata', handleLoadedMetadata);
+            video.removeEventListener('error', handleError);
+         };
       }
-   };
+   }, [src, handleLoadedMetadata, handleError]);
 
    if (status === 'error' && errorSpare) {
       return errorSpare;
    } else if (status === 'error' && !errorSpare) {
-      return <img className={className} src={ErrorImage} alt={`error preview`} />;
+      return <img className={className} src={ErrorImage} alt="error preview" />;
    }
 
    return (
-      <video
-         className={className}
-         src={src}
-         poster={status === 'loading' ? spareImage : undefined}
-         playsInline
-         muted
-         autoPlay
-         onLoadedData={() => setStatus('loaded')}
-         onTimeUpdate={handleTimeUpdate}
-         {...otherProps}
-      />
+      <>
+         {status === 'loading' && spareImage && (
+            <img className={className} src={spareImage} alt="preview image" />
+         )}
+         <video
+            ref={videoRef}
+            className={className}
+            src={src}
+            poster={spareImage}
+            preload="auto"
+            playsInline
+            muted
+            loop={browser?.name !== 'Safari'}
+         />
+      </>
    );
 });
 
