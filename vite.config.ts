@@ -29,7 +29,7 @@ export default defineConfig({
       alias: [{ find: '@', replacement: '/src' }],
    },
    define: {
-      __IS_DEV__: JSON.stringify(true),
+      __IS_DEV__: 'import.meta.env.DEV',
    },
    esbuild: {
       treeShaking: true,

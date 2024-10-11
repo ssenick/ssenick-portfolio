@@ -17,7 +17,7 @@ void i18n
    .init({
       lng: localStorage.getItem(LANGUAGE_LOCALSTORAGE_KEY) ?? initialLanguage,
       fallbackLng: localStorage.getItem(LANGUAGE_LOCALSTORAGE_KEY) ?? initialLanguage,
-      debug: __IS_DEV__,
+      debug: import.meta.env.DEV,
       backend: {
          loadPath: '/locales/{{lng}}/{{ns}}.json',
       },
