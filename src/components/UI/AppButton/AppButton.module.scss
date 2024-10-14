@@ -110,7 +110,8 @@
     }
   }
 
-  &.link {
+  &.link,
+  &.linkOpposite {
     .Button {
       position: relative;
       box-shadow: var(--color-shadow-opposite);
@@ -175,6 +176,7 @@
   &.clear,
   &.link,
   &.round,
+  &.linkOpposite,
   &.burger {
     .Button {
       position: relative;
@@ -212,6 +214,21 @@
         align-items: center;
         position: relative;
         z-index: 2;
+      }
+    }
+  }
+
+  &.linkOpposite {
+    .Button {
+      transition: color 0.4s ease-in-out;
+      &.show {
+        color: var(--color-white);
+
+        &::after {
+          z-index: 1;
+          transition: transform 0.5s ease-in-out;
+          transform: translate(-50%, -50%);
+        }
       }
     }
   }
