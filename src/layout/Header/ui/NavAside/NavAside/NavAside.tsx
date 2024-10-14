@@ -1,3 +1,4 @@
+import ReactLenis from '@studio-freight/react-lenis';
 import { AnimatePresence, motion } from 'framer-motion';
 import { memo, useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -45,50 +46,52 @@ const NavAside = memo((props: NavAsideProps) => {
                <motion.div onClick={closeModal} className={cls.overlay} {...animatePattern(opacity)} />
                <motion.div className={cls.wrapper} {...animatePattern(menuSlide)}>
                   <Curve />
-                  <div className={cls.body}>
-                     <nav className={cls.nav}>
-                        <motion.h5 {...animatePattern(slide)}>{t('Navigation')}</motion.h5>
-                        <ul className={cls.list}>
-                           {navLinks.map(({ path, text }, index) => (
-                              <li key={path}>
-                                 <FramerMagnetic>
-                                    <motion.div custom={index} {...animatePattern(slide)}>
-                                       <Link
-                                          onClick={closeAll}
-                                          className={classNames(
-                                             cls.link,
-                                             { [cls.active]: location === path },
-                                             [],
-                                          )}
-                                          to={path}
-                                       >
-                                          {t(text)}
-                                          <span className={cls.dot}></span>
-                                       </Link>
-                                    </motion.div>
-                                 </FramerMagnetic>
-                              </li>
-                           ))}
-                        </ul>
-                        <LangSwitcherMobile />
-                     </nav>
-                     <div className={cls.footer}>
-                        <motion.h5 {...animatePattern(slide)}>{t('Socials')}</motion.h5>
-                        <ul className={cls.footerList}>
-                           {socials.map(({ text, href }) => (
-                              <li key={href}>
-                                 <FramerMagnetic>
-                                    <a href={href} target="_blank" rel="noreferrer">
-                                       <motion.div {...animatePattern(slide)}>
-                                          <span className={cls.text}>{text}</span>
+                  <ReactLenis className={cls.lenisWrapper}>
+                     <div className={cls.body}>
+                        <nav className={cls.nav}>
+                           <motion.h5 {...animatePattern(slide)}>{t('Navigation')}</motion.h5>
+                           <ul className={cls.list}>
+                              {navLinks.map(({ path, text }, index) => (
+                                 <li key={path}>
+                                    <FramerMagnetic>
+                                       <motion.div custom={index} {...animatePattern(slide)}>
+                                          <Link
+                                             onClick={closeAll}
+                                             className={classNames(
+                                                cls.link,
+                                                { [cls.active]: location === path },
+                                                [],
+                                             )}
+                                             to={path}
+                                          >
+                                             {t(text)}
+                                             <span className={cls.dot}></span>
+                                          </Link>
                                        </motion.div>
-                                    </a>
-                                 </FramerMagnetic>
-                              </li>
-                           ))}
-                        </ul>
+                                    </FramerMagnetic>
+                                 </li>
+                              ))}
+                           </ul>
+                           <LangSwitcherMobile />
+                        </nav>
+                        <div className={cls.footer}>
+                           <motion.h5 {...animatePattern(slide)}>{t('Socials')}</motion.h5>
+                           <ul className={cls.footerList}>
+                              {socials.map(({ text, href }) => (
+                                 <li key={href}>
+                                    <FramerMagnetic>
+                                       <a href={href} target="_blank" rel="noreferrer">
+                                          <motion.div {...animatePattern(slide)}>
+                                             <span className={cls.text}>{text}</span>
+                                          </motion.div>
+                                       </a>
+                                    </FramerMagnetic>
+                                 </li>
+                              ))}
+                           </ul>
+                        </div>
                      </div>
-                  </div>
+                  </ReactLenis>
                </motion.div>
             </div>
          ) : null}

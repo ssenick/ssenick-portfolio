@@ -26,6 +26,12 @@
     color: var(--color-white);
     will-change: transform;
 
+    .lenisWrapper {
+      height: 100%;
+      position: relative;
+      overflow-y: auto;
+    }
+
     .body {
       display: flex;
       flex-direction: column;
@@ -33,7 +39,7 @@
       height: 100%;
       padding: 12vh 7.5vw 8vh;
       position: relative;
-      overflow: auto;
+      overflow-y: auto;
     }
 
     .nav,
