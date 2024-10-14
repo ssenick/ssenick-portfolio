@@ -17,14 +17,29 @@
 
   .signature {
     display: flex;
-    justify-content: flex-end;
+    align-items: center;
+    justify-content: space-between;
 
+    gap: 15px;
+    .resume{
+      position: relative;
+      top: 10%;
+      .resumeBtn{
+        display: flex;
+        align-items: center;
+        gap: calc(var(--index));
+      }
+    }
     .svg {
       width: clamp(6.25rem, 4.384rem + 9.328vw, 21.875rem);
 
       path {
         will-change: stroke-dasharray;
       }
+    }
+    @media (max-width: 350px){
+       flex-direction: column-reverse;
+      align-items: flex-start;
     }
   }
 }
