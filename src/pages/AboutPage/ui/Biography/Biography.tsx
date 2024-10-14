@@ -32,7 +32,7 @@ const Biography = memo((props: BiographyProps) => {
             <AppButton variant={'linkOpposite'} className={cls.resume}>
                <a href={Resume} download>
                   <span className={cls.resumeBtn}>
-                     <span>Download RP</span>
+                     <span>{t('Download RP')}</span>
                      <DownloadIcon />
                   </span>
                </a>
