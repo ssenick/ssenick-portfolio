@@ -30,6 +30,10 @@
       height: 100%;
       position: relative;
       overflow-y: auto;
+
+      > div:first-child {
+        height: 100%;
+      }
     }
 
     .body {
