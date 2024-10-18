@@ -22,6 +22,7 @@ root.render(
       <ErrorBoundary>
          <LanguageProvider>
             <MediaQueryProvider>
+               {/* <BrowserRouter> */}
                <HashRouter>
                   <App />
                </HashRouter>
