@@ -7,7 +7,7 @@ import { Languages } from '@/poviders/LanguageProvider/model/types';
 
 export const languages: ListBoxItem<Languages>[] = [
    { value: Languages.EN, content: { text: 'EN', icon: <IconEN /> } },
-   { value: Languages.RU, content: { text: 'RU', icon: <IconRU /> } },
    { value: Languages.UA, content: { text: 'UA', icon: <IconUA /> } },
+   { value: Languages.RU, content: { text: 'RU', icon: <IconRU /> } },
    { value: Languages.SK, content: { text: 'SK', icon: <IconSK /> } },
 ];
