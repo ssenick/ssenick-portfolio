@@ -24,13 +24,15 @@ const Experience = memo((props: ExperienceProps) => {
                   ' JS, API Integration, UI/UX, CI/CD Pipelines,' +
                   ' Storybook, Git, Jest, i18n, Prettier, ESLint, StyleLint'
                }
-               company={'Freelance (Self employed)'}
+               company={'Freelance'}
                period={'2023 - current'}
+               responsibilities={t('firstItemResponsibilities')}
             />
             <div className={cls.line}></div>
             <ExperienceItem
                className={cls.item2}
                title={t('secondItemTitle')}
+               responsibilities={t('secondItemResponsibilities')}
                description={
                   'React, Redux Toolkit, TypeScript, JS, RESTful API, Git, Storybook, CI/CD, Hasky, i18n'
                }
@@ -41,7 +43,8 @@ const Experience = memo((props: ExperienceProps) => {
             <ExperienceItem
                className={cls.item3}
                title={t('thirdItemTitle')}
-               description={'HTML, CSS, JavaScript, Responsive UX/UI, Figma'}
+               responsibilities={t('thirdItemResponsibilities')}
+               description={'HTML, CSS/SCSS, JavaScript, Responsive UX/UI, Figma, GSAP, Swiper'}
                company={'klepka.digital'}
                period={'2021 - 2022'}
             />
@@ -57,22 +60,24 @@ interface ExperienceItemProps {
    title: string;
    description: string;
    period: string;
+   responsibilities: string;
    company: string;
    className?: string;
    position?: 'left' | 'right';
 }
 const ExperienceItem = memo((props: ExperienceItemProps) => {
-   const { className, company, period, title, description, position = 'left' } = props;
+   const { className, company, period, title, description, responsibilities, position = 'left' } = props;
    const { t } = useTranslation('about');
    return (
       <div className={classNames(cls.ExperienceItem, {}, [className, cls[position]])}>
          <h3 className={cls.title}>{title}</h3>
-         <p className={cls.description}>{description}</p>
          <p className={cls.period}>{period}</p>
          <p className={cls.company}>
             <span className={cls.span}>{t('experienceItemSubtitle')}</span>
             <span> {company}</span>
          </p>
+         <p className={cls.description}>{description}</p>
+         <p className={cls.responsibilities}>{responsibilities}</p>
       </div>
    );
 });
