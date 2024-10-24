@@ -25,7 +25,7 @@ const Experience = memo((props: ExperienceProps) => {
                   ' Storybook, Git, Jest, i18n, Prettier, ESLint, StyleLint'
                }
                company={'Freelance'}
-               period={'2023 - current'}
+               period={'2024 - current'}
                responsibilities={t('firstItemResponsibilities')}
             />
             <div className={cls.line}></div>
@@ -37,7 +37,7 @@ const Experience = memo((props: ExperienceProps) => {
                   'React, Redux Toolkit, TypeScript, JS, RESTful API, Git, Storybook, CI/CD, Hasky, i18n'
                }
                company={'WeCan-IT'}
-               period={'2022 - 2023'}
+               period={'2022 - 2024'}
                position="right"
             />
             <ExperienceItem
