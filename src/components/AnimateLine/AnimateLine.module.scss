@@ -12,7 +12,8 @@
 
     path {
       stroke-width: 1px;
-      stroke: white;
+      stroke: var(--color-white);
+      opacity: 0.5;
       fill: none;
     }
   }
