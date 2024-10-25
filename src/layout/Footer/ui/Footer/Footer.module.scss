@@ -72,18 +72,13 @@
     align-items: center;
     flex-direction: column;
 
-    &::after {
-      content: "";
-      position: absolute;
-      width: 100%;
-      bottom: 0;
-      background-color: var(--color-white);
-      height: 1px;
-      opacity: 0.5;
-    }
-
     .title {
       padding-bottom: 0;
+    }
+
+    .wrapperLink {
+      position: relative;
+      z-index: 2;
     }
 
     .linkAbout {
