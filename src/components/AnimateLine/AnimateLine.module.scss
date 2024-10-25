@@ -1,0 +1,34 @@
+.AnimateLine {
+  height: 1px;
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px;
+
+  svg {
+    position: absolute;
+    width: 100%;
+    height: 200px;
+    top: -100px;
+
+    path {
+      stroke-width: 1px;
+      stroke: white;
+      fill: none;
+    }
+  }
+
+  .box {
+    height: 40px;
+    width: 100%;
+    position: relative;
+    top: -20px;
+    z-index: 1;
+
+    @media (any-hover: hover) {
+      &:hover {
+        height: 200px;
+        top: -100px;
+      }
+    }
+  }
+}
