@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
 import Arrow from '@/assets/icons/arrow.svg?react';
+import { AnimateLine } from '@/components/AnimateLine/AnimateLine.tsx';
 import { LinksList } from '@/components/LinksList/LinksList.tsx';
 import { AppButton } from '@/components/UI/AppButton/AppButton';
 import { Title } from '@/components/UI/Title/Title';
@@ -39,12 +40,14 @@ const Footer = memo((props: FooterProps) => {
          <motion.div style={{ y: valueMove }}>
             <div className={cls.quickContact}>
                <Title className={cls.title}>{t('Footer title')}</Title>
-               <FramerMagnetic>
+               <FramerMagnetic className={cls.wrapperLink}>
                   <Link to={getRouteContact()} className={cls.linkAbout}>
                      {t('Footer link')} <Arrow className={cls.arrow} />
                   </Link>
                </FramerMagnetic>
             </div>
+            <AnimateLine />
+
             <div className={cls.information}>
                <Title>{t('Footer inform title')} </Title>
                <p className={cls.description}>{t('Footer description')}</p>
