@@ -60,6 +60,7 @@ const Footer = memo((props: FooterProps) => {
                   <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
                </AppButton>
             </div>
+
             <div className={cls.wrapper}>
                <div>
                   <Title>{t('Version')}</Title>
