@@ -1,5 +1,6 @@
 import emailjs from '@emailjs/browser';
-import { memo, useCallback } from 'react';
+import { memo, useCallback, useState } from 'react';
+import ReCAPTCHA from 'react-google-recaptcha';
 import type { SubmitHandler } from 'react-hook-form';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
@@ -25,7 +26,7 @@ interface ContactFormProps {
 
 const ContactForm = memo((props: ContactFormProps) => {
    const { className } = props;
-
+   const [statusReCAPTCHA, setStatusReCAPTCHA] = useState<string | null>(null);
    const { t } = useTranslation('contact');
 
    const { register, handleSubmit, formState, reset } = useForm<IForm>({
@@ -35,9 +36,16 @@ const ContactForm = memo((props: ContactFormProps) => {
    const emailError = formState.errors.email?.message;
    const nameError = formState.errors.name?.message;
    const messageError = formState.errors.message?.message;
+   const onChangeReCAPTCHA = (value: string | null) => {
+      setStatusReCAPTCHA(value);
+   };
 
    const onSubmit: SubmitHandler<IForm> = useCallback(
       (data) => {
+         if (!statusReCAPTCHA) {
+            toast.error(t('error toast'));
+            return;
+         }
          const loadingToastId = toast.loading(t('loading toast'));
 
          emailjs
@@ -64,7 +72,7 @@ const ContactForm = memo((props: ContactFormProps) => {
                });
             });
       },
-      [reset, t],
+      [statusReCAPTCHA, reset, t],
    );
 
    return (
@@ -106,6 +114,14 @@ const ContactForm = memo((props: ContactFormProps) => {
                   },
                })}
             />
+            <div className={cls.recaptchaWrapper}>
+               <ReCAPTCHA
+                  className={cls.recaptcha}
+                  sitekey={import.meta.env.VITE_RECAPTCHA_KEY}
+                  onChange={onChangeReCAPTCHA}
+               />
+            </div>
+
             <div className={cls.footer}>
                <AppButton type={'submit'}>
                   <span className={cls.btn}>

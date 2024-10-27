@@ -17,6 +17,21 @@
     min-width: 250px;
   }
 
+  .recaptcha {
+    position: relative;
+    z-index: 1;
+    align-self: start;
+    zoom: 2;
+
+    @media (max-width: 1500px) {
+      zoom: 1.5;
+    }
+
+    @media (max-width: 900px) {
+      zoom: 1;
+    }
+  }
+
   .footer {
     display: flex;
     justify-content: center;
