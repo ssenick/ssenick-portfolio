@@ -1,6 +1,5 @@
 import emailjs from '@emailjs/browser';
-import { memo, useCallback, useState } from 'react';
-import ReCAPTCHA from 'react-google-recaptcha';
+import { memo, useCallback } from 'react';
 import type { SubmitHandler } from 'react-hook-form';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
@@ -33,22 +32,14 @@ const ContactForm = memo((props: ContactFormProps) => {
       mode: 'onSubmit',
    });
 
-   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
-
    const emailError = formState.errors.email?.message;
    const nameError = formState.errors.name?.message;
    const messageError = formState.errors.message?.message;
-   const onCaptchaChange = (token: string | null) => {
-      setCaptchaToken(token);
-   };
 
    const onSubmit: SubmitHandler<IForm> = useCallback(
       (data) => {
          const loadingToastId = toast.loading(t('loading toast'));
-         if (!captchaToken) {
-            toast.error('');
-            return;
-         }
+
          emailjs
             .send(
                import.meta.env.VITE_EMAIL_SERVICE_KEY,
@@ -57,7 +48,6 @@ const ContactForm = memo((props: ContactFormProps) => {
                   user_name: data.name,
                   user_email: data.email,
                   message: data.message,
-                  'g-recaptcha-response': captchaToken,
                },
                import.meta.env.VITE_EMAIL_USER_ID_KEY,
             )
@@ -66,7 +56,6 @@ const ContactForm = memo((props: ContactFormProps) => {
                   id: loadingToastId,
                });
                reset();
-               setCaptchaToken(null);
             })
             .catch((error) => {
                console.log(error);
@@ -75,7 +64,7 @@ const ContactForm = memo((props: ContactFormProps) => {
                });
             });
       },
-      [captchaToken, reset, t],
+      [reset, t],
    );
 
    return (
@@ -117,7 +106,6 @@ const ContactForm = memo((props: ContactFormProps) => {
                   },
                })}
             />
-            <ReCAPTCHA sitekey={import.meta.env.VITE_RECAPTCHA_KEY} onChange={onCaptchaChange} />
             <div className={cls.footer}>
                <AppButton type={'submit'}>
                   <span className={cls.btn}>
