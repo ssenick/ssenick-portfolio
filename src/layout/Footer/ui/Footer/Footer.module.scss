@@ -179,6 +179,8 @@
   }
 
   @media (max-width: 772px) {
-    padding: calc(clamp(3.75rem, 3.451rem + 1.493vw, 6.25rem) * 2) var(--p-container) clamp(2.188rem, 1.702rem + 2.425vw, 6.25rem);
+    padding:
+      calc(clamp(3.75rem, 3.451rem + 1.493vw, 6.25rem) * 2)
+      var(--p-container) clamp(2.188rem, 1.702rem + 2.425vw, 6.25rem);
   }
 }
