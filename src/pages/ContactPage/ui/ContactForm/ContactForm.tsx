@@ -43,7 +43,7 @@ const ContactForm = memo((props: ContactFormProps) => {
    const onSubmit: SubmitHandler<IForm> = useCallback(
       (data) => {
          if (!statusReCAPTCHA) {
-            toast.error(t('error toast'));
+            toast.error(t('message toast'));
             return;
          }
          const loadingToastId = toast.loading(t('loading toast'));
