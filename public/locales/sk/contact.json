@@ -11,5 +11,6 @@
   "3000 characters": "Vaša správa nemôže presiahnuť 3000 znakov",
   "error toast": "Nepodarilo sa odoslať :(",
   "success toast": "Správa odoslaná!",
-  "loading toast": "Načítava sa..."
+  "loading toast": "Načítava sa...",
+  "message toast": "Prosím, potvrďte, že ste človek!"
 }

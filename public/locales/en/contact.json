@@ -11,5 +11,6 @@
   "3000 characters": "Your message cannot exceed 3000 characters",
   "error toast": "Failed to send :(",
   "success toast": "Message sent!",
-  "loading toast": "Loading..."
+  "loading toast": "Loading...",
+  "message toast": "Please confirm that you are human!"
 }
