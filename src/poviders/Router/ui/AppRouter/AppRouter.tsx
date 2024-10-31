@@ -1,18 +1,15 @@
 import ReactLenis from '@studio-freight/react-lenis';
 import { Suspense } from 'react';
-import { Route, Routes } from 'react-router-dom';
-import { type Location } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 
 import type { AppRoutersProps } from '@/config/route/routeConfig';
 import { routeConfig } from '@/config/route/routeConfig';
+import { useFirstRender } from '@/hooks/useFirstRender.ts';
 import { PageTransition } from '@/poviders/PageTransition';
 
-interface AppRouterProps {
-   location: Location;
-}
-
-export const AppRouter = (props: AppRouterProps) => {
-   const { location } = props;
+export const AppRouter = () => {
+   const location = useLocation();
+   const inited = useFirstRender();
 
    return (
       <Suspense fallback={''}>
@@ -22,7 +19,7 @@ export const AppRouter = (props: AppRouterProps) => {
                   key={el.path}
                   path={el.path}
                   element={
-                     <PageTransition location={location}>
+                     <PageTransition inited={inited} location={location}>
                         <ReactLenis root>{el.element}</ReactLenis>
                      </PageTransition>
                   }
