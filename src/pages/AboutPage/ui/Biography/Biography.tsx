@@ -3,7 +3,7 @@ import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import DownloadIcon from '@/assets/icons/download.svg?react';
-import Resume from '@/assets/resume/resume.pdf';
+import Resume from '@/assets/resume/Ruslan_Senchenko_CV_frontend(foto).pdf';
 import { BlockWithTitle } from '@/components/BlockWithTitle/BlockWithTitle';
 import { AppButton } from '@/components/UI/AppButton/AppButton.tsx';
 import { pathAnimation } from '@/const/animate';
