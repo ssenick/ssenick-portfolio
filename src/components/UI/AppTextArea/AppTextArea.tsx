@@ -15,7 +15,7 @@ interface AppTextAreaProps extends InputHTMLAttributes<HTMLTextAreaElement> {
 
 const AppTextArea = forwardRef<HTMLTextAreaElement, AppTextAreaProps>((props, ref) => {
    const { className, label, error, maxLength, onChange, ...otherProps } = props;
-   const [harCount, setCharCount] = useState(0);
+   const [charCount, setCharCount] = useState(0);
    const maxLengthChars = maxLength;
 
    const handleInputChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
@@ -24,7 +24,6 @@ const AppTextArea = forwardRef<HTMLTextAreaElement, AppTextAreaProps>((props, re
          onChange(event);
       }
    };
-
    return (
       <label className={classNames(cls.AppTextArea, { [cls.isError]: error }, [className])}>
          <textarea ref={ref} onChange={handleInputChange} className={cls.input} {...otherProps} />
@@ -33,7 +32,7 @@ const AppTextArea = forwardRef<HTMLTextAreaElement, AppTextAreaProps>((props, re
             {error && <span className={cls.error}>{error}</span>}
             {maxLengthChars && (
                <span className={cls.chart}>
-                  {harCount} / {maxLengthChars}
+                  {charCount} / {maxLengthChars}
                </span>
             )}
          </div>
