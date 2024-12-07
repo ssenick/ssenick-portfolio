@@ -27,6 +27,7 @@ interface ContactFormProps {
 const ContactForm = memo((props: ContactFormProps) => {
    const { className } = props;
    const [statusReCAPTCHA, setStatusReCAPTCHA] = useState<string | null>(null);
+   const [textAreaKey, setTextAreaKey] = useState(0);
    const { t } = useTranslation('contact');
 
    const { register, handleSubmit, formState, reset } = useForm<IForm>({
@@ -64,6 +65,7 @@ const ContactForm = memo((props: ContactFormProps) => {
                   id: loadingToastId,
                });
                reset();
+               setTextAreaKey((prev) => prev + 1);
             })
             .catch((error) => {
                console.log(error);
@@ -103,6 +105,7 @@ const ContactForm = memo((props: ContactFormProps) => {
                />
             </div>
             <AppTextArea
+               key={textAreaKey}
                className={cls.input}
                label={t('Your message')}
                maxLength={3000}
