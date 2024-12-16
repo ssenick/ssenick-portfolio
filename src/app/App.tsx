@@ -7,7 +7,7 @@ import { classNames } from '@/helpers/classNames/classNames';
 import { AppRouter } from '@/poviders/Router';
 function App() {
    useEffect(() => {
-      ReactGA.initialize(import.meta.env.VITE_GOOGLE_ANALYTICS_KEY);
+      ReactGA.initialize('G-RWKDN306V0');
    }, []);
 
    return (
